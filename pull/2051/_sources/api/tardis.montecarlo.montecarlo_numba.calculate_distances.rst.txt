@@ -1,7 +1,0 @@
-tardis.montecarlo.montecarlo\_numba.calculate\_distances module
-===============================================================
-
-.. automodule:: tardis.montecarlo.montecarlo_numba.calculate_distances
-   :members:
-   :undoc-members:
-   :show-inheritance:
