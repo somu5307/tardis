@@ -410,6 +410,12 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <style>
+    /* strip stderr */
+    div.nboutput.container div.output_area.stderr {
+        background: #fdd;
+        display: none;
+    }
+
     .launch-btn {
         background-color: #2980B9;
         border: none;
@@ -439,7 +445,7 @@ div.rendered_html tbody tr:hover {
 </style>
 
 <div class="admonition note">
-<p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/io/output/physical_quantities.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch interactive version</a></p>
+<p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/io/output/physical_quantities.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch notebook</a></p>
 </div><section id="Accessing-Physical-Quantities">
 <h1>Accessing Physical Quantities<a class="headerlink" href="#Accessing-Physical-Quantities" title="Permalink to this heading">¶</a></h1>
 <p>In order to compute the synthetic spectrum, TARDIS must either be told or must calculate many physical properties of the model. To understand and test the code it can be important to look at these values. One easy way to do this is to run TARDIS in an interactive mode and then inspect the model properties.</p>
@@ -471,13 +477,13 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8c7aa0e52e634f358c2e8eb6614a1067"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8467d77ea5154269934805c757248730"}</script></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d5325cecb983439daaa288c8ea2f54d3"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "a26f493ff2a6438b943769802f52ac87"}</script></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -486,7 +492,7 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   980  100   980    0     0   4083      0 --:--:-- --:--:-- --:--:--  4066
+100   980  100   980    0     0   6621      0 --:--:-- --:--:-- --:--:--  6621
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -532,13 +538,13 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6a09c389d645444d804f23a60836248a"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "be545e9e4e724838a21b09ead85b77ae"}</script></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "312d94ded8274613a34a153df9d23019"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "88fd7fcf0ed34392ae1686567e75d472"}</script></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -561,34 +567,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_95bda5ce_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b138be00_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_95bda5ce_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >9.93e+03</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.01e+04</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.4</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.507</td>
+                        <th id="T_b138be00_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >9.93e+03</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.01e+04</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.4</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.507</td>
             </tr>
             <tr>
-                        <th id="T_95bda5ce_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >9.85e+03</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.02e+04</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.211</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.197</td>
+                        <th id="T_b138be00_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >9.85e+03</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.02e+04</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.211</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.197</td>
             </tr>
             <tr>
-                        <th id="T_95bda5ce_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >9.78e+03</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.01e+04</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.143</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.117</td>
+                        <th id="T_b138be00_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >9.78e+03</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.01e+04</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.143</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.117</td>
             </tr>
             <tr>
-                        <th id="T_95bda5ce_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >9.71e+03</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >9.87e+03</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.105</td>
-                        <td id="T_95bda5ce_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0869</td>
+                        <th id="T_b138be00_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >9.71e+03</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >9.87e+03</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.105</td>
+                        <td id="T_b138be00_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0869</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -625,34 +631,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9643a016_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9643a016_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.01e+04</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.08e+04</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.507</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.525</td>
+                        <th id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.01e+04</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.08e+04</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.507</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.525</td>
             </tr>
             <tr>
-                        <th id="T_9643a016_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.02e+04</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.1e+04</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.197</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.203</td>
+                        <th id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.02e+04</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.1e+04</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.197</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.203</td>
             </tr>
             <tr>
-                        <th id="T_9643a016_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.01e+04</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.08e+04</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.117</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.125</td>
+                        <th id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.01e+04</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.08e+04</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.117</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.125</td>
             </tr>
             <tr>
-                        <th id="T_9643a016_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >9.87e+03</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.05e+04</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0869</td>
-                        <td id="T_9643a016_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0933</td>
+                        <th id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >9.87e+03</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.05e+04</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0869</td>
+                        <td id="T_b1a6a000_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0933</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -685,34 +691,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.08e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.525</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.483</td>
+                        <th id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.08e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.525</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.483</td>
             </tr>
             <tr>
-                        <th id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.1e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.12e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.203</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.189</td>
+                        <th id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.1e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.12e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.203</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.189</td>
             </tr>
             <tr>
-                        <th id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.08e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.125</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.118</td>
+                        <th id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.08e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.125</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.118</td>
             </tr>
             <tr>
-                        <th id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.05e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.06e+04</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0933</td>
-                        <td id="T_96c7c7ba_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0895</td>
+                        <th id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.05e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.06e+04</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0933</td>
+                        <td id="T_b210dbfa_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0895</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -745,34 +751,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9749029e_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9749029e_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.483</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.469</td>
+                        <th id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.483</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.469</td>
             </tr>
             <tr>
-                        <th id="T_9749029e_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.12e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.12e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.189</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.182</td>
+                        <th id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.12e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.12e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.189</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.182</td>
             </tr>
             <tr>
-                        <th id="T_9749029e_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.118</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.113</td>
+                        <th id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.118</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.113</td>
             </tr>
             <tr>
-                        <th id="T_9749029e_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.06e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0895</td>
-                        <td id="T_9749029e_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0861</td>
+                        <th id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.06e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0895</td>
+                        <td id="T_b27b96b6_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0861</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -807,34 +813,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_97c94bb6_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_97c94bb6_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.469</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.479</td>
+                        <th id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.469</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.479</td>
             </tr>
             <tr>
-                        <th id="T_97c94bb6_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.12e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.182</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.178</td>
+                        <th id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.12e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.182</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.178</td>
             </tr>
             <tr>
-                        <th id="T_97c94bb6_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.113</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.113</td>
+                        <th id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.113</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.113</td>
             </tr>
             <tr>
-                        <th id="T_97c94bb6_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0861</td>
-                        <td id="T_97c94bb6_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0839</td>
+                        <th id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0861</td>
+                        <td id="T_b2e5e85e_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0839</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -869,34 +875,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9849c872_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b3577168_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9849c872_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.479</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.47</td>
+                        <th id="T_b3577168_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.479</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.47</td>
             </tr>
             <tr>
-                        <th id="T_9849c872_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.12e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.178</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.185</td>
+                        <th id="T_b3577168_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.12e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.178</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.185</td>
             </tr>
             <tr>
-                        <th id="T_9849c872_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.113</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.112</td>
+                        <th id="T_b3577168_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.113</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.112</td>
             </tr>
             <tr>
-                        <th id="T_9849c872_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0839</td>
-                        <td id="T_9849c872_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0856</td>
+                        <th id="T_b3577168_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0839</td>
+                        <td id="T_b3577168_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0856</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -931,34 +937,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_98cc470c_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b3c69278_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_98cc470c_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.47</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.47</td>
+                        <th id="T_b3c69278_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.47</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.47</td>
             </tr>
             <tr>
-                        <th id="T_98cc470c_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.12e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.185</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.178</td>
+                        <th id="T_b3c69278_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.12e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.185</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.178</td>
             </tr>
             <tr>
-                        <th id="T_98cc470c_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.112</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.112</td>
+                        <th id="T_b3c69278_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.112</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.112</td>
             </tr>
             <tr>
-                        <th id="T_98cc470c_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0856</td>
-                        <td id="T_98cc470c_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.086</td>
+                        <th id="T_b3c69278_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0856</td>
+                        <td id="T_b3c69278_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.086</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -993,34 +999,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_994f9850_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b4341ece_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_994f9850_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.47</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.472</td>
+                        <th id="T_b4341ece_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.47</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.472</td>
             </tr>
             <tr>
-                        <th id="T_994f9850_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.14e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.178</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.175</td>
+                        <th id="T_b4341ece_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.14e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.178</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.175</td>
             </tr>
             <tr>
-                        <th id="T_994f9850_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.112</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.111</td>
+                        <th id="T_b4341ece_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.112</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.111</td>
             </tr>
             <tr>
-                        <th id="T_994f9850_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.086</td>
-                        <td id="T_994f9850_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.084</td>
+                        <th id="T_b4341ece_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.086</td>
+                        <td id="T_b4341ece_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.084</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1055,34 +1061,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_99d1285c_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_99d1285c_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.11e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.472</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.469</td>
+                        <th id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.11e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.472</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.469</td>
             </tr>
             <tr>
-                        <th id="T_99d1285c_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.14e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.15e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.175</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.17</td>
+                        <th id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.14e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.15e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.175</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.17</td>
             </tr>
             <tr>
-                        <th id="T_99d1285c_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.111</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.109</td>
+                        <th id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.111</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.109</td>
             </tr>
             <tr>
-                        <th id="T_99d1285c_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.08e+04</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.084</td>
-                        <td id="T_99d1285c_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0822</td>
+                        <th id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.08e+04</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.084</td>
+                        <td id="T_b4a06fca_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0822</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1115,34 +1121,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b50be70a_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.11e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.469</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.475</td>
+                        <th id="T_b50be70a_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.11e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.469</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.475</td>
             </tr>
             <tr>
-                        <th id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.15e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.14e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.17</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.177</td>
+                        <th id="T_b50be70a_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.15e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.14e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.17</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.177</td>
             </tr>
             <tr>
-                        <th id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.109</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.112</td>
+                        <th id="T_b50be70a_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.109</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.112</td>
             </tr>
             <tr>
-                        <th id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.08e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.06e+04</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0822</td>
-                        <td id="T_9a53dc2a_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0878</td>
+                        <th id="T_b50be70a_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.08e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.06e+04</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0822</td>
+                        <td id="T_b50be70a_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0878</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1177,34 +1183,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b578cece_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.475</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.472</td>
+                        <th id="T_b578cece_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.475</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.472</td>
             </tr>
             <tr>
-                        <th id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.14e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.12e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.177</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.184</td>
+                        <th id="T_b578cece_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.14e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.12e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.177</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.184</td>
             </tr>
             <tr>
-                        <th id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.112</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.114</td>
+                        <th id="T_b578cece_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.112</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.114</td>
             </tr>
             <tr>
-                        <th id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.06e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.06e+04</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0878</td>
-                        <td id="T_9ad5ceec_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0859</td>
+                        <th id="T_b578cece_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.06e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.06e+04</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0878</td>
+                        <td id="T_b578cece_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0859</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1237,34 +1243,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.472</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.467</td>
+                        <th id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.472</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.467</td>
             </tr>
             <tr>
-                        <th id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.12e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.184</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.176</td>
+                        <th id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.12e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.184</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.176</td>
             </tr>
             <tr>
-                        <th id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.114</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.11</td>
+                        <th id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.114</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.11</td>
             </tr>
             <tr>
-                        <th id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.06e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.08e+04</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0859</td>
-                        <td id="T_9b5a2a98_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0821</td>
+                        <th id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.06e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.08e+04</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0859</td>
+                        <td id="T_b5e8dfac_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0821</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1299,34 +1305,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9bdec47e_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b659b100_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9bdec47e_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.11e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.467</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.466</td>
+                        <th id="T_b659b100_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.11e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.467</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.466</td>
             </tr>
             <tr>
-                        <th id="T_9bdec47e_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.176</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.18</td>
+                        <th id="T_b659b100_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.176</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.18</td>
             </tr>
             <tr>
-                        <th id="T_9bdec47e_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.11</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.111</td>
+                        <th id="T_b659b100_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.11</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.111</td>
             </tr>
             <tr>
-                        <th id="T_9bdec47e_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.08e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.08e+04</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0821</td>
-                        <td id="T_9bdec47e_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0841</td>
+                        <th id="T_b659b100_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.08e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.08e+04</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0821</td>
+                        <td id="T_b659b100_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0841</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1361,34 +1367,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.11e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.466</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.469</td>
+                        <th id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.11e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.466</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.469</td>
             </tr>
             <tr>
-                        <th id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.18</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.182</td>
+                        <th id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.18</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.182</td>
             </tr>
             <tr>
-                        <th id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.111</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.113</td>
+                        <th id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.111</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.113</td>
             </tr>
             <tr>
-                        <th id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.08e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0841</td>
-                        <td id="T_9c6cc22e_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0854</td>
+                        <th id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.08e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0841</td>
+                        <td id="T_b6c91f68_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0854</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1423,34 +1429,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9cf1d086_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9cf1d086_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.11e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.469</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.484</td>
+                        <th id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.11e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.469</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.484</td>
             </tr>
             <tr>
-                        <th id="T_9cf1d086_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.182</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.181</td>
+                        <th id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.182</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.181</td>
             </tr>
             <tr>
-                        <th id="T_9cf1d086_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.113</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.113</td>
+                        <th id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.113</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.113</td>
             </tr>
             <tr>
-                        <th id="T_9cf1d086_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0854</td>
-                        <td id="T_9cf1d086_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0858</td>
+                        <th id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0854</td>
+                        <td id="T_b7377fc6_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0858</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1485,34 +1491,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9d782280_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b7a52594_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9d782280_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.1e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.484</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.472</td>
+                        <th id="T_b7a52594_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.1e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.484</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.472</td>
             </tr>
             <tr>
-                        <th id="T_9d782280_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.181</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.177</td>
+                        <th id="T_b7a52594_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.181</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.177</td>
             </tr>
             <tr>
-                        <th id="T_9d782280_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.113</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.113</td>
+                        <th id="T_b7a52594_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.113</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.113</td>
             </tr>
             <tr>
-                        <th id="T_9d782280_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.06e+04</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0858</td>
-                        <td id="T_9d782280_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0858</td>
+                        <th id="T_b7a52594_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.06e+04</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0858</td>
+                        <td id="T_b7a52594_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0858</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1545,34 +1551,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b810c60a_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.1e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.472</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.468</td>
+                        <th id="T_b810c60a_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.1e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.472</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.468</td>
             </tr>
             <tr>
-                        <th id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.14e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.177</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.175</td>
+                        <th id="T_b810c60a_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.14e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.177</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.175</td>
             </tr>
             <tr>
-                        <th id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.113</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.11</td>
+                        <th id="T_b810c60a_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.113</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.11</td>
             </tr>
             <tr>
-                        <th id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.06e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.08e+04</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0858</td>
-                        <td id="T_9dfba5b0_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0816</td>
+                        <th id="T_b810c60a_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.06e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.08e+04</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0858</td>
+                        <td id="T_b810c60a_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0816</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1607,34 +1613,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.11e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.468</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.464</td>
+                        <th id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.11e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.468</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.464</td>
             </tr>
             <tr>
-                        <th id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.14e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.175</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.177</td>
+                        <th id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.14e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.175</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.177</td>
             </tr>
             <tr>
-                        <th id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.11e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.1e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.11</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.113</td>
+                        <th id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.11e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.1e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.11</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.113</td>
             </tr>
             <tr>
-                        <th id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.08e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0816</td>
-                        <td id="T_9e7c8c84_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0848</td>
+                        <th id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.08e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0816</td>
+                        <td id="T_b87b7bda_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0848</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1669,34 +1675,34 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area rendered_html docutils container">
 <style  type="text/css" >
-</style><table id="T_9efd94e6_e69f_11ec_afd0_00224808aca6" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+</style><table id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_9efd94e6_e69f_11ec_afd0_00224808aca6level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row0_col0" class="data row0 col0" >1.11e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row0_col1" class="data row0 col1" >1.11e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row0_col2" class="data row0 col2" >0.464</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row0_col3" class="data row0 col3" >0.466</td>
+                        <th id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row0_col0" class="data row0 col0" >1.11e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row0_col1" class="data row0 col1" >1.11e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row0_col2" class="data row0 col2" >0.464</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row0_col3" class="data row0 col3" >0.466</td>
             </tr>
             <tr>
-                        <th id="T_9efd94e6_e69f_11ec_afd0_00224808aca6level0_row1" class="row_heading level0 row1" >5</th>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row1_col0" class="data row1 col0" >1.13e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row1_col1" class="data row1 col1" >1.13e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row1_col2" class="data row1 col2" >0.177</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row1_col3" class="data row1 col3" >0.177</td>
+                        <th id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578level0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row1_col0" class="data row1 col0" >1.13e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row1_col1" class="data row1 col1" >1.13e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row1_col2" class="data row1 col2" >0.177</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row1_col3" class="data row1 col3" >0.177</td>
             </tr>
             <tr>
-                        <th id="T_9efd94e6_e69f_11ec_afd0_00224808aca6level0_row2" class="row_heading level0 row2" >10</th>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row2_col0" class="data row2 col0" >1.1e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row2_col1" class="data row2 col1" >1.11e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row2_col2" class="data row2 col2" >0.113</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row2_col3" class="data row2 col3" >0.111</td>
+                        <th id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578level0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row2_col0" class="data row2 col0" >1.1e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row2_col1" class="data row2 col1" >1.11e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row2_col2" class="data row2 col2" >0.113</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row2_col3" class="data row2 col3" >0.111</td>
             </tr>
             <tr>
-                        <th id="T_9efd94e6_e69f_11ec_afd0_00224808aca6level0_row3" class="row_heading level0 row3" >15</th>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row3_col0" class="data row3 col0" >1.07e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row3_col1" class="data row3 col1" >1.07e+04</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row3_col2" class="data row3 col2" >0.0848</td>
-                        <td id="T_9efd94e6_e69f_11ec_afd0_00224808aca6row3_col3" class="data row3 col3" >0.0853</td>
+                        <th id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578level0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row3_col0" class="data row3 col0" >1.07e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row3_col1" class="data row3 col1" >1.07e+04</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row3_col2" class="data row3 col2" >0.0848</td>
+                        <td id="T_b8e70c9c_eb23_11ec_8fd3_000d3a641578row3_col3" class="data row3 col3" >0.0853</td>
             </tr>
     </tbody></table></div>
 </div>
@@ -1722,7 +1728,7 @@ div.rendered_html tbody tr:hover {
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]
 
         Simulation finished in 20 iterations
-        Simulation took 53.76 s
+        Simulation took 44.18 s
  (<span class="ansi-bold">base.py</span>:468)
 </pre></div></div>
 </div>
@@ -2646,7 +2652,7 @@ Name: (14, 1, 0), dtype: float64
 <li><p>Information that is not stored as Astropy Quantities (e.g. the ion and level populations used in the example above) are usually stored in cgs units (i.e. cm−3 for the populations).</p></li>
 </ul>
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"c7df01c525cf4b82b25a99ddb727ccf0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "59ae4c2d03b3471d861360a19943b14b": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "4750216a3d7745229466c6a1e552aae8": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "info", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c7df01c525cf4b82b25a99ddb727ccf0", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_59ae4c2d03b3471d861360a19943b14b", "value": 0.0}}, "a03652fd1b73445c8e4ef9b02ba9bb67": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ddbff994ad9e4a2691b187fa13519967": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d3196aacd2bd42a89b721f11fd456634": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a03652fd1b73445c8e4ef9b02ba9bb67", "placeholder": "\u200b", "style": "IPY_MODEL_ddbff994ad9e4a2691b187fa13519967", "value": "Iterations:"}}, "2230204f43fe41d5b386ea73bfb533a4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9ac7e63e4d74473ca1823cdc2a4d38a1": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "f962aa73f77f43dbaec9b40d059e3f31": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2230204f43fe41d5b386ea73bfb533a4", "placeholder": "\u200b", "style": "IPY_MODEL_9ac7e63e4d74473ca1823cdc2a4d38a1", "value": "0/? [00:00&lt;?, ?it/s]"}}, "d186dbc81739495291ffe52c401f4a6b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8c7aa0e52e634f358c2e8eb6614a1067": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_d3196aacd2bd42a89b721f11fd456634", "IPY_MODEL_4750216a3d7745229466c6a1e552aae8", "IPY_MODEL_f962aa73f77f43dbaec9b40d059e3f31"], "layout": "IPY_MODEL_d186dbc81739495291ffe52c401f4a6b"}}, "a72d48442eda43e5be0079b077f76857": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "6e750efb1cc0418dad92ab8cd46943df": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "0080f71357584c86aea104967a0eb7f2": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "info", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a72d48442eda43e5be0079b077f76857", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_6e750efb1cc0418dad92ab8cd46943df", "value": 0.0}}, "fd19651ae2c3452c9617236eabd1af62": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "540d7ee2c93c4cd7b3ce1641b6fd4b35": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "ba4d25e2698c44fd9a9b8c4aac99cbc3": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_fd19651ae2c3452c9617236eabd1af62", "placeholder": "\u200b", "style": "IPY_MODEL_540d7ee2c93c4cd7b3ce1641b6fd4b35", "value": "Packets:   "}}, "55b1edf651dc43bbb4a7f9234daf4076": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "67ca704c8b4c49ce8c7628dbce715d17": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "3f5c04acf56b4b938a4de5f7ef65c26f": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_55b1edf651dc43bbb4a7f9234daf4076", "placeholder": "\u200b", "style": "IPY_MODEL_67ca704c8b4c49ce8c7628dbce715d17", "value": "0/? [00:00&lt;?, ?it/s]"}}, "b644d68b9b0e49eaa791cb0934ef4efd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d5325cecb983439daaa288c8ea2f54d3": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ba4d25e2698c44fd9a9b8c4aac99cbc3", "IPY_MODEL_0080f71357584c86aea104967a0eb7f2", "IPY_MODEL_3f5c04acf56b4b938a4de5f7ef65c26f"], "layout": "IPY_MODEL_b644d68b9b0e49eaa791cb0934ef4efd"}}, "99591a3fea3c424fb35a8c15aac59e37": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d0eeb3ada0014674bbefe45b803c89a5": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_99591a3fea3c424fb35a8c15aac59e37", "msg_id": "", "outputs": []}}, "2233fd47c241417a8423a0ada657ed08": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1ed39a47b55040e4b7b355e19d3d8d56": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_2233fd47c241417a8423a0ada657ed08", "msg_id": "", "outputs": []}}, "724c2cbfc0634a2585c904f5ab98a8a2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60%"}}, "171e732fef484e13a8005948dbb9c609": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "7072b21a7de447178efbe6340e07317f": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_724c2cbfc0634a2585c904f5ab98a8a2", "max": 20.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_171e732fef484e13a8005948dbb9c609", "value": 20.0}}, "1c4dffd7469d4443b2bbc42fa60c3bf3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "6%"}}, "3ceefcc2073b4ae88e45ee3e51c97988": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e69b011e97a84716a8e605ca25bd163f": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1c4dffd7469d4443b2bbc42fa60c3bf3", "placeholder": "\u200b", "style": "IPY_MODEL_3ceefcc2073b4ae88e45ee3e51c97988", "value": "Iterations:"}}, "9993518a01744ed896a455ee63406c69": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e5d4e19f1da246c295567e093065af9d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "b5ed545fb7da434489ab70b4d000af24": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9993518a01744ed896a455ee63406c69", "placeholder": "\u200b", "style": "IPY_MODEL_e5d4e19f1da246c295567e093065af9d", "value": "20/20 [00:25&lt;00:00,  3.34s/it]"}}, "9aada33f634e49dbaa0f508c4a8d8f0f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6a09c389d645444d804f23a60836248a": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_e69b011e97a84716a8e605ca25bd163f", "IPY_MODEL_7072b21a7de447178efbe6340e07317f", "IPY_MODEL_b5ed545fb7da434489ab70b4d000af24"], "layout": "IPY_MODEL_9aada33f634e49dbaa0f508c4a8d8f0f"}}, "609678bfedb34adc9aa08a22074e4919": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60%"}}, "31c4aede6a20420a85f250167f920f8c": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "856cb5f722c246e2adabcd9e7f00bdf7": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_609678bfedb34adc9aa08a22074e4919", "max": 100000.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_31c4aede6a20420a85f250167f920f8c", "value": 99843.0}}, "2ff786ce93d44a39810f3d3bf8f42eb6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "6%"}}, "a79c015552e34055989f1d72cc6f1977": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "1b3d488cf268404393cdafe70274257f": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2ff786ce93d44a39810f3d3bf8f42eb6", "placeholder": "\u200b", "style": "IPY_MODEL_a79c015552e34055989f1d72cc6f1977", "value": "Packets:   "}}, "28e30e5a7ead426ea1450f0d99eb8eae": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e4de92850031430d996a7384828764ae": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "515ce194c0794781b1b86db0dd64fb4f": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_28e30e5a7ead426ea1450f0d99eb8eae", "placeholder": "\u200b", "style": "IPY_MODEL_e4de92850031430d996a7384828764ae", "value": "99843/100000 [00:08&lt;00:00, 11708.81it/s]"}}, "88c1b883193f4ceb989462048f2a0def": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "312d94ded8274613a34a153df9d23019": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_1b3d488cf268404393cdafe70274257f", "IPY_MODEL_856cb5f722c246e2adabcd9e7f00bdf7", "IPY_MODEL_515ce194c0794781b1b86db0dd64fb4f"], "layout": "IPY_MODEL_88c1b883193f4ceb989462048f2a0def"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"01870158165d4a3d95b0af0d84c13857": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "b2205f1061e44884957ca5d3acb80923": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "c0b6fadba7de41fb88940b744d1e0bef": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "info", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_01870158165d4a3d95b0af0d84c13857", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_b2205f1061e44884957ca5d3acb80923", "value": 0.0}}, "cdbfc94ca2834b6bafac8ab4de87b2fa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "15472f79ac494897b196d29be4a542a5": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "0a112b8a08704459b8e92b32aab86c91": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_cdbfc94ca2834b6bafac8ab4de87b2fa", "placeholder": "\u200b", "style": "IPY_MODEL_15472f79ac494897b196d29be4a542a5", "value": "Iterations:"}}, "1c2eceefc26b491b815e360e43b3b1e8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5165975355b2407690ea10af477f5ebd": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "f2b33d11e9724da4ae6a244d47419f6b": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1c2eceefc26b491b815e360e43b3b1e8", "placeholder": "\u200b", "style": "IPY_MODEL_5165975355b2407690ea10af477f5ebd", "value": "0/? [00:00&lt;?, ?it/s]"}}, "5f90e5c0e08c43f9b480830aa675612b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8467d77ea5154269934805c757248730": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_0a112b8a08704459b8e92b32aab86c91", "IPY_MODEL_c0b6fadba7de41fb88940b744d1e0bef", "IPY_MODEL_f2b33d11e9724da4ae6a244d47419f6b"], "layout": "IPY_MODEL_5f90e5c0e08c43f9b480830aa675612b"}}, "785dc31f285a4573bc333d5d8d0ff0e6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "9951fdf0902047968b0658c3ab3f77a7": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "6a6055a1011b46ba981b5b3226e0a9a2": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "info", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_785dc31f285a4573bc333d5d8d0ff0e6", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_9951fdf0902047968b0658c3ab3f77a7", "value": 0.0}}, "e84ec58098b84f158d8dc1b18c7d8fd0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6215d5e171b2432aad05cbd832aa219e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "163f9712da504841bcd15eed6169f820": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e84ec58098b84f158d8dc1b18c7d8fd0", "placeholder": "\u200b", "style": "IPY_MODEL_6215d5e171b2432aad05cbd832aa219e", "value": "Packets:   "}}, "3466fb923d63418cb723d7c25e039d9e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4ce459512cbd4cc3919f8c881c9ccde7": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "6f9d19d14640431d825b4075d959a412": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3466fb923d63418cb723d7c25e039d9e", "placeholder": "\u200b", "style": "IPY_MODEL_4ce459512cbd4cc3919f8c881c9ccde7", "value": "0/? [00:00&lt;?, ?it/s]"}}, "74088823dc484cf7980acbcf27a74e36": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a26f493ff2a6438b943769802f52ac87": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_163f9712da504841bcd15eed6169f820", "IPY_MODEL_6a6055a1011b46ba981b5b3226e0a9a2", "IPY_MODEL_6f9d19d14640431d825b4075d959a412"], "layout": "IPY_MODEL_74088823dc484cf7980acbcf27a74e36"}}, "70f644f4aed1498a85e5e5a364954c43": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6753a8f4576241cba93ea177e3cd987d": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_70f644f4aed1498a85e5e5a364954c43", "msg_id": "", "outputs": []}}, "1c9e261dae224956ab465b8ebf063499": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c78b6ee1bcf64a8292fe4a7b9a3aaa89": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_1c9e261dae224956ab465b8ebf063499", "msg_id": "", "outputs": []}}, "1838251c39614cceb88cd54a7515de31": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60%"}}, "235a434930c544ff92c3413a9d094729": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "0d138cef915d488da61bffe8c5fa658e": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1838251c39614cceb88cd54a7515de31", "max": 20.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_235a434930c544ff92c3413a9d094729", "value": 20.0}}, "2a7f52313a0645088d4447ce9bee0033": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "6%"}}, "1599707305134470920f86d02baab53e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e8a3cded3511449481061a4a3b62286a": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2a7f52313a0645088d4447ce9bee0033", "placeholder": "\u200b", "style": "IPY_MODEL_1599707305134470920f86d02baab53e", "value": "Iterations:"}}, "25b27144159b4d068f5f8c3249c8d0b9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0772387476d1413aa236086333cc5aaa": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "5571d4f7929e4c5c90cbd2993066432b": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_25b27144159b4d068f5f8c3249c8d0b9", "placeholder": "\u200b", "style": "IPY_MODEL_0772387476d1413aa236086333cc5aaa", "value": "20/20 [00:20&lt;00:00,  2.69s/it]"}}, "ce1e3c8c3fd24b03a01648ea83a36f87": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "be545e9e4e724838a21b09ead85b77ae": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_e8a3cded3511449481061a4a3b62286a", "IPY_MODEL_0d138cef915d488da61bffe8c5fa658e", "IPY_MODEL_5571d4f7929e4c5c90cbd2993066432b"], "layout": "IPY_MODEL_ce1e3c8c3fd24b03a01648ea83a36f87"}}, "585cc29e49ff457d9c7b9bc2b6769d8e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60%"}}, "729e1e7605554f5eb0faba1eb212cc5e": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "1b7c1c15a91147b9bdca8d7dc02f5d19": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_585cc29e49ff457d9c7b9bc2b6769d8e", "max": 100000.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_729e1e7605554f5eb0faba1eb212cc5e", "value": 98856.0}}, "da63d1aa6b1a4ac5a7fae4892f8a4e09": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "6%"}}, "79079159a9f94db08454d9c6f3e3568b": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "3681863298c64303bfad05e8ea468ebe": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_da63d1aa6b1a4ac5a7fae4892f8a4e09", "placeholder": "\u200b", "style": "IPY_MODEL_79079159a9f94db08454d9c6f3e3568b", "value": "Packets:   "}}, "32d76709f08a411ebc7fb11fba5b3621": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f6e0a8d8d51c43a582b4a4afac9bcb10": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "cfecfe009cd54eb9a4f6aee6cc4aa5f7": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_32d76709f08a411ebc7fb11fba5b3621", "placeholder": "\u200b", "style": "IPY_MODEL_f6e0a8d8d51c43a582b4a4afac9bcb10", "value": "98856/100000 [00:06&lt;00:00, 14201.04it/s]"}}, "0a97907674614303b7bc0dd2662a1684": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "88fd7fcf0ed34392ae1686567e75d472": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_3681863298c64303bfad05e8ea468ebe", "IPY_MODEL_1b7c1c15a91147b9bdca8d7dc02f5d19", "IPY_MODEL_cfecfe009cd54eb9a4f6aee6cc4aa5f7"], "layout": "IPY_MODEL_0a97907674614303b7bc0dd2662a1684"}}}, "version_major": 2, "version_minor": 0}
 </script></section>
 </section>
 
@@ -2662,7 +2668,7 @@ Name: (14, 1, 0), dtype: float64
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 07 Jun 2022.
+      <span class="lastupdated">Last updated on 13 Jun 2022.
       </span></p>
   </div>
 
