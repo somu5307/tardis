@@ -423,6 +423,12 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <style>
+    /* strip stderr */
+    div.nboutput.container div.output_area.stderr {
+        background: #fdd;
+        display: none;
+    }
+
     .launch-btn {
         background-color: #2980B9;
         border: none;
@@ -452,7 +458,7 @@ div.rendered_html tbody tr:hover {
 </style>
 
 <div class="admonition note">
-<p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/outdated/init_trad_bug.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch interactive version</a></p>
+<p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/outdated/init_trad_bug.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch notebook</a></p>
 </div><section id="Initial_t_rad-Bug">
 <h1>Initial_t_rad Bug<a class="headerlink" href="#Initial_t_rad-Bug" title="Permalink to this heading">¶</a></h1>
 <p>The purpose of this notebook is to demonstrate the bug associated with setting the initial_t_rad tardis.plasma property.</p>
@@ -2001,7 +2007,7 @@ array([4, 5, 6])
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 08 Jun 2022.
+      <span class="lastupdated">Last updated on 14 Jun 2022.
       </span></p>
   </div>
 

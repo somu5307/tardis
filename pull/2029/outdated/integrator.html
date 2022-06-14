@@ -406,6 +406,12 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <style>
+    /* strip stderr */
+    div.nboutput.container div.output_area.stderr {
+        background: #fdd;
+        display: none;
+    }
+
     .launch-btn {
         background-color: #2980B9;
         border: none;
@@ -435,7 +441,7 @@ div.rendered_html tbody tr:hover {
 </style>
 
 <div class="admonition note">
-<p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/outdated/integrator.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch interactive version</a></p>
+<p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/outdated/integrator.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch notebook</a></p>
 </div><section id="API-example-for-the-formal-integral">
 <span id="integrator"></span><h1>API example for the formal integral<a class="headerlink" href="#API-example-for-the-formal-integral" title="Permalink to this heading">¶</a></h1>
 <p>There are currently two ways to invoke the calculation of the formal integral with tardis. The first is for the use in interactive shells and scripts and the second one for running tardis with the command line script <code class="docutils literal notranslate"><span class="pre">tardis</span></code>.</p>
@@ -2092,7 +2098,7 @@ if (IPython.notebook.kernel != null) {
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 08 Jun 2022.
+      <span class="lastupdated">Last updated on 14 Jun 2022.
       </span></p>
   </div>
 
