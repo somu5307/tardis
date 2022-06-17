@@ -713,7 +713,6 @@ class Estimators(object):
     montecarlo_configuration.temporary_v_packet_bins = number_of_vpackets
     montecarlo_configuration.full_relativity = runner.enable_full_relativity
     montecarlo_configuration.montecarlo_seed = runner.seed
-    montecarlo_configuration.single_packet_seed = runner.single_packet_seed
     montecarlo_configuration.v_packet_spawn_start_frequency = (
         runner.virtual_spectrum_spawn_range.end.to(
             u.Hz, equivalencies=u.spectral()
@@ -742,7 +741,7 @@ class Estimators(object):
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 15 Jun 2022.
+      <span class="lastupdated">Last updated on 17 Jun 2022.
       </span></p>
   </div>
 

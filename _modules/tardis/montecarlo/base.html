@@ -213,7 +213,6 @@ MAX_SEED_VAL = 2**32 - 1
         packet_source=None,
         debug_packets=False,
         logger_buffer=1,
-        single_packet_seed=None,
         tracking_rpacket=False,
         use_gpu=False,
     ):
@@ -232,7 +231,6 @@ MAX_SEED_VAL = 2**32 - 1
         self.enable_full_relativity = enable_full_relativity
         numba_config.ENABLE_FULL_RELATIVITY = enable_full_relativity
         self.line_interaction_type = line_interaction_type
-        self.single_packet_seed = single_packet_seed
         self.integrator_settings = integrator_settings
         self.v_packet_settings = v_packet_settings
         self.spectrum_method = spectrum_method
@@ -802,7 +800,6 @@ MAX_SEED_VAL = 2**32 - 1
             packet_source=packet_source,
             debug_packets=config.montecarlo.debug_packets,
             logger_buffer=config.montecarlo.logger_buffer,
-            single_packet_seed=config.montecarlo.single_packet_seed,
             virtual_packet_logging=(
                 config.spectrum.virtual.virtual_packet_logging
                 | virtual_packet_logging
@@ -820,7 +817,7 @@ MAX_SEED_VAL = 2**32 - 1
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 15 Jun 2022.
+      <span class="lastupdated">Last updated on 17 Jun 2022.
       </span></p>
   </div>
 
