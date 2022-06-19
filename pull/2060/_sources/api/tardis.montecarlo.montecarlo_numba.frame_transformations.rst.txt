@@ -1,7 +1,0 @@
-tardis.montecarlo.montecarlo\_numba.frame\_transformations module
-=================================================================
-
-.. automodule:: tardis.montecarlo.montecarlo_numba.frame_transformations
-   :members:
-   :undoc-members:
-   :show-inheritance:
