@@ -16,7 +16,6 @@ Submodules
    :maxdepth: 4
 
    tardis.montecarlo.montecarlo_numba.base
-   tardis.montecarlo.montecarlo_numba.calculate_distances
    tardis.montecarlo.montecarlo_numba.estimators
    tardis.montecarlo.montecarlo_numba.formal_integral
    tardis.montecarlo.montecarlo_numba.formal_integral_cuda
