@@ -184,6 +184,27 @@ default values.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="tardis.io.config_validator.is_Quantity">
+<span class="sig-prename descclassname"><span class="pre">tardis.io.config_validator.</span></span><span class="sig-name descname"><span class="pre">is_Quantity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checker</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/config_validator.html#is_Quantity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.config_validator.is_Quantity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the provided instance is of type astropy.units.quantity.Quantity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>checker:</strong></dt><dd><p>Object of <code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeChecker</span></code>. Passed by jsonschema internally.</p>
+</dd>
+<dt><strong>instance:</strong></dt><dd><p>The instance to be checked.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool: True if the instance is of type astropy.units.quantity.Quantity else False</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="tardis.io.config_validator.validate_dict">
 <span class="sig-prename descclassname"><span class="pre">tardis.io.config_validator.</span></span><span class="sig-name descname"><span class="pre">validate_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schemapath='/home/runner/work/tardis/tardis/tardis/io/schemas/base.yml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validator=&lt;class</span> <span class="pre">'jsonschema.validators.create.&lt;locals&gt;.Validator'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/config_validator.html#validate_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.config_validator.validate_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -207,7 +228,7 @@ default values.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 21 Jun 2022.
+      <span class="lastupdated">Last updated on 24 Jun 2022.
       </span></p>
   </div>
 
