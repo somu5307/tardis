@@ -175,7 +175,7 @@ def _yaml_handler(path):
         return yaml.load(f, Loader=YAMLLoader)
 
 
-<div class="viewcode-block" id="is_Quantity"><a class="viewcode-back" href="../../../api/tardis.io.config_validator.html#tardis.io.config_validator.is_Quantity">[docs]</a>def is_Quantity(checker, instance):
+<div class="viewcode-block" id="is_quantity"><a class="viewcode-back" href="../../../api/tardis.io.config_validator.html#tardis.io.config_validator.is_quantity">[docs]</a>def is_quantity(checker, instance):
     &quot;&quot;&quot;
     Check if the provided instance is of type astropy.units.quantity.Quantity
 
@@ -205,7 +205,7 @@ def _yaml_handler(path):
     resolver = RefResolver(schemaurl, schema, handlers=handlers)
     validated_dict = deepcopy(config_dict)
     custom_type_checker = validator.TYPE_CHECKER.redefine(
-        &quot;quantity&quot;, is_Quantity
+        &quot;quantity&quot;, is_quantity
     )
     custom_validator = validators.extend(
         validator, type_checker=custom_type_checker
@@ -233,7 +233,7 @@ def _yaml_handler(path):
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 27 Jun 2022.
+      <span class="lastupdated">Last updated on 29 Jun 2022.
       </span></p>
   </div>
 
