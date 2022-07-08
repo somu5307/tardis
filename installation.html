@@ -158,7 +158,7 @@ to be installed on your system.</p></li>
 </div>
 <section id="install-with-lockfiles">
 <h2>Install with lockfiles<a class="headerlink" href="#install-with-lockfiles" title="Permalink to this heading">¶</a></h2>
-<p>Conda lockfiles are platform-specific dependency files that produce repeteable environments.
+<p>Conda lockfiles are platform-specific dependency files that produce repeatable environments.
 These files are generated on every new release. We strongly recommend installing TARDIS using
 this method by following the steps described below.</p>
 <ol class="arabic simple">
@@ -236,6 +236,13 @@ reproducibility of scientific results.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda update --name tardis --file conda-{platform}-64.lock
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have installed the tardis package in development mode, you should <em>ideally</em> update your environment whenever you pull latest tardis code because the new code added might be using updated (or new) dependencies. If you don’t do that and your tardis installation seems broken, you can check if your environment requires update by comparing it against the latest environment file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda compare --name tardis tardis_env3.yml
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 
@@ -251,7 +258,7 @@ reproducibility of scientific results.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 29 Jun 2022.
+      <span class="lastupdated">Last updated on 08 Jul 2022.
       </span></p>
   </div>
 
