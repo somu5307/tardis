@@ -1,14 +1,6 @@
 tardis.montecarlo.montecarlo\_numba package
 ===========================================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   tardis.montecarlo.montecarlo_numba.continuum
-
 Submodules
 ----------
 
