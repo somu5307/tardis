@@ -166,7 +166,7 @@
 <span id="tardis-io-parsers-arepo-module"></span><h1>tardis.io.parsers.arepo module<a class="headerlink" href="#module-tardis.io.parsers.arepo" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="tardis.io.parsers.arepo.ArepoSnapshot">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.io.parsers.arepo.</span></span><span class="sig-name descname"><span class="pre">ArepoSnapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speciesfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numthreads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#ArepoSnapshot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.ArepoSnapshot" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.io.parsers.arepo.</span></span><span class="sig-name descname"><span class="pre">ArepoSnapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speciesfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#ArepoSnapshot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.ArepoSnapshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Loads relevant data for conversion from Arepo snapshot to a
 csvy-model. Requires arepo-snap-util to be installed.
@@ -195,16 +195,6 @@ Default: 0.0</p>
 of-sight to the x-axis. Only usable with snapshots.
 Default: 0.0</p>
 </dd>
-<dt><strong>boxsize</strong><span class="classifier">float</span></dt><dd><p>Size of the box (in cm) from which data is mapped
-to a Cartesian grid. Only usable with snapshots.
-Default: 1e12</p>
-</dd>
-<dt><strong>resolution</strong><span class="classifier">int</span></dt><dd><p>Resolution of the Cartesian grid. Only usable
-with snapshots. Default: 512</p>
-</dd>
-<dt><strong>numthreads</strong><span class="classifier">int</span></dt><dd><p>Number of threads with which Cartesian mapping
-is done. Default: 4</p>
-</dd>
 </dl>
 </dd>
 </dl>
@@ -212,12 +202,6 @@ is done. Default: 4</p>
 <dt class="sig sig-object py" id="tardis.io.parsers.arepo.ArepoSnapshot.get_grids">
 <span class="sig-name descname"><span class="pre">get_grids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#ArepoSnapshot.get_grids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.ArepoSnapshot.get_grids" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all relevant data to create Profile objects</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tardis.io.parsers.arepo.ArepoSnapshot.nucMapOnCartGrid">
-<span class="sig-name descname"><span class="pre">nucMapOnCartGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">snapshot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numthreads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xnuc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saveas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_only_cells</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#ArepoSnapshot.nucMapOnCartGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.ArepoSnapshot.nucMapOnCartGrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper funciton to extract nuclear composition from snapshots</p>
 </dd></dl>
 
 </dd></dl>
@@ -261,18 +245,11 @@ the angle with respect to the x axis. Default: 20.0</p>
 </dd>
 <dt><strong>outer_radius</strong><span class="classifier">float</span></dt><dd><p>Outer radius where the profiles will be cut off. Default: None</p>
 </dd>
-<dt><strong>show_plot</strong><span class="classifier">bool</span></dt><dd><p>Specifies if a plot is to be shown after the creation of the
-profile. Default: True</p>
-</dd>
-<dt><strong>save_plot</strong><span class="classifier">str</span></dt><dd><p>Location where the plot is being saved. Default: None</p>
-</dd>
-<dt><strong>plot_dpi</strong><span class="classifier">int</span></dt><dd><p>Dpi of the saved plot. Default: 600</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>profile</strong><span class="classifier">LineProfile object</span></dt><dd></dd>
+<dt><strong>profile</strong><span class="classifier">ConeProfile object</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -317,72 +294,11 @@ direction are identical.</p>
 </dd>
 <dt><strong>outer_radius</strong><span class="classifier">float</span></dt><dd><p>Outer radius where the profiles will be cut off. Default: None</p>
 </dd>
-<dt><strong>show_plot</strong><span class="classifier">bool</span></dt><dd><p>Specifies if a plot is to be shown after the creation of the
-profile. Default: True</p>
-</dd>
-<dt><strong>save_plot</strong><span class="classifier">str</span></dt><dd><p>Location where the plot is being saved. Default: None</p>
-</dd>
-<dt><strong>plot_dpi</strong><span class="classifier">int</span></dt><dd><p>Dpi of the saved plot. Default: 600</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>profile</strong><span class="classifier">LineProfile object</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="tardis.io.parsers.arepo.LineProfile">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.io.parsers.arepo.</span></span><span class="sig-name descname"><span class="pre">LineProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xnuc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#LineProfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.LineProfile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#tardis.io.parsers.arepo.Profile" title="tardis.io.parsers.arepo.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a></p>
-<p>Class for profiles extrected along a line, i.e. the x-axis.
-Extends Profile.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>pos</strong><span class="classifier">list of float</span></dt><dd><p>Meshgrid of positions in center of mass frames in
-Cartesian coordinates</p>
-</dd>
-<dt><strong>vel</strong><span class="classifier">list of float</span></dt><dd><p>Meshgrid of velocities/ velocity vectors</p>
-</dd>
-<dt><strong>rho</strong><span class="classifier">list of float</span></dt><dd><p>Meshgrid of density</p>
-</dd>
-<dt><strong>xnuc</strong><span class="classifier">dict</span></dt><dd><p>Dictonary containing all the nuclear fraction
-meshgrids of the relevant species.</p>
-</dd>
-<dt><strong>time</strong><span class="classifier">float</span></dt><dd><p>Time of the data</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="tardis.io.parsers.arepo.LineProfile.create_profile">
-<span class="sig-name descname"><span class="pre">create_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#LineProfile.create_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.LineProfile.create_profile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a profile along the x-axis</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>inner_radius</strong><span class="classifier">float</span></dt><dd><p>Inner radius where the profiles will be cut off. Default: None</p>
-</dd>
-<dt><strong>outer_radius</strong><span class="classifier">float</span></dt><dd><p>Outer radius where the profiles will be cut off. Default: None</p>
-</dd>
-<dt><strong>show_plot</strong><span class="classifier">bool</span></dt><dd><p>Specifies if a plot is to be shown after the creation of the
-profile. Default: True</p>
-</dd>
-<dt><strong>save_plot</strong><span class="classifier">str</span></dt><dd><p>Location where the plot is being saved. Default: None</p>
-</dd>
-<dt><strong>plot_dpi</strong><span class="classifier">int</span></dt><dd><p>Dpi of the saved plot. Default: 600</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>profile</strong><span class="classifier">LineProfile object</span></dt><dd></dd>
+<dt><strong>profile</strong><span class="classifier">FullProfile object</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -516,7 +432,7 @@ by passing the statistics=”std” keyword.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 11 Jul 2022.
+      <span class="lastupdated">Last updated on 14 Jul 2022.
       </span></p>
   </div>
 
