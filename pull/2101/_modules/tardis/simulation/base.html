@@ -67,6 +67,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/spectrum/index.html">Spectrum Generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">TARDIS Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/contributing/index.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/tools/index.html">Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../references/api/modules.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references/code_comparison/index.html">Code Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references/zreferences.html">Bibliography and Glossary</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Outdated</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../outdated/index.html">Outdated Documentation</a></li>
@@ -120,7 +134,7 @@ from IPython.display import display
 logger = logging.getLogger(__name__)
 
 
-<div class="viewcode-block" id="PlasmaStateStorerMixin"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.PlasmaStateStorerMixin">[docs]</a>class PlasmaStateStorerMixin(object):
+<div class="viewcode-block" id="PlasmaStateStorerMixin"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.PlasmaStateStorerMixin">[docs]</a>class PlasmaStateStorerMixin(object):
     &quot;&quot;&quot;Mixin class to provide the capability to the simulation object of
     storing plasma information and the inner boundary temperature during each
     MC iteration.
@@ -139,7 +153,7 @@ logger = logging.getLogger(__name__)
         )
         self.iterations_t_inner = np.zeros(iterations) * u.K
 
-<div class="viewcode-block" id="PlasmaStateStorerMixin.store_plasma_state"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.PlasmaStateStorerMixin.store_plasma_state">[docs]</a>    def store_plasma_state(self, i, w, t_rad, electron_densities, t_inner):
+<div class="viewcode-block" id="PlasmaStateStorerMixin.store_plasma_state"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.PlasmaStateStorerMixin.store_plasma_state">[docs]</a>    def store_plasma_state(self, i, w, t_rad, electron_densities, t_inner):
         &quot;&quot;&quot;Store current plasma information and inner boundary temperature
         used in iterated i.
 
@@ -161,7 +175,7 @@ logger = logging.getLogger(__name__)
         self.iterations_electron_densities[i, :] = electron_densities.values
         self.iterations_t_inner[i] = t_inner</div>
 
-<div class="viewcode-block" id="PlasmaStateStorerMixin.reshape_plasma_state_store"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.PlasmaStateStorerMixin.reshape_plasma_state_store">[docs]</a>    def reshape_plasma_state_store(self, executed_iterations):
+<div class="viewcode-block" id="PlasmaStateStorerMixin.reshape_plasma_state_store"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.PlasmaStateStorerMixin.reshape_plasma_state_store">[docs]</a>    def reshape_plasma_state_store(self, executed_iterations):
         &quot;&quot;&quot;Reshapes the storage arrays in case convergence was reached before
         all specified iterations were executed.
 
@@ -182,7 +196,7 @@ logger = logging.getLogger(__name__)
         ]</div></div>
 
 
-<div class="viewcode-block" id="Simulation"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation">[docs]</a>class Simulation(PlasmaStateStorerMixin, HDFWriterMixin):
+<div class="viewcode-block" id="Simulation"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation">[docs]</a>class Simulation(PlasmaStateStorerMixin, HDFWriterMixin):
     &quot;&quot;&quot;A composite object containing all the required information for a
     simulation.
 
@@ -295,7 +309,7 @@ logger = logging.getLogger(__name__)
             not self.plasma.continuum_interaction_species.empty
         )
 
-<div class="viewcode-block" id="Simulation.estimate_t_inner"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.estimate_t_inner">[docs]</a>    def estimate_t_inner(
+<div class="viewcode-block" id="Simulation.estimate_t_inner"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.estimate_t_inner">[docs]</a>    def estimate_t_inner(
         self, input_t_inner, luminosity_requested, t_inner_update_exponent=-0.5
     ):
         emitted_luminosity = self.runner.calculate_emitted_luminosity(
@@ -308,7 +322,7 @@ logger = logging.getLogger(__name__)
 
         return input_t_inner * luminosity_ratios**t_inner_update_exponent</div>
 
-<div class="viewcode-block" id="Simulation.damped_converge"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.damped_converge">[docs]</a>    @staticmethod
+<div class="viewcode-block" id="Simulation.damped_converge"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.damped_converge">[docs]</a>    @staticmethod
     def damped_converge(value, estimated_value, damping_factor):
         # FIXME: Should convergence strategy have its own class containing this
         # as a method
@@ -367,7 +381,7 @@ logger = logging.getLogger(__name__)
             self.consecutive_converges_count = 0
             return False
 
-<div class="viewcode-block" id="Simulation.advance_state"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.advance_state">[docs]</a>    def advance_state(self):
+<div class="viewcode-block" id="Simulation.advance_state"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.advance_state">[docs]</a>    def advance_state(self):
         &quot;&quot;&quot;
         Advances the state of the model and the plasma for the next
         iteration of the simulation. Returns True if the convergence criteria
@@ -473,7 +487,7 @@ logger = logging.getLogger(__name__)
 
         return converged</div>
 
-<div class="viewcode-block" id="Simulation.iterate"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.iterate">[docs]</a>    def iterate(self, no_of_packets, no_of_virtual_packets=0, last_run=False):
+<div class="viewcode-block" id="Simulation.iterate"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.iterate">[docs]</a>    def iterate(self, no_of_packets, no_of_virtual_packets=0, last_run=False):
         logger.info(
             f&quot;\n\tStarting iteration {(self.iterations_executed + 1):d} of {self.iterations:d}&quot;
         )
@@ -518,7 +532,7 @@ logger = logging.getLogger(__name__)
         self.log_run_results(emitted_luminosity, reabsorbed_luminosity)
         self.iterations_executed += 1</div>
 
-<div class="viewcode-block" id="Simulation.run"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.run">[docs]</a>    def run(self):
+<div class="viewcode-block" id="Simulation.run"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.run">[docs]</a>    def run(self):
         &quot;&quot;&quot;
         run the simulation
         &quot;&quot;&quot;
@@ -570,7 +584,7 @@ logger = logging.getLogger(__name__)
         )
         self._call_back()</div>
 
-<div class="viewcode-block" id="Simulation.log_plasma_state"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.log_plasma_state">[docs]</a>    def log_plasma_state(
+<div class="viewcode-block" id="Simulation.log_plasma_state"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.log_plasma_state">[docs]</a>    def log_plasma_state(
         self,
         t_rad,
         w,
@@ -642,7 +656,7 @@ logger = logging.getLogger(__name__)
             f&quot;\n\tCurrent t_inner = {t_inner:.3f}\n\tExpected t_inner for next iteration = {next_t_inner:.3f}\n&quot;
         )</div>
 
-<div class="viewcode-block" id="Simulation.log_run_results"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.log_run_results">[docs]</a>    def log_run_results(self, emitted_luminosity, absorbed_luminosity):
+<div class="viewcode-block" id="Simulation.log_run_results"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.log_run_results">[docs]</a>    def log_run_results(self, emitted_luminosity, absorbed_luminosity):
         logger.info(
             f&quot;\n\tLuminosity emitted   = {emitted_luminosity:.3e}\n&quot;
             f&quot;\tLuminosity absorbed  = {absorbed_luminosity:.3e}\n&quot;
@@ -653,7 +667,7 @@ logger = logging.getLogger(__name__)
         for cb, args in self._callbacks.values():
             cb(self, *args)
 
-<div class="viewcode-block" id="Simulation.add_callback"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.add_callback">[docs]</a>    def add_callback(self, cb_func, *args):
+<div class="viewcode-block" id="Simulation.add_callback"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.add_callback">[docs]</a>    def add_callback(self, cb_func, *args):
         &quot;&quot;&quot;
         Add a function which will be called
         after every iteration.
@@ -679,7 +693,7 @@ logger = logging.getLogger(__name__)
         self._cb_next_id += 1
         return cb_id</div>
 
-<div class="viewcode-block" id="Simulation.remove_callback"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.remove_callback">[docs]</a>    def remove_callback(self, id):
+<div class="viewcode-block" id="Simulation.remove_callback"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.remove_callback">[docs]</a>    def remove_callback(self, id):
         &quot;&quot;&quot;
         Remove the callback with a specific ID (which was returned by
         add_callback)
@@ -700,7 +714,7 @@ logger = logging.getLogger(__name__)
             logger.debug(f&quot;Call Back was not found in {self._callbacks.keys()}&quot;)
             return False</div>
 
-<div class="viewcode-block" id="Simulation.from_config"><a class="viewcode-back" href="../../../references/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.from_config">[docs]</a>    @classmethod
+<div class="viewcode-block" id="Simulation.from_config"><a class="viewcode-back" href="../../../develop/api/tardis.simulation.base.html#tardis.simulation.base.Simulation.from_config">[docs]</a>    @classmethod
     def from_config(
         cls,
         config,
