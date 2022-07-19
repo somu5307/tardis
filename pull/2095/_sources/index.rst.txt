@@ -89,6 +89,7 @@ Mission Statement
 
     contributing/CONTRIBUTING.md
     contributing/development/index
+    contributing/tools/index
     contributing/CHANGELOG.md
     contributing/roadmap
 
