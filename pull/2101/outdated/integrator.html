@@ -26,8 +26,6 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Spectral Synthesis with the Formal Integral Method" href="using_formal_integral.html" />
-    <link rel="prev" title="Example Usage of HDFWriter" href="hdf_writer.html" />
     <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -60,6 +58,7 @@
 <p class="caption" role="heading"><span class="caption-text">Interacting with TARDIS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../interacting/input/index.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interacting/model.html">Configuring a Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../interacting/output/index.html">Additional Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../interacting/visualization/index.html">Visualization Tools &amp; Widgets</a></li>
 </ul>
@@ -70,14 +69,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../physics/est_and_conv/index.html">Estimators and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TARDIS Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../development/contributing/index.html">Contributing to TARDIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/tools/index.html">Development Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../development/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/roadmap.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
@@ -85,21 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/code_comparison/index.html">Code Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/zreferences.html">Bibliography and Glossary</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Outdated</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Outdated Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="commandline.html">Running TARDIS in the commandline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="old_gui.html">Old Graphical User Interface (Outdated)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openmp.html">Parallel execution with OpenMP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="old_install.html">Outdated Installation FAQs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="init_trad_bug.html">Initial_t_rad Bug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="isotope_pd_subclass.html">Extending Pandas DataFrame Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hdf_writer.html">Example Usage of HDFWriter</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">API example for the formal integral</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_formal_integral.html">Spectral Synthesis with the Formal Integral Method</a></li>
-</ul>
-</li>
 </ul>
 
         </div>
@@ -116,7 +99,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Outdated Documentation</a> &raquo;</li>
       <li>API example for the formal integral</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/outdated/integrator.ipynb.txt" rel="nofollow"> View page source</a>
@@ -2089,16 +2071,13 @@ if (IPython.notebook.kernel != null) {
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="hdf_writer.html" class="btn btn-neutral float-left" title="Example Usage of HDFWriter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="using_formal_integral.html" class="btn btn-neutral float-right" title="Spectral Synthesis with the Formal Integral Method" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 18 Jul 2022.
+      <span class="lastupdated">Last updated on 19 Jul 2022.
       </span></p>
   </div>
 
