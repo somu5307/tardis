@@ -112,6 +112,7 @@
              
   <h1>Source code for tardis.montecarlo.montecarlo_numba.r_packet</h1><div class="highlight"><pre>
 <span></span>from enum import IntEnum
+from operator import index
 
 import numpy as np
 import pandas as pd
@@ -222,34 +223,38 @@ def print_r_packet_properties(r_packet):
     Returns
     -------
     pandas.core.frame.DataFrame
-        Dataframe containing properties of RPackets
+        Dataframe containing properties of RPackets as columns like status, seed, r, nu, mu, energy, shell_id
+
     &quot;&quot;&quot;
-    rtracker_dict_list = []
-    index_array = []
-    step_array = []
-    for rpacket in rpacket_trackers:
-        for rpacket_step_no in range(len(rpacket.r)):
-            index_array.append(rpacket.index)
-            step_array.append(rpacket_step_no)
-            rtracker_dict_list.append(
-                [
-                    rpacket.status[rpacket_step_no],
-                    rpacket.seed,
-                    rpacket.r[rpacket_step_no],
-                    rpacket.nu[rpacket_step_no],
-                    rpacket.mu[rpacket_step_no],
-                    rpacket.energy[rpacket_step_no],
-                    rpacket.shell_id[rpacket_step_no],
-                ]
-            )
-    index_array = [np.array(index_array), np.array(step_array)]
-    rpacket_df = pd.DataFrame(
-        rtracker_dict_list,
-        index=index_array,
-        columns=[&quot;status&quot;, &quot;seed&quot;, &quot;r&quot;, &quot;nu&quot;, &quot;mu&quot;, &quot;energy&quot;, &quot;shell_id&quot;],
+    len_df = sum([len(tracker.r) for tracker in rpacket_trackers])
+    index_array = np.empty([2, len_df], dtype=&quot;int&quot;)
+    df_dtypes = np.dtype(
+        [
+            (&quot;status&quot;, np.int64),
+            (&quot;seed&quot;, np.int64),
+            (&quot;r&quot;, np.float64),
+            (&quot;nu&quot;, np.float64),
+            (&quot;mu&quot;, np.float64),
+            (&quot;energy&quot;, np.float64),
+            (&quot;shell_id&quot;, np.int64),
+        ]
     )
-    rpacket_df.index.names = [&quot;index&quot;, &quot;step&quot;]
-    return rpacket_df</div>
+    rpacket_tracker_ndarray = np.empty(len_df, df_dtypes)
+    cur_index = 0
+    for rpacket_tracker in rpacket_trackers:
+        prev_index = cur_index
+        cur_index = prev_index + len(rpacket_tracker.r)
+        for j, column_name in enumerate(df_dtypes.fields.keys()):
+            rpacket_tracker_ndarray[column_name][
+                prev_index:cur_index
+            ] = getattr(rpacket_tracker, column_name)
+        index_array[0][prev_index:cur_index] = getattr(rpacket_tracker, &quot;index&quot;)
+        index_array[1][prev_index:cur_index] = range(cur_index - prev_index)
+    return pd.DataFrame(
+        rpacket_tracker_ndarray,
+        index=pd.MultiIndex.from_arrays(index_array, names=[&quot;index&quot;, &quot;step&quot;]),
+        columns=df_dtypes.names,
+    )</div>
 </pre></div>
 
            </div>
@@ -260,7 +265,7 @@ def print_r_packet_properties(r_packet):
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 19 Jul 2022.
+      <span class="lastupdated">Last updated on 20 Jul 2022.
       </span></p>
   </div>
 

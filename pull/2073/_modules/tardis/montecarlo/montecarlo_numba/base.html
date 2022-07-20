@@ -124,7 +124,6 @@ import pandas as pd
 from tardis.montecarlo.montecarlo_numba.r_packet import (
     RPacket,
     PacketStatus,
-    rpacket_trackers_to_dataframe,
 )
 
 from tardis.montecarlo.montecarlo_numba.numba_interface import (
@@ -249,10 +248,7 @@ from tardis.util.base import update_iterations_pbar, update_packet_pbar
     update_iterations_pbar(1)
     # Condition for Checking if RPacket Tracking is enabled
     if montecarlo_configuration.RPACKET_TRACKING:
-        runner.rpacket_tracker = rpacket_trackers
-        runner.rpacket_tracker_df = rpacket_trackers_to_dataframe(
-            rpacket_trackers
-        )</div>
+        runner.rpacket_tracker = rpacket_trackers</div>
 
 
 <div class="viewcode-block" id="montecarlo_main_loop"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.base.html#tardis.montecarlo.montecarlo_numba.base.montecarlo_main_loop">[docs]</a>@njit(**njit_dict)
@@ -502,7 +498,7 @@ def montecarlo_main_loop(
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 19 Jul 2022.
+      <span class="lastupdated">Last updated on 20 Jul 2022.
       </span></p>
   </div>
 
