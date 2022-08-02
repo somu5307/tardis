@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic General Properties &mdash; tardis</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/tardis_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href="../../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> tardis
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart.html">Quickstart for TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Input/Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/configuration/index.html">Configuration (Required Input)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/optional/index.html">Optional Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/visualization/index.html">Visualization Tools &amp; Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/output/index.html">Additional Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/grid/TardisGridTutorial.html">Running TARDIS Model Grids</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Physics Walkthrough</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Physics Walkthrough Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Setting Up the Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../montecarlo/index.html">Monte Carlo Iteration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../spectrum/index.html">Spectrum Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../energy_input/index.html">Gamma Ray Energy Deposition</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/code_comparison/index.html">Code Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/zreferences.html">References and Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outdated</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../outdated/index.html">Outdated Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">tardis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Basic General Properties</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/physics/setup/plasma/properties/basic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="basic-general-properties">
+<h1>Basic General Properties<a class="headerlink" href="#basic-general-properties" title="Permalink to this heading">¶</a></h1>
+<p>After reading in the inputs, TARDIS begins its calculations of the plasma states by first calculating some basic properties that sets a foundation for more advanced calculations later. These properties generally involve properties of atoms and elements.</p>
+<section id="selected-atoms">
+<h2>Selected Atoms<a class="headerlink" href="#selected-atoms" title="Permalink to this heading">¶</a></h2>
+<p>Dentoted as: selected-atoms
+Calculated from: abundance</p>
+<p>In order to obtain any calculations regarding an atom, its atomic number must be known, that is, the number of protons within the nucleus of the atom. When the atomic data file is read in via the <code class="code docutils literal notranslate"><span class="pre">atom-data</span></code> parameter in the configuration, TARDIS is made aware of the atomic number of every element within the file, so long as the file is formatted correctly, and must chose which atomic numbers correspond to the elements and isotopes stated within the <code class="code docutils literal notranslate"><span class="pre">abundace</span></code> field of the configuration. To do this, TARDIS simply in the index of the specified abundance list, giving it the atomic numbers of each element and isotope present within the simulation, while saving these numbers as a <a class="reference external" href="https://pandas.pydata.org/docs/">Pandas</a> index named <code class="code docutils literal notranslate"><span class="pre">selected-atoms</span></code>.</p>
+</section>
+<section id="atomic-mass">
+<h2>Atomic Mass<a class="headerlink" href="#atomic-mass" title="Permalink to this heading">¶</a></h2>
+<p>Denoted as: atomic-mass
+Calculated from: atomic-data, selected-atoms</p>
+<p>After reading in the atomic number of each atom, TARDIS will parse through the atomic data to find the atomic mass (the amount of matter within the nucleus) in grams given its corresponding atomic number, saving these masses into the <code class="code docutils literal notranslate"><span class="pre">atomic-mass</span></code> Pandas series.</p>
+</section>
+<section id="ionization-data">
+<h2>Ionization Data<a class="headerlink" href="#ionization-data" title="Permalink to this heading">¶</a></h2>
+<p>Denoted as: ionization-data
+Calculated from: atomic-data, selected-atoms</p>
+<p>The ionization energy of an atom is the energy necessary to remove a single electron from the outermost orbital of an atom. This removal will cause the atom to become a cation, and since the atom is now positively charged, then the next subsequent ionization energy to remove another electron will increase due to Coulombic forces. These energies are refered to by ordinal numbers, such as the First Ionization Energy, Second Ionization Energy, and so on, while the ordinal numbers themselves can be refered to as the Ion Number of the atom. Within a supernova, the thermal energy emitted will be enough to cause certain atoms to ionize due to the energy exceeding the atom’s ionization energy, and it is vital for TARDIS to keep track of these energies to factor in how and when the atoms ionize during a simulation. Using the <code class="code docutils literal notranslate"><span class="pre">selected-atoms</span></code> list, TARDIS will parse through the atom data file which contains the ionization energies in ergs for each ion number of an atom and will select the energies corresponding to the atomic numbers it has saved, saving these energies and ion numbers for each selected atom within the <code class="code docutils literal notranslate"><span class="pre">ionization-data</span></code> Pandas series.</p>
+</section>
+<section id="levels">
+<h2>Levels<a class="headerlink" href="#levels" title="Permalink to this heading">¶</a></h2>
+<p>Denoted as: levels
+Calculated from: atomic-data, selected-atoms</p>
+<p>In order to keep the atomic masses and ionization data for each atom within the simulation, TARDIS will place them into a single Pandas series to keep track of the number of energy levels and ion numbers per atomic number. In future calculations, TARDIS will parse through this series to acquire any necessary parameters.</p>
+</section>
+<section id="number-density">
+<h2>Number Density<a class="headerlink" href="#number-density" title="Permalink to this heading">¶</a></h2>
+<p>Denoted as: <span class="math notranslate nohighlight">\(N_i\)</span>
+Calculated from: atomic-mass, <span class="math notranslate nohighlight">\(\rho\)</span></p>
+<p>The number density, in the case of TARDIS, refers to the number of given atoms per unit volume. Within the configuration file, the density of the atoms is is make known to TARDIS via the specified density profile (see the Model Configuration).</p>
+</section>
+<section id="lines">
+<h2>Lines<a class="headerlink" href="#lines" title="Permalink to this heading">¶</a></h2>
+<p>Denoted as: lines
+Calculated from: atomic-data, selected-atoms</p>
+<p>Within an atom lie many different energy levels which electrons can transition into, either when an atom absorbs a photon which results in a low-to-high transition or when an atom emits a photon resulting in a high-to-low transition. Due to quantum mechanical behaviors, however, these transitions do not always occur, so these transitions are measured via their probability of occuring. TARDIS, in creating and updating the plasma state, must take these transitions into account to create a spectrum with absoprtion and emission lines, so TARDIS will parse through the atomic data and the atoms within the abdunances section and find the following atomic number and ion numbers of each atom. TARDIS will then go through every possible energy level within each atom and record the following:</p>
+<ul class="simple">
+<li><p>A Numeric Identification for the energy level</p></li>
+<li><p>The wavelength of light associated with that energy level in angstrom and in centimeters</p></li>
+<li><p>The probability for an electron in that level to transition to a higher (<code class="code docutils literal notranslate"><span class="pre">f_lu</span></code>) or lower (<code class="code docutils literal notranslate"><span class="pre">f_ul</span></code>) state</p></li>
+<li><p>The frequency of each level (denoted by <span class="math notranslate nohighlight">\(\nu\)</span>) calculated from <span class="math notranslate nohighlight">\(\dfrac{\lambda}{c}\)</span></p></li>
+<li><p>The probabilities for a stimulated absorption and emission from atom-photon interactions (the B Einstein Coefficients)</p></li>
+<li><p>The probability for spontaneous emission (the A Einstein Coefficient)</p></li>
+</ul>
+<p>TARDIS will then save all this information into a single Pandas dataframe entitled <code class="code docutils literal notranslate"><span class="pre">lines</span></code>, with <code class="code docutils literal notranslate"><span class="pre">nu</span></code>, <code class="code docutils literal notranslate"><span class="pre">f_lu</span></code>, <code class="code docutils literal notranslate"><span class="pre">wavelength_cm</span></code> as attributes to access them easily.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 02 Aug 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

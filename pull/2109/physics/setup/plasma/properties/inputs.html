@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inputs &mdash; tardis</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/tardis_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href="../../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> tardis
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart.html">Quickstart for TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Input/Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/configuration/index.html">Configuration (Required Input)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/optional/index.html">Optional Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/visualization/index.html">Visualization Tools &amp; Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/output/index.html">Additional Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../io/grid/TardisGridTutorial.html">Running TARDIS Model Grids</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Physics Walkthrough</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Physics Walkthrough Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Setting Up the Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../montecarlo/index.html">Monte Carlo Iteration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../spectrum/index.html">Spectrum Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../energy_input/index.html">Gamma Ray Energy Deposition</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/code_comparison/index.html">Code Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources/zreferences.html">References and Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outdated</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../outdated/index.html">Outdated Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">tardis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Inputs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/physics/setup/plasma/properties/inputs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="inputs">
+<h1>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h1>
+<p>Before beginning plasma calculations, TARDIS will require a set of initial inputs as defined within the configuration file. Some inputs can be automatically calculated or are set to a default unchangable value by TARDIS, while others need an input specified by the user.</p>
+<section id="required-user-inputs">
+<h2>Required User Inputs<a class="headerlink" href="#required-user-inputs" title="Permalink to this heading">¶</a></h2>
+<section id="abundance">
+<h3>Abundance<a class="headerlink" href="#abundance" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: abundance
+TARDIS will require the Abundance of elements and isotopes within the supernova. This is defined within the abundance section of the model configuration (see Model Configuration).</p>
+</section>
+<section id="atomic-data">
+<h3>Atomic Data<a class="headerlink" href="#atomic-data" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: atomic-data
+In addition to the mass abundances of elements and isotopes, TARDIS requires the Atomic Data to be able to define the properties of each element. This can be done defining the file containing the data within the configuration file via the <code class="code docutils literal notranslate"><span class="pre">atom_data</span></code> property and having the file within your working directory.</p>
+</section>
+<section id="density">
+<h3>Density<a class="headerlink" href="#density" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: <span class="math notranslate nohighlight">\(\rho\)</span>
+The Density of each shell is necessary to perform calculations as well. This is defined within the density section of the Model Configuration (see the Model page for more information on density).</p>
+</section>
+<section id="time-since-explosion">
+<h3>Time Since Explosion<a class="headerlink" href="#time-since-explosion" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: <span class="math notranslate nohighlight">\(t_{exp}\)</span>
+TARDIS will need the time since the explosion in units of time primarily to calculate <span class="math notranslate nohighlight">\(\tau_{\textrm{sobolev}}\)</span>. This time value can be defined within the supernova section of the model configuration (see Supernova Configuration).</p>
+</section>
+</section>
+<section id="optional-user-inputs">
+<h2>Optional User Inputs<a class="headerlink" href="#optional-user-inputs" title="Permalink to this heading">¶</a></h2>
+<section id="radiative-temperature">
+<h3>Radiative Temperature<a class="headerlink" href="#radiative-temperature" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: <span class="math notranslate nohighlight">\(T_{rad}\)</span>
+An Initial Radiative Temperature (in Kelvin) is required by TARDIS, which can be defined within the plasma configuration (see Plasma Configuration). This value will be updated throughout the simulation (see the Convergence Section). If no initial radiative temperature is defined, TARDIS will assign a default value of -1 to automatically calculate the initial temperatures. For more information on the role of radiative temperature, see the Model page.</p>
+</section>
+<section id="dilution-factor">
+<h3>Dilution Factor<a class="headerlink" href="#dilution-factor" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: <span class="math notranslate nohighlight">\(W\)</span>
+TARDIS requires, as well, an initial fractional energy density at the observer compared to the blackbody known as the Dilution Factor, which can either be defined per shell within a CSVY model configuration (see CSVY Model) or can be left to be automatically calculated by TARDIS (see Model for more details). The dilution factor will be updated throughout the simulation (see the Convergence Section).</p>
+</section>
+<section id="linktradtelectron">
+<h3>LinkTRadTElectron<a class="headerlink" href="#linktradtelectron" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: <span class="math notranslate nohighlight">\(T_{electron}/T_{rad}\)</span>
+Within its calculations, TARDIS will compute the Electron Temperature by using the Radiative Temperature and the ratio between the radiative temperature (also known as the photospheric effective temperature) and the electron temperature, denoted as <code class="code docutils literal notranslate"><span class="pre">LinkTRadTElectron</span></code>. TARDIS sets this ratio to a default value of 0.9 when assembling the plasma states to assume an isothermal flow of stellar winds as per <span id="id1">[]</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This parameter cannot be edited or changed by the user.</p>
+</div>
+</section>
+<section id="helium-treatment">
+<h3>Helium Treatment<a class="headerlink" href="#helium-treatment" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: HeliumTreatment
+The method TARDIS uses to handle how helium is treated within the simulation depends on the specified treatment type. As a default, TARDIS will treat helium as it does with all other elements, however within the plasma configuration, one can specify TARDIS use NLTE approximations when handling helium (see Plasma Configuration).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Specifying any type of approximation will require a
+heating rate/light curve data file within the working directory</p>
+</div>
+</section>
+<section id="continuum-interaction-species">
+<h3>Continuum Interaction Species<a class="headerlink" href="#continuum-interaction-species" title="Permalink to this heading">¶</a></h3>
+<p>Denoted as: ContinuumInteractionSpecies
+Certain isotopes can be requested to be treated with ionization and recombination if a list of the specified isotopes are passed through the species subsection under the continuum_interaction section of the plasma configuration (see Plasma Configuration).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature as of now does not run correctly under inputted species and
+should be left in its default state.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both <code class="code docutils literal notranslate"><span class="pre">HeliumTreatment</span></code> and <code class="code docutils literal notranslate"><span class="pre">Continuum</span> <span class="pre">Interaction</span> <span class="pre">Species</span></code> are used
+for treatments of specific elements within the span of the simulation
+and thus do not contribute to any one property directly.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 02 Aug 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
