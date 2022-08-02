@@ -121,7 +121,7 @@ import logging
 
 import pandas as pd
 import numpy as np
-import collections
+import collections.abc as collections_abc
 from collections import OrderedDict
 
 import yaml
@@ -269,11 +269,11 @@ YAMLLoader.add_constructor(
     args :
         Arguments passed into `func`
     &quot;&quot;&quot;
-    if isinstance(base, collections.Mapping):
+    if isinstance(base, collections_abc.Mapping):
         for k in base:
             traverse_configs(base[k], other[k], func, *args)
     elif (
-        isinstance(base, collections.Iterable)
+        isinstance(base, collections_abc.Iterable)
         and not isinstance(base, basestring)
         and not hasattr(base, &quot;shape&quot;)
     ):
@@ -526,7 +526,7 @@ YAMLLoader.add_constructor(
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 01 Aug 2022.
+      <span class="lastupdated">Last updated on 02 Aug 2022.
       </span></p>
   </div>
 
