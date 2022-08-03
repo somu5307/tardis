@@ -66,14 +66,14 @@
 <li class="toctree-l1"><a class="reference internal" href="physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics/energy_input/index.html">Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing/development/index.html">Developer Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -1994,10 +1994,10 @@
 </li>
       <li><a href="api/tardis.io.model_reader.html#tardis.io.model_reader.read_cmfgen_composition">read_cmfgen_composition() (in module tardis.io.model_reader)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/tardis.io.model_reader.html#tardis.io.model_reader.read_cmfgen_density">read_cmfgen_density() (in module tardis.io.model_reader)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/tardis.io.model_reader.html#tardis.io.model_reader.read_csv_composition">read_csv_composition() (in module tardis.io.model_reader)</a>
 </li>
       <li><a href="api/tardis.io.model_reader.html#tardis.io.model_reader.read_csv_isotope_abundances">read_csv_isotope_abundances() (in module tardis.io.model_reader)</a>
@@ -2034,6 +2034,8 @@
 </li>
       <li><a href="api/tardis.util.base.html#tardis.util.base.roman_to_int">roman_to_int() (in module tardis.util.base)</a>
 </li>
+      <li><a href="api/tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.rpacket_trackers_to_dataframe">rpacket_trackers_to_dataframe() (in module tardis.montecarlo.montecarlo_numba.r_packet)</a>
+</li>
       <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.run">run() (tardis.montecarlo.base.MontecarloRunner method)</a>
 
       <ul>
@@ -2063,8 +2065,6 @@
       <li><a href="api/tardis.grid.base.html#tardis.grid.base.tardisGrid.save_grid">save_grid() (tardis.grid.base.tardisGrid method)</a>
 </li>
       <li><a href="api/tardis.montecarlo.montecarlo_numba.numba_interface.html#tardis.montecarlo.montecarlo_numba.numba_interface.LineInteractionType.SCATTER">SCATTER (tardis.montecarlo.montecarlo_numba.numba_interface.LineInteractionType attribute)</a>
-</li>
-      <li><a href="api/tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.scatter">scatter() (in module tardis.montecarlo.montecarlo_numba.interaction)</a>
 </li>
       <li><a href="api/tardis.visualization.tools.sdec_plot.html#tardis.visualization.tools.sdec_plot.SDECData">SDECData (class in tardis.visualization.tools.sdec_plot)</a>
 </li>
@@ -3027,7 +3027,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 02 Aug 2022.
+      <span class="lastupdated">Last updated on 03 Aug 2022.
       </span></p>
   </div>
 

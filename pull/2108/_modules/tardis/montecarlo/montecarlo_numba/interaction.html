@@ -66,14 +66,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/energy_input/index.html">Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contributing/development/index.html">Developer Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contributing/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -255,24 +255,6 @@ def sample_nu_free_bound(numba_plasma, shell, continuum_id):
     return phot_nus_block[idx] - (em[idx] - zrand) / (em[idx] - em[idx - 1]) * (
         phot_nus_block[idx] - phot_nus_block[idx - 1]
     )</div>
-
-
-<div class="viewcode-block" id="scatter"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.scatter">[docs]</a>@njit(**njit_dict_no_parallel)
-def scatter(r_packet, time_explosion):
-
-    old_doppler_factor = get_doppler_factor(
-        r_packet.r, r_packet.mu, time_explosion
-    )
-    comov_nu = r_packet.nu * old_doppler_factor
-    comov_energy = r_packet.energy * old_doppler_factor
-    r_packet.mu = get_random_mu()
-    inverse_new_doppler_factor = get_inverse_doppler_factor(
-        r_packet.r, r_packet.mu, time_explosion
-    )
-
-    r_packet.energy = comov_energy * inverse_new_doppler_factor
-
-    return comov_nu, inverse_new_doppler_factor</div>
 
 
 <div class="viewcode-block" id="continuum_event"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.continuum_event">[docs]</a>@njit(**njit_dict_no_parallel)
@@ -605,7 +587,7 @@ def line_emission(r_packet, emission_line_id, time_explosion, numba_plasma):
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 02 Aug 2022.
+      <span class="lastupdated">Last updated on 03 Aug 2022.
       </span></p>
   </div>
 

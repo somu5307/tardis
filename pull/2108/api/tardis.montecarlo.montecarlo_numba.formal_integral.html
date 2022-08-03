@@ -89,14 +89,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/energy_input/index.html">Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/development/index.html">Developer Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -334,16 +334,16 @@ and temperature T</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tardis.montecarlo.montecarlo_numba.formal_integral.numba_formal_integral">
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.formal_integral.</span></span><span class="sig-name descname"><span class="pre">numba_formal_integral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plasma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inu_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">att_S_ul</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Jred_lu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Jblue_lu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_sobolev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/formal_integral.html#numba_formal_integral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.formal_integral.numba_formal_integral" title="Permalink to this definition">¶</a></dt>
-<dd><p>model, plasma, and estimator are the numba variants
-Returns
-——-
-L : float64 array</p>
-<blockquote>
-<div><p>integrated luminosities</p>
-</div></blockquote>
-<dl class="simple">
-<dt>I_nu_p<span class="classifier">float64 2D array</span></dt><dd><p>intensities at each p-ray multiplied by p
+<dd><p>model, plasma, and estimator are the numba variants</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>L</strong><span class="classifier">float64 array</span></dt><dd><p>integrated luminosities</p>
+</dd>
+<dt><strong>I_nu_p</strong><span class="classifier">float64 2D array</span></dt><dd><p>intensities at each p-ray multiplied by p
 frequency x p-ray grid</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -418,7 +418,7 @@ since it is numba compatable</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 02 Aug 2022.
+      <span class="lastupdated">Last updated on 03 Aug 2022.
       </span></p>
   </div>
 

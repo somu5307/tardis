@@ -69,7 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/energy_input/index.html">Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul class="current">
@@ -86,7 +86,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#building-documentation-locally">Building documentation locally</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharing-the-built-documentation-in-your-pr-documentation-preview">Sharing the built documentation in your PR (Documentation Preview)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-the-built-documentation-in-your-pull-request">Sharing the built documentation in your pull request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting-your-documentation">Troubleshooting Your Documentation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="running_tests.html">Running tests</a></li>
@@ -96,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -168,7 +169,7 @@
 <p>When making or adding changes to the functionality of an aspect of TARDIS, an <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file or Jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file) should be created to demonstrate how it works, and that page must then be included in the documentation. This is described in detail in the following sections.</p>
 <section id="rst-documentation">
 <h3>RST Documentation<a class="headerlink" href="#rst-documentation" title="Permalink to this heading">¶</a></h3>
-<p>Documentation not featuring interactive code examples is written in Sphinx’s reStructuredText (see <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">here</a>). Files written in reStructuredText have a <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file extension, and are then built as HTML filed by Sphinx during the documentation build. Only the RST file, not the built HTML file, are committed to the repository. Documentation should be clear and concise. See <a class="reference internal" href="../../io/visualization/using_widgets.html"><span class="doc">Using TARDIS Widgets</span></a> as a good example of an RST-generated page.</p>
+<p>Documentation not featuring interactive code examples is written in Sphinx’s reStructuredText (see the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">sphinx documentation</a>). Files written in reStructuredText have a <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file extension, and are then built as HTML filed by Sphinx during the documentation build. Only the RST file, not the built HTML file, are committed to the repository. Documentation should be clear and concise. See <a class="reference internal" href="../../io/visualization/using_widgets.html"><span class="doc">Using TARDIS Widgets</span></a> as a good example of an RST-generated page.</p>
 </section>
 <section id="ipynb-documentation">
 <h3>IPYNB Documentation<a class="headerlink" href="#ipynb-documentation" title="Permalink to this heading">¶</a></h3>
@@ -203,33 +204,28 @@ make html
 <li><p>If you’re working on a fresh local copy of the TARDIS repository, you might need to do <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">develop</span></code> before executing these commands.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">DISABLE_NBSPHINX=1</span> <span class="pre">make</span> <span class="pre">html</span></code> to disable notebook rendering (fast mode).</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span> <span class="pre">CORES=&lt;number</span> <span class="pre">of</span> <span class="pre">cores&gt;</span></code> to have the documentation build in parallel. Using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span> <span class="pre">CORES=auto</span></code> instructs Sphinx to use all of your device’s cores.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span> <span class="pre">SPHINXOPTS=&quot;&lt;insert</span> <span class="pre">sphinx</span> <span class="pre">options&gt;&quot;</span></code> to include additional sphinx options, which can be found <a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-build.html#options">here</a>.</p></li>
 </ul>
 </div>
 <p>After running this command, you can find the built docs (i.e. HTML webpages) in <code class="docutils literal notranslate"><span class="pre">docs/_build/html</span></code>. Open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser to see how the documentation looks like with your edits. Navigate to page where you made changes or file that you added to check whether it looks as intended or not.</p>
-<p>Additionally, check your terminal for warning messages during the documentation build (often caused by faulty hyperlinks or failing to include the page in the documentation). These should be repaired prior to merging your changes into the documentation.</p>
+<p>Additionally, check your terminal for warning messages during the documentation build (often caused by faulty hyperlinks or failing to include the page in the documentation). These should be repaired prior to merging your changes into the documentation. See below for troubleshooting tips.</p>
 </section>
-<section id="sharing-the-built-documentation-in-your-pr-documentation-preview">
-<span id="doc-preview"></span><h2>Sharing the built documentation in your PR (Documentation Preview)<a class="headerlink" href="#sharing-the-built-documentation-in-your-pr-documentation-preview" title="Permalink to this heading">¶</a></h2>
-<p>When you make edits in TARDIS documentation and submit a PR, we can only see the changes in source files in GitHub files diff, but not the built documentation (webpages). This is usually fine unless you have made changes in the documentation itself or changes that could break the Jupyter notebooks used in the documentation. In such cases, you should share the preview of documentation with your changes by building it online via GitHub. This will help us (the reviewers of your PR) to check how the documentation will look once your PR is merged.</p>
-<p>To preview your changes to the documentation on GitHub, please:</p>
-<ol class="arabic simple">
-<li><p>Enable GitHub Actions in the <em>Actions</em> tab of your fork.</p></li>
-<li><p>Under <em>Settings -&gt; Pages</em> in your fork, make sure GitHub Pages is being built from the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch and the <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">(root)</span></code> folder.</p></li>
-</ol>
-<p>Then, there are two ways to trigger the build:</p>
-<ol class="arabic simple">
-<li><p>If the branch you are working on contains the word <code class="docutils literal notranslate"><span class="pre">doc</span></code> in it, then every commit pushed to that branch will trigger the build.</p></li>
-<li><p>If your commit message contains the <code class="docutils literal notranslate"><span class="pre">[build</span> <span class="pre">docs]</span></code> tag, then that commit will trigger the build.</p></li>
-</ol>
-<p>You can check for warning messages via the <em>Actions</em> tab of your fork. Your preview will be available at <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;.github.io/tardis/branch/&lt;branch</span> <span class="pre">name&gt;/index.html</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You always can trigger a new build by pushing an empty commit: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--allow-empty</span> <span class="pre">-m</span> <span class="pre">&quot;[build</span> <span class="pre">docs]&quot;</span></code></p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>On GitHub, built documentation files (including <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files built by Sphinx) can be a maximum of 100 MB. You can check the file sizes after a local documentation build in <code class="docutils literal notranslate"><span class="pre">docs/_build/html</span></code>, or after a documentation preview on GitHub in the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch. Note that image output in notebooks built by Sphinx are by default in SVG format. For detailed images, these images can be very large. If file size becomes a problem, you will need to change the image format for that notebook by placing <code class="docutils literal notranslate"><span class="pre">%config</span> <span class="pre">InlineBackend.figure_formats='png2x'</span></code> in a <a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.8.7/hidden-cells.html">hidden cell</a> at the beginning of the notebook.</p>
-</div>
+<section id="sharing-the-built-documentation-in-your-pull-request">
+<span id="doc-preview"></span><h2>Sharing the built documentation in your pull request<a class="headerlink" href="#sharing-the-built-documentation-in-your-pull-request" title="Permalink to this heading">¶</a></h2>
+<p>When proposing changes to the documentation, or the code in general, it is useful to reviewers to see how the documentation will look once your pull request is merged. This is done by adding the <code class="docutils literal notranslate"><span class="pre">build-docs</span></code> label to your pull request on GitHub. If you do not have permission to add the label, leave a comment in your pull request or contact a senior member of the collaboration and it will be added.</p>
+<p>The documentation will be built as soon as the label is added, and any subsequent commits while the label is present will trigger a documentation build. Your built documentation will be available at <code class="docutils literal notranslate"><span class="pre">https://tardis-sn.github.io/tardis/pull/&lt;pull</span> <span class="pre">request</span> <span class="pre">number&gt;/index.html</span></code>. It will also be automatically linked to in the comments of the pull request.</p>
+<p>Finally, to view the build logs (which will contain warning and error messages), go to the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> tab in the TARDIS repository, and click on <code class="docutils literal notranslate"><span class="pre">docs</span></code> in the list of workflows. You can search documentation builds by branch to find your build log.</p>
+</section>
+<section id="troubleshooting-your-documentation">
+<h2>Troubleshooting Your Documentation<a class="headerlink" href="#troubleshooting-your-documentation" title="Permalink to this heading">¶</a></h2>
+<p>It is important to keep your documentation free of warnings and errors, which can be found in the build logs (locally these will appear in your terminal, and for builds on GitHub see the last paragraph in the above section). On GitHub, these will give you a notification that your documentation build failed. Below are some pointers for resolving these issues:</p>
+<ul class="simple">
+<li><p>Errors often are a result of notebooks being incompatible with your new code. Make sure notebooks are always updated to reflect your additions.</p></li>
+<li><p>Warnings are often due to incorrect syntax in RST documentation regarding links, section headers, tables of contents, etc. The <a class="reference external" href="https://sublime-and-sphinx-guide.readthedocs.io/en/latest/index.html">Sublime and Sphinx Guide</a> is a good resource for learning proper syntax.</p></li>
+<li><p>Warnings can also be because docstrings are not consistent with the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpy docstring format</a>.</p></li>
+<li><p>On GitHub, built documentation files (including <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files built by Sphinx) can be a maximum of 100 MB. You can check the file sizes after a local documentation build in <code class="docutils literal notranslate"><span class="pre">docs/_build/html</span></code>. Note that image output in notebooks built by Sphinx is by default in SVG format. For detailed images, these images can be very large. If file size becomes a problem, you will need to change the image format for that notebook by placing <code class="docutils literal notranslate"><span class="pre">%config</span> <span class="pre">InlineBackend.figure_formats='png2x'</span></code> in a <a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.8.7/hidden-cells.html">hidden cell</a> at the beginning of the notebook.</p></li>
+</ul>
+<p>Please reach out for help if you have difficulties resolving issues in your documentation.</p>
 </section>
 </section>
 
@@ -245,7 +241,7 @@ make html
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 02 Aug 2022.
+      <span class="lastupdated">Last updated on 03 Aug 2022.
       </span></p>
   </div>
 
