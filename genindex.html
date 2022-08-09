@@ -64,7 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="physics/intro/index.html">Physics Walkthrough Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/setup/index.html">Setting Up the Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics/est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/spectrum/index.html">Spectrum Generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/energy_input/index.html">Energy Deposition</a></li>
 </ul>
@@ -525,6 +525,8 @@
 </li>
       <li><a href="api/tardis.visualization.widgets.line_info.html#tardis.visualization.widgets.line_info.LineInfoWidget.COLORS">COLORS (tardis.visualization.widgets.line_info.LineInfoWidget attribute)</a>
 </li>
+      <li><a href="api/tardis.model.base.html#tardis.model.base.Composition">Composition (class in tardis.model.base)</a>
+</li>
       <li><a href="api/tardis.io.parsers.arepo.html#tardis.io.parsers.arepo.ConeProfile">ConeProfile (class in tardis.io.parsers.arepo)</a>
 </li>
       <li><a href="api/tardis.io.config_reader.html#tardis.io.config_reader.Configuration">Configuration (class in tardis.io.config_reader)</a>
@@ -669,16 +671,18 @@
 </li>
       <li><a href="api/tardis.util.base.html#tardis.util.base.element_symbol2atomic_number">element_symbol2atomic_number() (in module tardis.util.base)</a>
 </li>
+      <li><a href="api/tardis.model.base.html#tardis.model.base.Composition.elemental_number_density">elemental_number_density (tardis.model.base.Composition property)</a>
+</li>
       <li><a href="api/tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.PacketStatus.EMITTED">EMITTED (tardis.montecarlo.montecarlo_numba.r_packet.PacketStatus attribute)</a>
 </li>
       <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_luminosity">emitted_packet_luminosity (tardis.montecarlo.base.MontecarloRunner property)</a>
 </li>
       <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_mask">emitted_packet_mask (tardis.montecarlo.base.MontecarloRunner property)</a>
 </li>
-      <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_nu">emitted_packet_nu (tardis.montecarlo.base.MontecarloRunner property)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_nu">emitted_packet_nu (tardis.montecarlo.base.MontecarloRunner property)</a>
+</li>
       <li><a href="api/tardis.visualization.widgets.custom_abundance.html#tardis.visualization.widgets.custom_abundance.CustomAbundanceWidget.error_view">error_view (tardis.visualization.widgets.custom_abundance.CustomAbundanceWidget attribute)</a>
 </li>
       <li><a href="api/tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.InteractionType.ESCATTERING">ESCATTERING (tardis.montecarlo.montecarlo_numba.r_packet.InteractionType attribute)</a>
@@ -3027,7 +3031,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 03 Aug 2022.
+      <span class="lastupdated">Last updated on 09 Aug 2022.
       </span></p>
   </div>
 

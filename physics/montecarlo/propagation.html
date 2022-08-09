@@ -86,9 +86,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lineinteraction.html">Line Interaction Treatments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estimators.html">Volume-Based Estimators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spectrum/index.html">Spectrum Generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../energy_input/index.html">Energy Deposition</a></li>
 </ul>
@@ -164,7 +165,7 @@
 <span id="propagation"></span><h1>Packet Propagation<a class="headerlink" href="#packet-propagation" title="Permalink to this heading">¶</a></h1>
 <p>The bulk of a Monte Carlo Radiative Transfer calculation is spent on
 determining the propagation history of the different packets. After a packet is
-initialized (see <a class="reference external" href="https://docs.python.org/3/c-api/init.html#initialization" title="(in Python v3.10)"><span>Initialization, Finalization, and Threads</span></a>), it is launched and may then perform interactions with the
+initialized (see <a class="reference internal" href="initialization.html"><span class="doc">Energy Packet Initialization</span></a>), it is launched and may then perform interactions with the
 surrounding material. This occurs again in a probabilistic manner. The packet
 propagation is followed until it escapes through the outer boundary of the
 computational domain, at which point the packet contributes to the synthetic
@@ -172,7 +173,7 @@ spectrum, the main product of a TARDIS calculation. The different spectral
 features are simply a combined product of the changes in the packet properties
 induced in the radiation-matter interactions.</p>
 <section id="propagation-in-a-spherical-domain">
-<h2>Propagation in a Spherical Domain<a class="headerlink" href="#propagation-in-a-spherical-domain" title="Permalink to this heading">¶</a></h2>
+<span id="spherical-domain"></span><h2>Propagation in a Spherical Domain<a class="headerlink" href="#propagation-in-a-spherical-domain" title="Permalink to this heading">¶</a></h2>
 <p>Once the initial packet properties are assigned, the propagation process
 commences. Without interacting, a packet, like a photon, will propagate on a
 straight trajectory.</p>
@@ -481,7 +482,7 @@ radiation field emitted by the photosphere in the following way:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 03 Aug 2022.
+      <span class="lastupdated">Last updated on 09 Aug 2022.
       </span></p>
   </div>
 

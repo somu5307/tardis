@@ -87,7 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/intro/index.html">Physics Walkthrough Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/setup/index.html">Setting Up the Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../physics/est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/spectrum/index.html">Spectrum Generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/energy_input/index.html">Energy Deposition</a></li>
 </ul>
@@ -451,7 +451,7 @@ The radiative rates describe how to calculate the <span class="math notranslate 
 <p>2) <code class="docutils literal notranslate"><span class="pre">nebular</span></code> in which
 <span class="math notranslate nohighlight">\(J_\textrm{blue} = W \times \textrm{Blackbody}(T_\textrm{rad})\)</span></p>
 <p>3) <code class="docutils literal notranslate"><span class="pre">detailed</span></code> in which the <span class="math notranslate nohighlight">\(J_\textrm{blue}\)</span>
-are calculated using an estimator (this is described in <a class="reference internal" href="../../../physics/est_and_conv/estimators.html"><span class="doc">Volume-Based Estimators</span></a>).</p>
+are calculated using an estimator (this is described in <a class="reference internal" href="../../../physics/montecarlo/estimators.html"><span class="doc">Volume-Based Estimators</span></a>).</p>
 <p>TARDIS currently supports three different kinds of line interaction: <code class="docutils literal notranslate"><span class="pre">scatter</span></code> — a resonance scattering implementation,
 <code class="docutils literal notranslate"><span class="pre">macroatom</span></code> — the most complex form of line interaction described in <a class="reference internal" href="../../../physics/setup/plasma/macroatom.html#macroatom"><span class="std std-ref">Macro Atom</span></a> and <code class="docutils literal notranslate"><span class="pre">downbranch</span></code> a simplified
 version of <code class="docutils literal notranslate"><span class="pre">macroatom</span></code> in which only downward transitions are allowed (see <a class="reference internal" href="../../../physics/montecarlo/lineinteraction.html#lineinteraction"><span class="std std-ref">Line Interaction Treatments</span></a>).</p>
@@ -483,7 +483,7 @@ normal operations.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 03 Aug 2022.
+      <span class="lastupdated">Last updated on 09 Aug 2022.
       </span></p>
   </div>
 
