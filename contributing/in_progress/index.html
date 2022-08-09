@@ -24,7 +24,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Credits &amp; Publication Policies" href="../../resources/credits.html" />
+    <link rel="next" title="Gamma-ray energy deposition" href="nebular_phase/gammaray_deposition.html" />
     <link rel="prev" title="Change Log" href="../CHANGELOG.html" />
     <link href="../../_static/tardis.css" rel="stylesheet" type="text/css">
 
@@ -69,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../physics/energy_input/index.html">Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul class="current">
@@ -80,7 +79,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#google-summer-of-code-gsoc">Google Summer of Code (GSOC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#restructure">Restructure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#new-physics">New Physics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#simulate-supernovae-in-the-nebular-phase">Simulate Supernovae in the Nebular Phase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulate-supernovae-in-the-nebular-phase">Simulate Supernovae in the Nebular Phase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nebular_phase/gammaray_deposition.html">Gamma-ray energy deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nebular_phase/positronium.html">Positronium</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#implement-more-continuum-interactions">Implement More Continuum Interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulate-non-homologous-expansion">Simulate Non-Homologous Expansion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulate-asymmetric-supernovae">Simulate Asymmetric Supernovae</a></li>
@@ -177,6 +180,23 @@
 <li><p>Deposited energy needs to be thermalized by solving the Spencer-Fano equations, resulting in fractions of the energy going into heating, non-thermal excitation and non-thermal ionization.</p></li>
 <li><p>At late times when the densities are low collisions become too infrequent to quickly de-excite metastable energy levels. Forbidden lines arising from these levels need to be included. Transitions between levels have to include ion-electron collisions.</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nebular_phase/gammaray_deposition.html">Gamma-ray energy deposition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Main-loop">Main loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Generate-plasma">Generate plasma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Plotting-results">Plotting results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Interactions-binned-by-radius">Interactions binned by radius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Density-Profile">Density Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Fraction-of-energy-escaping-from-the-ejecta">Fraction of energy escaping from the ejecta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Spectrum-of-escape-energy-at-the-final-time-step">Spectrum of escape energy at the final time step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Energy-deposition-rate">Energy deposition rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nebular_phase/gammaray_deposition.html#Energy-deposition-rate-versus-radius-at-time_explosion">Energy deposition rate versus radius at time_explosion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nebular_phase/positronium.html">Positronium</a></li>
+</ul>
+</div>
 </section>
 <section id="implement-more-continuum-interactions">
 <h3>Implement More Continuum Interactions<a class="headerlink" href="#implement-more-continuum-interactions" title="Permalink to this heading">¶</a></h3>
@@ -222,7 +242,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../CHANGELOG.html" class="btn btn-neutral float-left" title="Change Log" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../resources/credits.html" class="btn btn-neutral float-right" title="Credits &amp; Publication Policies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="nebular_phase/gammaray_deposition.html" class="btn btn-neutral float-right" title="Gamma-ray energy deposition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

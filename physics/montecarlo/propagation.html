@@ -91,7 +91,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../energy_input/index.html">Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
@@ -282,11 +281,13 @@ boundary, the plasma properties are recalculated, and the propagation direction 
 <p>As a packet propagates through the computational domain, physical radiation-matter interactions can trigger changes
 in the packet properties. The probability that a photon/packet will interact with matter is characterized by its
 optical depth <span class="math notranslate nohighlight">\(\tau\)</span>; the probability that a packet will have interacted after going through an optical depth
-<span class="math notranslate nohighlight">\(\Delta \tau\)</span> is <span class="math notranslate nohighlight">\(1-e^{-\Delta \tau}\)</span>. To model this (see <a class="reference internal" href="basicprinciples.html#randomsampling"><span class="std std-ref">Random Sampling</span></a>), the
+<span class="math notranslate nohighlight">\(\Delta \tau\)</span> is <span class="math notranslate nohighlight">\(1-e^{-\Delta \tau}\)</span> (see <a class="reference internal" href="../intro/light_and_matter.html#opacity"><span class="std std-ref">Opacity and Optical Depth</span></a> for more). To model this
+(see <a class="reference internal" href="basicprinciples.html#randomsampling"><span class="std std-ref">Random Sampling</span></a>), the
 packet is assigned a random value of optical depth <span class="math notranslate nohighlight">\(\tau_\mathrm{interaction} = -\log z\)</span> (for another random
 <span class="math notranslate nohighlight">\(z\)</span> between 0 and 1), and upon reaching that optical depth, the packet will interact.</p>
 <p>TARDIS considers two different radiation-matter interactions within the simulation: electron scattering and atomic
-line interactions. As packets propagate, they accumulate optical depth due to the possibility of going through either
+line interactions (see <a class="reference internal" href="../intro/light_and_matter.html#light-and-matter"><span class="std std-ref">Light, Matter, and How They Interact</span></a> for a basic introduction to these interactions). As packets propagate,
+they accumulate optical depth due to the possibility of going through either
 of these interactions. Since the main focus of TARDIS is to calculate optical spectra,
 electron-scatterings are treated in the elastic low-energy limit as classical
 Thomson scatterings. In this case, the electron scattering process is frequency-independent. As a consequence to the
