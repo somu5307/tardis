@@ -197,6 +197,29 @@ logger = logging.getLogger(__name__)
         return self.geometry.r_outer.values * self.geometry_units[&quot;r_outer&quot;]</div>
 
 
+<div class="viewcode-block" id="Radial1DGeometry"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Radial1DGeometry">[docs]</a>class Radial1DGeometry:
+    &quot;&quot;&quot;
+    Holds information about model geometry for radial 1D models.
+
+    Parameters
+    ----------
+    r_inner : astropy.units.quantity.Quantity
+    r_outer : astropy.units.quantity.Quantity
+    v_inner : astropy.units.quantity.Quantity
+    v_outer : astropy.units.quantity.Quantity
+    &quot;&quot;&quot;
+
+    def __init__(self, r_inner, r_outer, v_inner, v_outer):
+        self.r_inner = r_inner
+        self.r_outer = r_outer
+        self.v_inner = v_inner
+        self.v_outer = v_outer
+
+    @property
+    def volume(self):
+        return (4.0 / 3) * np.pi * (self.r_outer**3 - self.r_inner**3)</div>
+
+
 <div class="viewcode-block" id="Composition"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Composition">[docs]</a>class Composition:
     &quot;&quot;&quot;
     Holds information about model composition
@@ -987,7 +1010,7 @@ logger = logging.getLogger(__name__)
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 09 Aug 2022.
+      <span class="lastupdated">Last updated on 10 Aug 2022.
       </span></p>
   </div>
 

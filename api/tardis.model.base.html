@@ -244,6 +244,28 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="tardis.model.base.Radial1DGeometry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.model.base.</span></span><span class="sig-name descname"><span class="pre">Radial1DGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_outer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_outer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/model/base.html#Radial1DGeometry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.model.base.Radial1DGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Holds information about model geometry for radial 1D models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>r_inner</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>r_outer</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>v_inner</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>v_outer</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="tardis.model.base.Radial1DGeometry.volume">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#tardis.model.base.Radial1DGeometry.volume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="tardis.model.base.Radial1DModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.model.base.</span></span><span class="sig-name descname"><span class="pre">Radial1DModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/model/base.html#Radial1DModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.model.base.Radial1DModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="tardis.io.util.html#tardis.io.util.HDFWriterMixin" title="tardis.io.util.HDFWriterMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">HDFWriterMixin</span></code></a></p>
@@ -466,7 +488,7 @@ dilution factor.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 09 Aug 2022.
+      <span class="lastupdated">Last updated on 10 Aug 2022.
       </span></p>
   </div>
 
