@@ -88,9 +88,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/intro/index.html">Physics Walkthrough Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/setup/index.html">Setting Up the Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../physics/est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/development/index.html">Developer Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/tools/index.html">Developer Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contributing/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -432,7 +431,7 @@ of the Monte Carlo loop (which calculates the final spectrum!) when the radiatio
 <code class="docutils literal notranslate"><span class="pre">no_of_packets</span></code> to create a less noisy output spectrum. <code class="docutils literal notranslate"><span class="pre">no_of_virtual_packets</span></code> can also be set to greater than 0 (a useful number is 3) to
 use the Virtual Packet formalism. Increasing this number drastically increases computational costs (and memory requirements if they are logged).
 The <code class="docutils literal notranslate"><span class="pre">iterations</span></code> parameter describes the maximum number of Monte Carlo loops executed in a simulation before it ends. Convergence criteria can be used to make the simulation stop
-sooner when the convergence threshold has been reached (see <a class="reference internal" href="../../../physics/est_and_conv/convergence.html#convergence"><span class="std std-ref">Convergence</span></a>).</p>
+sooner when the convergence threshold has been reached (see <a class="reference internal" href="../../../physics/update_and_conv/update_and_conv.html"><span class="doc">Updating Plasma and Convergence</span></a>).</p>
 <section id="convergence-strategy">
 <span id="conv-config"></span><h2>Convergence Strategy<a class="headerlink" href="#convergence-strategy" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">convergence_criteria</span></code> section has a <code class="docutils literal notranslate"><span class="pre">type</span></code> keyword. Currently, one type is allowed: <code class="docutils literal notranslate"><span class="pre">damped</span></code>.
@@ -747,7 +746,7 @@ to parallelise the code. (See <a class="reference internal" href="../index.html#
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 19 Jul 2022.
+      <span class="lastupdated">Last updated on 11 Aug 2022.
       </span></p>
   </div>
 

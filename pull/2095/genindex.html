@@ -64,9 +64,8 @@
 <li class="toctree-l1"><a class="reference internal" href="physics/intro/index.html">Physics Walkthrough Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/setup/index.html">Setting Up the Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics/est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
@@ -74,7 +73,7 @@
 <li class="toctree-l1"><a class="reference internal" href="contributing/development/index.html">Developer Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing/tools/index.html">Developer Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -522,6 +521,8 @@
 </li>
       <li><a href="api/tardis.visualization.widgets.line_info.html#tardis.visualization.widgets.line_info.LineInfoWidget.COLORS">COLORS (tardis.visualization.widgets.line_info.LineInfoWidget attribute)</a>
 </li>
+      <li><a href="api/tardis.model.base.html#tardis.model.base.Composition">Composition (class in tardis.model.base)</a>
+</li>
       <li><a href="api/tardis.io.parsers.arepo.html#tardis.io.parsers.arepo.ConeProfile">ConeProfile (class in tardis.io.parsers.arepo)</a>
 </li>
       <li><a href="api/tardis.io.config_reader.html#tardis.io.config_reader.Configuration">Configuration (class in tardis.io.config_reader)</a>
@@ -666,16 +667,18 @@
 </li>
       <li><a href="api/tardis.util.base.html#tardis.util.base.element_symbol2atomic_number">element_symbol2atomic_number() (in module tardis.util.base)</a>
 </li>
+      <li><a href="api/tardis.model.base.html#tardis.model.base.Composition.elemental_number_density">elemental_number_density (tardis.model.base.Composition property)</a>
+</li>
       <li><a href="api/tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.PacketStatus.EMITTED">EMITTED (tardis.montecarlo.montecarlo_numba.r_packet.PacketStatus attribute)</a>
 </li>
       <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_luminosity">emitted_packet_luminosity (tardis.montecarlo.base.MontecarloRunner property)</a>
 </li>
       <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_mask">emitted_packet_mask (tardis.montecarlo.base.MontecarloRunner property)</a>
 </li>
-      <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_nu">emitted_packet_nu (tardis.montecarlo.base.MontecarloRunner property)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_nu">emitted_packet_nu (tardis.montecarlo.base.MontecarloRunner property)</a>
+</li>
       <li><a href="api/tardis.visualization.widgets.custom_abundance.html#tardis.visualization.widgets.custom_abundance.CustomAbundanceWidget.error_view">error_view (tardis.visualization.widgets.custom_abundance.CustomAbundanceWidget attribute)</a>
 </li>
       <li><a href="api/tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.InteractionType.ESCATTERING">ESCATTERING (tardis.montecarlo.montecarlo_numba.r_packet.InteractionType attribute)</a>
@@ -1953,6 +1956,8 @@
         <li><a href="api/tardis.model.base.html#tardis.model.base.Radial1DModel.r_outer">(tardis.model.base.Radial1DModel property)</a>
 </li>
       </ul></li>
+      <li><a href="api/tardis.model.base.html#tardis.model.base.Radial1DGeometry">Radial1DGeometry (class in tardis.model.base)</a>
+</li>
       <li><a href="api/tardis.model.base.html#tardis.model.base.Radial1DModel">Radial1DModel (class in tardis.model.base)</a>
 </li>
       <li><a href="api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.RadiationFieldCorrection">RadiationFieldCorrection (class in tardis.plasma.properties.ion_population)</a>
@@ -2031,6 +2036,8 @@
 </li>
       <li><a href="api/tardis.util.base.html#tardis.util.base.roman_to_int">roman_to_int() (in module tardis.util.base)</a>
 </li>
+      <li><a href="api/tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.rpacket_trackers_to_dataframe">rpacket_trackers_to_dataframe() (in module tardis.montecarlo.montecarlo_numba.r_packet)</a>
+</li>
       <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.run">run() (tardis.montecarlo.base.MontecarloRunner method)</a>
 
       <ul>
@@ -2060,8 +2067,6 @@
       <li><a href="api/tardis.grid.base.html#tardis.grid.base.tardisGrid.save_grid">save_grid() (tardis.grid.base.tardisGrid method)</a>
 </li>
       <li><a href="api/tardis.montecarlo.montecarlo_numba.numba_interface.html#tardis.montecarlo.montecarlo_numba.numba_interface.LineInteractionType.SCATTER">SCATTER (tardis.montecarlo.montecarlo_numba.numba_interface.LineInteractionType attribute)</a>
-</li>
-      <li><a href="api/tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.scatter">scatter() (in module tardis.montecarlo.montecarlo_numba.interaction)</a>
 </li>
       <li><a href="api/tardis.visualization.tools.sdec_plot.html#tardis.visualization.tools.sdec_plot.SDECData">SDECData (class in tardis.visualization.tools.sdec_plot)</a>
 </li>
@@ -2957,8 +2962,12 @@
 </li>
       <li><a href="api/tardis.plasma.properties.plasma_input.html#tardis.plasma.properties.plasma_input.Volume">Volume (class in tardis.plasma.properties.plasma_input)</a>
 </li>
-      <li><a href="api/tardis.model.base.html#tardis.model.base.Radial1DModel.volume">volume (tardis.model.base.Radial1DModel property)</a>
+      <li><a href="api/tardis.model.base.html#tardis.model.base.Radial1DGeometry.volume">volume (tardis.model.base.Radial1DGeometry property)</a>
+
+      <ul>
+        <li><a href="api/tardis.model.base.html#tardis.model.base.Radial1DModel.volume">(tardis.model.base.Radial1DModel property)</a>
 </li>
+      </ul></li>
       <li><a href="api/tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.vpacket_hdf_properties">vpacket_hdf_properties (tardis.montecarlo.base.MontecarloRunner attribute)</a>
 </li>
   </ul></td>
@@ -3024,7 +3033,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 19 Jul 2022.
+      <span class="lastupdated">Last updated on 11 Aug 2022.
       </span></p>
   </div>
 

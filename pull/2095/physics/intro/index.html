@@ -74,9 +74,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../setup/index.html">Setting Up the Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../montecarlo/index.html">Monte Carlo Iteration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../energy_input/index.html">Gamma Ray Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
@@ -84,7 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contributing/development/index.html">Developer Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing/tools/index.html">Developer Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contributing/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -147,8 +146,28 @@
 <section id="how-tardis-works">
 <h2>How TARDIS Works<a class="headerlink" href="#how-tardis-works" title="Permalink to this heading">¶</a></h2>
 <p>The goal of TARDIS is, given input information about a supernova, to determine (i) properties of the plasma making up the supernova and (ii) the spectrum of light that is emitted from the supernova.</p>
-<p>The physics of TARDIS is in four major parts, which are summarized here and in the diagram below. First, the TARDIS simulation is set up (<a class="reference internal" href="../setup/index.html"><span class="doc">Setting Up the Simulation</span></a>). This involves the creation of the supernova model and the initial conditions of the supernova’s plasma. Next is the Monte Carlo Iteration (<a class="reference internal" href="../montecarlo/index.html"><span class="doc">Monte Carlo Iteration</span></a>) where the heart of TARDIS takes place; packets of light are sent through the supernova and tracked as they interact with matter. Next, TARDIS uses information from the Monte Carlo iteration to update properties of the plasma to eventually find the correct plasma state (<a class="reference internal" href="../est_and_conv/index.html"><span class="doc">Estimators and Convergence</span></a>). This process of doing a Monte Carlo iteration and then updating the plasma is repeated for a specified number of times or until certain aspects of the plasma state converge (as is discussed in <a class="reference internal" href="../est_and_conv/convergence.html#convergence"><span class="std std-ref">Convergence</span></a>). After that, data generated in the Monte Carlo simulation is used to synthesize the output spectrum of the supernova (<a class="reference internal" href="../spectrum/index.html"><span class="doc">Spectrum Generation</span></a>).</p>
-<a class="reference internal image-reference" href="../../_images/tardis_flowchart.png"><img alt="../../_images/tardis_flowchart.png" src="../../_images/tardis_flowchart.png" style="width: 200px;" /></a>
+<p>The physics of TARDIS is in four major parts, which are summarized here and in the diagram below. First, the TARDIS simulation is set up (<a class="reference internal" href="../setup/index.html"><span class="doc">Setting Up the Simulation</span></a>) from a TARDIS configuration (see <a class="reference internal" href="../../io/configuration/read_configuration.html"><span class="doc">here</span></a> for how the configuration is created). This involves the creation of the supernova model and the initial conditions of the supernova’s plasma, as well as initializing the Monte Carlo runner. Next is the Monte Carlo Iteration (<a class="reference internal" href="../montecarlo/index.html"><span class="doc">Monte Carlo Iteration</span></a>) where the heart of TARDIS takes place; packets of light are sent through the supernova and tracked as they interact with matter. Next, TARDIS uses information from the Monte Carlo iteration to update properties of the plasma to eventually find the correct plasma state (<a class="reference internal" href="../update_and_conv/update_and_conv.html"><span class="doc">Updating Plasma and Convergence</span></a>). This process of doing a Monte Carlo iteration and then updating the plasma is repeated for a specified number of times or until certain aspects of the plasma state converge (as is also discussed in <a class="reference internal" href="../update_and_conv/update_and_conv.html"><span class="doc">Updating Plasma and Convergence</span></a>). After that, data generated in the Monte Carlo simulation is used to synthesize the output spectrum of the supernova (<a class="reference internal" href="../spectrum/index.html"><span class="doc">Spectrum Generation</span></a>).</p>
+<p>In the diagram, each physics step is shown in a box with the name of the step (bolded and underlined) along with the method that triggers the step (italicized) and the major components of the step. The reading of the configuration and the overall itterative process (comprising the Monte Carlo Iteration step and Updating Plasma and Convergence step) are also shown, again with the methods triggering these processes in italics.</p>
+<div class="graphviz"><object data="../../_images/graphviz-0bdf2d585c8150a4343ccd5c26b4973ec692741c.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph {
+    compound = true
+    graph [nodesep=4, ranksep=1]
+    config [label=&lt;&lt;B&gt;Configuration&lt;/B&gt;&lt;br/&gt;&lt;br/&gt; &lt;i&gt;&amp;lt;Configuration object&amp;gt;=Configuration.from_yaml(...)&lt;/i&gt;&lt;br/&gt; &lt;i&gt;&amp;lt;Configuration object&amp;gt;=Configuration.from_config_dict(...)&lt;/i&gt;&gt;, shape=oval]
+    setup_sim [label=&lt;&lt;B&gt;&lt;u&gt;Setting up the Simulation&lt;/u&gt;&lt;/B&gt; &lt;br/&gt;&lt;br/&gt; &lt;i&gt;&amp;lt;Simulation object&amp;gt;=Simulation.from_config(...)&lt;/i&gt; &lt;br/&gt;&lt;br/&gt; - Creates and calculates model &lt;br/&gt; - Creates and calculates plasma &lt;br/&gt; - Initializes Monte Carlo runner&gt;, shape=rectangle]
+    mc_iteration [label=&lt;&lt;B&gt;&lt;u&gt;Monte Carlo Iteration&lt;/u&gt;&lt;/B&gt; &lt;br/&gt;&lt;br/&gt; &lt;i&gt;&amp;lt;Simulation object&amp;gt;.iterate(...)&lt;/i&gt;&lt;br/&gt; &lt;br/&gt; - Initializes packets &lt;br/&gt; - Propagates packets &lt;br/&gt; - Calculates estimators&gt;, shape=rectangle]
+    adv_state [label=&lt;&lt;B&gt;&lt;u&gt;Updating Plasma and Convergence&lt;/u&gt;&lt;/B&gt; &lt;br/&gt;&lt;br/&gt; &lt;i&gt;&amp;lt;Simulation object&amp;gt;.advance_state()&lt;/i&gt; &lt;br/&gt;&lt;br/&gt; - Estimates and updates t_rad, w, and t_inner in model &lt;br/&gt; - Updates plasma &lt;br/&gt; - Checks for convergence&gt;, shape=rectangle]
+    spec_gen [label=&lt;&lt;B&gt;&lt;u&gt;Spectrum Generation&lt;/u&gt;&lt;/B&gt; &lt;br/&gt;&lt;br/&gt; &lt;i&gt;From final Monte Carlo iteration&lt;/i&gt; &lt;br/&gt;&lt;br/&gt; - Basic spectrum generation &lt;br/&gt; - Virtual packets &lt;br/&gt; - Formal integral&gt;, shape=rectangle]
+    subgraph cluster1 {
+        style = rounded
+		margin = .25
+		label=&lt;&lt;br/&gt;&lt;br/&gt;&lt;i&gt;&amp;lt;Simulation object&amp;gt;.run()&lt;/i&gt;&lt;br/&gt; &gt;;
+		mc_iteration -&gt; adv_state
+        adv_state -&gt; mc_iteration
+	}
+    config -&gt; setup_sim
+    setup_sim -&gt; mc_iteration [lhead=cluster1, minlen=2]
+    adv_state -&gt; spec_gen [ltail=cluster1]
+}</p></object></div>
 </section>
 <section id="background-material">
 <h2>Background Material<a class="headerlink" href="#background-material" title="Permalink to this heading">¶</a></h2>
@@ -184,7 +203,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 19 Jul 2022.
+      <span class="lastupdated">Last updated on 11 Aug 2022.
       </span></p>
   </div>
 

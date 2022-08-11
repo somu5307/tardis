@@ -66,9 +66,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../physics/intro/index.html">Physics Walkthrough Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../physics/setup/index.html">Setting Up the Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../physics/montecarlo/index.html">Monte Carlo Iteration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../physics/est_and_conv/index.html">Estimators and Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/update_and_conv/update_and_conv.html">Updating Plasma and Convergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../physics/spectrum/index.html">Spectrum Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../physics/energy_input/index.html">Gamma Ray Energy Deposition</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
 <ul>
@@ -76,7 +75,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../contributing/development/index.html">Developer Workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/tools/index.html">Developer Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing/roadmap.html">Development Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul class="current">
@@ -144,6 +143,9 @@
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <div class="docutils container" id="id1">
 <dl class="citation">
+<dt class="label" id="id25"><span class="brackets">JR76</span></dt>
+<dd><p>J. M Jauch and F Rohrlich. <em>The Theory of Photons and Electrons: the Relativistic Quantum Field Theory of Charged Particles with Spin One-half</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 1976. ISBN 978-3-642-80951-4 978-3-642-80953-8. OCLC: 840300942. URL: <a class="reference external" href="https://doi.org/10.1007/978-3-642-80951-4">https://doi.org/10.1007/978-3-642-80951-4</a> (visited on 2022-07-27).</p>
+</dd>
 <dt class="label" id="id23"><span class="brackets">WSP20</span></dt>
 <dd><p>Rainer Weinberger, Volker Springel, and Rüdiger Pakmor. The arepo public code release. <em>The Astrophysical Journal Supplement Series</em>, 248(2):32, Jun 2020. URL: <a class="reference external" href="http://dx.doi.org/10.3847/1538-4365/ab908c">http://dx.doi.org/10.3847/1538-4365/ab908c</a>, <a class="reference external" href="https://doi.org/10.3847/1538-4365/ab908c">doi:10.3847/1538-4365/ab908c</a>.</p>
 </dd>
@@ -183,8 +185,14 @@
 <dt class="label" id="id14"><span class="brackets">MazzaliLucy93</span></dt>
 <dd><p>P. A. Mazzali and L. B. Lucy. The application of Monte Carlo methods to the synthesis of early-time supernovae spectra. <em>Astronomy and Astrophysics</em>, 279:447–456, November 1993.</p>
 </dd>
+<dt class="label" id="id24"><span class="brackets">MilneHungerfordFryer+04</span></dt>
+<dd><p>P. A. Milne, A. L. Hungerford, C. L. Fryer, T. M. Evans, T. J. Urbatsch, S. E. Boggs, J. Isern, E. Bravo, A. Hirschmann, S. Kumagai, P. A. Pinto, and L. -S. The. Unified One-Dimensional Simulations of Gamma-Ray Line Emission from Type Ia Supernovae. <em>\apj </em>, 613(2):1101–1119, October 2004. <a class="reference external" href="https://arxiv.org/abs/astro-ph/0406173">arXiv:astro-ph/0406173</a>, <a class="reference external" href="https://doi.org/10.1086/423235">doi:10.1086/423235</a>.</p>
+</dd>
 <dt class="label" id="id15"><span class="brackets">Noebauer14</span></dt>
 <dd><p>U. M. Noebauer. <em>A Monte Carlo Approach to Radiation Hydrodynamics in Stellar Outflows</em>. Dissertation, Technische Universität München, München, 2014. URL: <a class="reference external" href="http://nbn-resolving.de/urn/resolver.pl?urn:nbn:de:bvb:91-diss-20140731-1219398-0-8">http://nbn-resolving.de/urn/resolver.pl?urn:nbn:de:bvb:91-diss-20140731-1219398-0-8</a>.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">OrePowell49</span></dt>
+<dd><p>A. Ore and J. L. Powell. Three-Photon Annihilation of an Electron-Positron Pair. <em>Physical Review</em>, 75(11):1696–1699, June 1949. <a class="reference external" href="https://doi.org/10.1103/PhysRev.75.1696">doi:10.1103/PhysRev.75.1696</a>.</p>
 </dd>
 <dt class="label" id="id16"><span class="brackets">SimProgaMiller+10</span></dt>
 <dd><p>S. A. Sim, D. Proga, L. Miller, K. S. Long, and T. J. Turner. Multidimensional modelling of X-ray spectra for AGN accretion disc outflows - III. Application to a hydrodynamical simulation. <em>Monthly Notices of the RAS</em>, 408:1396–1408, November 2010. <a class="reference external" href="https://arxiv.org/abs/1006.3449">arXiv:1006.3449</a>, <a class="reference external" href="https://doi.org/10.1111/j.1365-2966.2010.17215.x">doi:10.1111/j.1365-2966.2010.17215.x</a>.</p>
@@ -220,7 +228,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 19 Jul 2022.
+      <span class="lastupdated">Last updated on 11 Aug 2022.
       </span></p>
   </div>
 
