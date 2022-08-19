@@ -11,6 +11,7 @@ The following pages contain the TARDIS tutorials:
 * :doc:`io/visualization/sdec_plot`
 * :doc:`io/visualization/convergence_plot`
 * :doc:`io/visualization/abundance_widget`
+* :doc:`io/visualization/montecarlo_packet_visualization`
 * :doc:`io/output/to_hdf`
 * :doc:`io/output/physical_quantities`
 * :doc:`io/output/plasma_graph`
