@@ -96,6 +96,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/tools/index.html">Developer Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/CHANGELOG.html">Change Log</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
@@ -105,10 +106,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../resources/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../resources/code_comparison/index.html">Code Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../resources/zreferences.html">References and Glossary</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Outdated</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../outdated/index.html">Outdated Documentation</a></li>
 </ul>
 
         </div>
@@ -455,6 +452,10 @@ div.rendered_html tbody tr:hover {
 <p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch notebook</a></p>
 </div><section id="Converting-Arepo-snapshots-to-be-usable-by-TARDIS">
 <h1>Converting Arepo snapshots to be usable by TARDIS<a class="headerlink" href="#Converting-Arepo-snapshots-to-be-usable-by-TARDIS" title="Permalink to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Note</p>
+<p>This notebook cannot be run interactively!</p>
+</div>
 <section id="What-is-Arepo?">
 <h2>What is <a class="reference external" href="https://arepo-code.org/">Arepo</a>?<a class="headerlink" href="#What-is-Arepo?" title="Permalink to this heading">¶</a></h2>
 <blockquote>
@@ -482,13 +483,13 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "280238b4396f4bb2bc02a885cc9c3757", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "04c16ae33dfa4c718d2cc76a09a32f7d", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="Loading-the-simulation-data">
@@ -496,21 +497,27 @@ div.rendered_html tbody tr:hover {
 <p>As a first step, the relevant data has to be loaded from an Arepo snapshot, i.e. an output file of Arepo. In case you have the arepo-snap-util package installed, you can use the built in wrapper (as described below) to load the relevant data. In case you do not have this package installed or want to load the snapshot in a different way, you can manually provide the relevant data and continue with the next step.</p>
 <p>If you’re using the built-in tool, you will need to provide the path to the snapshot file, a list with the elements you want to include in your TARDIS model, as well as the species file with which the Arepo simulation was run. <em>(The species file should contain one header line, followed by two colums, where the first contains the names of all the species and is used to find the indices of the individual species within the snapshot. The second column is not used by the loader.)</em></p>
 <p>In case you have the arepo-snap-util package installed, you can load the data directly from a snapshot:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snapshot</span> <span class="o">=</span> <span class="n">arepo</span><span class="o">.</span><span class="n">ArepoSnapshot</span><span class="p">(</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snapshot</span> <span class="o">=</span> <span class="n">arepo</span><span class="o">.</span><span class="n">ArepoSnapshot</span><span class="p">(</span>
     <span class="s2">&quot;arepo_snapshot.hdf5&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ni56&quot;</span><span class="p">,</span> <span class="s2">&quot;si28&quot;</span><span class="p">],</span> <span class="s2">&quot;species55.txt&quot;</span>
 <span class="p">)</span>
 <span class="n">pos</span><span class="p">,</span> <span class="n">vel</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">xnuc</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">get_grids</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 <p>This will load the necessary from the snapshot. See the <a class="reference internal" href="../../../../../api/tardis.io.parsers.arepo.html"><span class="doc">API</span></a> documentation for more options on how to load snapshots.</p>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Note</p>
 <p>The built in functionality only loads Arepo particle species <code class="docutils literal notranslate"><span class="pre">0</span></code>, i.e. gas particles. For most (if not all) purposes connected to TARDIS, gas particles should be the only species of interest. In case you need to load a different particle species, please manually load the data.</p>
 </div>
-<p>This will fail with an error if you do not have the arepo-snap-util package installed. Since this is not a default dependency of TARDIS, lets manually load the data. <em>(This manual load can effectively be used to load all kinds of models unrelated to Arepo, as long as the data comes in the correct format.)</em></p>
-<p>In this case the data is loaded from a <code class="docutils literal notranslate"><span class="pre">json</span></code> file. This file has been created manually by dumping the data which would have been loaded from the snapshot to a <code class="docutils literal notranslate"><span class="pre">json</span></code> file. <em>(The ``json`` file is only an example and more for illustrative purposes. As long as the data is provided in the correct format (see below) it is up to the user how it is saved/loaded.)</em></p>
+<p>This will fail with an error if you do not have the arepo-snap-util package installed. Since this is not a default dependency of TARDIS, the data can also be loaded manually. <em>(This manual load can effectively be used to load all kinds of models unrelated to Arepo, as long as the data comes in the correct format.)</em></p>
+<p>The data could be loaded from a previously generated <code class="docutils literal notranslate"><span class="pre">json</span></code> file, where all necessary input from the snapshot has been dumped in. <em>(The ``json`` file is only an example and more for illustrative purposes. As long as the data is provided in the correct format (see below) it is up to the user how it is saved/loaded.)</em></p>
 <details><summary><p>Code: (click to expand)</p>
-</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Dumping the data:</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;pos&quot;</span> <span class="p">:</span> <span class="n">pos</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
     <span class="s2">&quot;vel&quot;</span> <span class="p">:</span> <span class="n">vel</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
     <span class="s2">&quot;rho&quot;</span> <span class="p">:</span> <span class="n">rho</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
@@ -520,44 +527,9 @@ div.rendered_html tbody tr:hover {
 <span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arepo_snapshot.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">json_string</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
-</pre></div>
-</div>
-</details><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget -O arepo_snapshot.json https://github.com/tardis-sn/tardis-refdata/raw/master/arepo_data/arepo_snapshot.json<span class="p">;</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
---2022-08-16 11:47:07--  https://github.com/tardis-sn/tardis-refdata/raw/master/arepo_data/arepo_snapshot.json
-Resolving github.com (github.com)... 140.82.112.4
-Connecting to github.com (github.com)|140.82.112.4|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://raw.githubusercontent.com/tardis-sn/tardis-refdata/master/arepo_data/arepo_snapshot.json [following]
---2022-08-16 11:47:08--  https://raw.githubusercontent.com/tardis-sn/tardis-refdata/master/arepo_data/arepo_snapshot.json
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.108.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 134 [text/plain]
-Saving to: ‘arepo_snapshot.json’
 
-arepo_snapshot.json 100%[===================&gt;]     134  --.-KB/s    in 0s
-
-2022-08-16 11:47:08 (10.7 MB/s) - ‘arepo_snapshot.json’ saved [134/134]
-
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arepo_snapshot.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<span class="c1">### Loading the data:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arepo_snapshot.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">))</span>
 
 <span class="c1"># The following lines only parse the .json file. You might not need this depending on how you saved</span>
@@ -572,8 +544,13 @@ arepo_snapshot.json 100%[===================&gt;]     134  --.-KB/s    in 0s
     <span class="s2">&quot;ni56&quot;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nucs</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
     <span class="s2">&quot;si28&quot;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nucs</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
 <span class="p">}</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position data shape: &quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position data shape: &quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Velocity data shape: &quot;</span><span class="p">,</span> <span class="n">vel</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Density data shape: &quot;</span><span class="p">,</span> <span class="n">rho</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nuclear data shape (per element): &quot;</span><span class="p">,</span> <span class="n">xnuc</span><span class="p">[</span><span class="s2">&quot;ni56&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -585,55 +562,10 @@ arepo_snapshot.json 100%[===================&gt;]     134  --.-KB/s    in 0s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">JSONDecodeError</span>                           Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb Cell 12</span> in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://ssh-remote%2B7b22686f73744e616d65223a224d6f726961227d/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb#X14sdnNjb2RlLXJlbW90ZQ%3D%3D?line=0&#39;&gt;1&lt;/a&gt;</span> with open(&#39;arepo_snapshot.json&#39;) as json_file:
-<span class="ansi-green-fg">----&gt; &lt;a href=&#39;vscode-notebook-cell://ssh-remote%2B7b22686f73744e616d65223a224d6f726961227d/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb#X14sdnNjb2RlLXJlbW90ZQ%3D%3D?line=1&#39;&gt;2&lt;/a&gt;</span>     data = json.loads(json.load(json_file))
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://ssh-remote%2B7b22686f73744e616d65223a224d6f726961227d/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb#X14sdnNjb2RlLXJlbW90ZQ%3D%3D?line=3&#39;&gt;4&lt;/a&gt;</span> # The following lines only parse the .json file. You might not need this depending on how you saved
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://ssh-remote%2B7b22686f73744e616d65223a224d6f726961227d/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb#X14sdnNjb2RlLXJlbW90ZQ%3D%3D?line=4&#39;&gt;5&lt;/a&gt;</span> # the snapshot data
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://ssh-remote%2B7b22686f73744e616d65223a224d6f726961227d/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb#X14sdnNjb2RlLXJlbW90ZQ%3D%3D?line=5&#39;&gt;6&lt;/a&gt;</span> pos, vel, rho, nucs, time = data[&#34;pos&#34;], data[&#34;vel&#34;], data[&#34;rho&#34;], data[&#34;xnuc&#34;], data[&#34;time&#34;]
-
-File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/__init__.py:293</span>, in <span class="ansi-cyan-fg">load</span><span class="ansi-blue-fg">(fp, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    274</span> def load(fp, *, cls=None, object_hook=None, parse_float=None,
-<span class="ansi-green-intense-fg ansi-bold">    275</span>         parse_int=None, parse_constant=None, object_pairs_hook=None, **kw):
-<span class="ansi-green-intense-fg ansi-bold">    276</span>     &#34;&#34;&#34;Deserialize ``fp`` (a ``.read()``-supporting file-like object containing
-<span class="ansi-green-intense-fg ansi-bold">    277</span>     a JSON document) to a Python object.
-<span class="ansi-green-intense-fg ansi-bold">    278</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    291</span>     kwarg; otherwise ``JSONDecoder`` is used.
-<span class="ansi-green-intense-fg ansi-bold">    292</span>     &#34;&#34;&#34;
-<span class="ansi-green-fg">--&gt; 293</span>     return loads(fp.read(),
-<span class="ansi-green-intense-fg ansi-bold">    294</span>         cls=cls, object_hook=object_hook,
-<span class="ansi-green-intense-fg ansi-bold">    295</span>         parse_float=parse_float, parse_int=parse_int,
-<span class="ansi-green-intense-fg ansi-bold">    296</span>         parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
-
-File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/__init__.py:357</span>, in <span class="ansi-cyan-fg">loads</span><span class="ansi-blue-fg">(s, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    352</span>     del kw[&#39;encoding&#39;]
-<span class="ansi-green-intense-fg ansi-bold">    354</span> if (cls is None and object_hook is None and
-<span class="ansi-green-intense-fg ansi-bold">    355</span>         parse_int is None and parse_float is None and
-<span class="ansi-green-intense-fg ansi-bold">    356</span>         parse_constant is None and object_pairs_hook is None and not kw):
-<span class="ansi-green-fg">--&gt; 357</span>     return _default_decoder.decode(s)
-<span class="ansi-green-intense-fg ansi-bold">    358</span> if cls is None:
-<span class="ansi-green-intense-fg ansi-bold">    359</span>     cls = JSONDecoder
-
-File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder.py:337</span>, in <span class="ansi-cyan-fg">JSONDecoder.decode</span><span class="ansi-blue-fg">(self, s, _w)</span>
-<span class="ansi-green-intense-fg ansi-bold">    332</span> def decode(self, s, _w=WHITESPACE.match):
-<span class="ansi-green-intense-fg ansi-bold">    333</span>     &#34;&#34;&#34;Return the Python representation of ``s`` (a ``str`` instance
-<span class="ansi-green-intense-fg ansi-bold">    334</span>     containing a JSON document).
-<span class="ansi-green-intense-fg ansi-bold">    335</span>
-<span class="ansi-green-intense-fg ansi-bold">    336</span>     &#34;&#34;&#34;
-<span class="ansi-green-fg">--&gt; 337</span>     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-<span class="ansi-green-intense-fg ansi-bold">    338</span>     end = _w(s, end).end()
-<span class="ansi-green-intense-fg ansi-bold">    339</span>     if end != len(s):
-
-File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder.py:355</span>, in <span class="ansi-cyan-fg">JSONDecoder.raw_decode</span><span class="ansi-blue-fg">(self, s, idx)</span>
-<span class="ansi-green-intense-fg ansi-bold">    353</span>     obj, end = self.scan_once(s, idx)
-<span class="ansi-green-intense-fg ansi-bold">    354</span> except StopIteration as err:
-<span class="ansi-green-fg">--&gt; 355</span>     raise JSONDecodeError(&#34;Expecting value&#34;, s, err.value) from None
-<span class="ansi-green-intense-fg ansi-bold">    356</span> return obj, end
-
-<span class="ansi-red-fg">JSONDecodeError</span>: Expecting value: line 1 column 1 (char 0)
+Position data shape:  (3, 1218054)
+Velocity data shape:  (3, 1218054)
+Density data shape:  (1218054,)
+Nuclear data shape (per element):  (1218054,)
 </pre></div></div>
 </div>
 <div class="line-block">
@@ -650,7 +582,7 @@ File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder
 <li><p><strong>Full profile</strong>: This averages over the whole simulation</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span> <span class="o">=</span> <span class="n">arepo</span><span class="o">.</span><span class="n">ConeProfile</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">vel</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">xnuc</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
@@ -666,8 +598,8 @@ File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder
 <p class="admonition-title fa fa-exclamation-circle">Note</p>
 <p>The keyword <code class="docutils literal notranslate"><span class="pre">opening_angle=40</span></code> is only needed for the cone profile. The other modes do not accept this keyword! The angle itself is the opening angle of the full cone and NOT the angle between the central x-axis and the cone!</p>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">create_profile</span><span class="p">(</span><span class="n">opening_angle</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
@@ -675,6 +607,13 @@ File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder
 <span class="n">profile</span><span class="o">.</span><span class="n">plot_profile</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/io_configuration_components_models_converters_arepo_to_tardis_20_0.png" src="../../../../../_images/io_configuration_components_models_converters_arepo_to_tardis_20_0.png" />
 </div>
 </div>
 </section>
@@ -689,8 +628,8 @@ File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder
 <section id="Selecting-a-specific-region">
 <h2>Selecting a specific region<a class="headerlink" href="#Selecting-a-specific-region" title="Permalink to this heading">¶</a></h2>
 <p>In many cases you only want a very specific region from the snapshot, e.g. cutting out the dense, optically thick regions. This can be acchieved using the keywords <code class="docutils literal notranslate"><span class="pre">inner_radius</span></code> and <code class="docutils literal notranslate"><span class="pre">outer_radius</span></code>.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">create_profile</span><span class="p">(</span><span class="n">opening_angle</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mf">1e11</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mf">2e11</span><span class="p">)</span>
@@ -700,9 +639,16 @@ File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../_images/io_configuration_components_models_converters_arepo_to_tardis_23_0.png" src="../../../../../_images/io_configuration_components_models_converters_arepo_to_tardis_23_0.png" />
+</div>
+</div>
 <p>Once you have created a profile of the desired region, you can export the profile to a <code class="docutils literal notranslate"><span class="pre">csvy</span></code> file, which in turn can be used in a TARDIS model. Here you have to specify how many shells you want to export. The profiles are rebinned automatically using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binned_statistic.html">Scipys binned_statistic function</a>, using the mean value of the data in each bin.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;snapshot_converted_to_tardis.csvy&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -710,16 +656,12 @@ File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb Cell 24</span> in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; &lt;a href=&#39;vscode-notebook-cell://ssh-remote%2B7b22686f73744e616d65223a224d6f726961227d/home/afullard/tardis/docs/io/configuration/components/models/converters/arepo_to_tardis.ipynb#X32sdnNjb2RlLXJlbW90ZQ%3D%3D?line=0&#39;&gt;1&lt;/a&gt;</span> profile.export(20, &#34;snapshot_converted_to_tardis.csvy&#34;, overwrite=True)
-
-<span class="ansi-red-fg">NameError</span>: name &#39;profile&#39; is not defined
+&#39;snapshot_converted_to_tardis.csvy&#39;
 </pre></div></div>
 </div>
 <p>During the export, the <code class="docutils literal notranslate"><span class="pre">yaml</span></code> header is automatically written and includes the time of the screenshot as the time for both the nuclear data as well as the density profile. Per default, the positive axis will be exported. the negative axis can be exported with <code class="docutils literal notranslate"><span class="pre">direction=&quot;neg&quot;</span></code>.</p>
@@ -759,7 +701,7 @@ File <span class="ansi-green-fg">~/.conda/envs/tardis/lib/python3.8/json/decoder
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 19 Aug 2022.
+      <span class="lastupdated">Last updated on 12 Sep 2022.
       </span></p>
   </div>
 
