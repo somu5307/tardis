@@ -19,6 +19,7 @@ Submodules
    tardis.plasma.properties.base
    tardis.plasma.properties.continuum_processes
    tardis.plasma.properties.general
+   tardis.plasma.properties.helium_nlte
    tardis.plasma.properties.ion_population
    tardis.plasma.properties.j_blues
    tardis.plasma.properties.level_population
@@ -27,6 +28,7 @@ Submodules
    tardis.plasma.properties.plasma_input
    tardis.plasma.properties.property_collections
    tardis.plasma.properties.radiative_properties
+   tardis.plasma.properties.rate_matrix_index
    tardis.plasma.properties.transition_probabilities
 
 Module contents
