@@ -168,7 +168,9 @@ nlte_properties = PlasmaPropertyCollection(
         BetaSobolev,
     ]
 )
-nlte_solver_properties = PlasmaPropertyCollection([NLTEIndexHelper])
+nlte_solver_properties = PlasmaPropertyCollection(
+    [NLTEIndexHelper, NLTERateEquationSolver]
+)
 helium_nlte_properties = PlasmaPropertyCollection(
     [
         HeliumNLTE,
@@ -275,7 +277,7 @@ isotope_properties = PlasmaPropertyCollection(
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 12 Nov 2022.
+      <span class="lastupdated">Last updated on 16 Nov 2022.
       </span></p>
   </div>
 

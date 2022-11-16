@@ -24,6 +24,7 @@ Submodules
    tardis.plasma.properties.j_blues
    tardis.plasma.properties.level_population
    tardis.plasma.properties.nlte
+   tardis.plasma.properties.nlte_rate_equation_solver
    tardis.plasma.properties.partition_function
    tardis.plasma.properties.plasma_input
    tardis.plasma.properties.property_collections
