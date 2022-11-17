@@ -19,6 +19,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -119,10 +120,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">tardis</a> &raquo;</li>
-          <li><a href="tardis.html">tardis package</a> &raquo;</li>
-      <li>tardis.montecarlo package</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
+          <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
+      <li class="breadcrumb-item active">tardis.montecarlo package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/tardis.montecarlo.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -164,19 +165,101 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.html">tardis.montecarlo.montecarlo_numba package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.base.html">tardis.montecarlo.montecarlo_numba.base module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.estimators.html">tardis.montecarlo.montecarlo_numba.estimators module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html">tardis.montecarlo.montecarlo_numba.formal_integral module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral_cuda.html">tardis.montecarlo.montecarlo_numba.formal_integral_cuda module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html">tardis.montecarlo.montecarlo_numba.interaction module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.macro_atom.html">tardis.montecarlo.montecarlo_numba.macro_atom module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.base.html">tardis.montecarlo.montecarlo_numba.base module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.base.html#tardis.montecarlo.montecarlo_numba.base.montecarlo_main_loop"><code class="docutils literal notranslate"><span class="pre">montecarlo_main_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.base.html#tardis.montecarlo.montecarlo_numba.base.montecarlo_radial1d"><code class="docutils literal notranslate"><span class="pre">montecarlo_radial1d()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.estimators.html">tardis.montecarlo.montecarlo_numba.estimators module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.estimators.html#tardis.montecarlo.montecarlo_numba.estimators.set_estimators"><code class="docutils literal notranslate"><span class="pre">set_estimators()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.estimators.html#tardis.montecarlo.montecarlo_numba.estimators.update_bound_free_estimators"><code class="docutils literal notranslate"><span class="pre">update_bound_free_estimators()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.estimators.html#tardis.montecarlo.montecarlo_numba.estimators.update_line_estimators"><code class="docutils literal notranslate"><span class="pre">update_line_estimators()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html">tardis.montecarlo.montecarlo_numba.formal_integral module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.BoundsError"><code class="docutils literal notranslate"><span class="pre">BoundsError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.FormalIntegrator"><code class="docutils literal notranslate"><span class="pre">FormalIntegrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.IntegrationError"><code class="docutils literal notranslate"><span class="pre">IntegrationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.NumbaFormalIntegrator"><code class="docutils literal notranslate"><span class="pre">NumbaFormalIntegrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.calculate_p_values"><code class="docutils literal notranslate"><span class="pre">calculate_p_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.calculate_z"><code class="docutils literal notranslate"><span class="pre">calculate_z()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.intensity_black_body"><code class="docutils literal notranslate"><span class="pre">intensity_black_body()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.line_search"><code class="docutils literal notranslate"><span class="pre">line_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.numba_formal_integral"><code class="docutils literal notranslate"><span class="pre">numba_formal_integral()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.populate_z"><code class="docutils literal notranslate"><span class="pre">populate_z()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.reverse_binary_search"><code class="docutils literal notranslate"><span class="pre">reverse_binary_search()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.trapezoid_integration"><code class="docutils literal notranslate"><span class="pre">trapezoid_integration()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral_cuda.html">tardis.montecarlo.montecarlo_numba.formal_integral_cuda module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral_cuda.html#tardis.montecarlo.montecarlo_numba.formal_integral_cuda.BoundsError"><code class="docutils literal notranslate"><span class="pre">BoundsError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral_cuda.html#tardis.montecarlo.montecarlo_numba.formal_integral_cuda.CudaFormalIntegrator"><code class="docutils literal notranslate"><span class="pre">CudaFormalIntegrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.formal_integral_cuda.html#tardis.montecarlo.montecarlo_numba.formal_integral_cuda.calculate_p_values"><code class="docutils literal notranslate"><span class="pre">calculate_p_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html">tardis.montecarlo.montecarlo_numba.interaction module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.adiabatic_cooling"><code class="docutils literal notranslate"><span class="pre">adiabatic_cooling()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.bf_cooling"><code class="docutils literal notranslate"><span class="pre">bf_cooling()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.bound_free_emission"><code class="docutils literal notranslate"><span class="pre">bound_free_emission()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.continuum_event"><code class="docutils literal notranslate"><span class="pre">continuum_event()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.determine_bf_macro_activation_idx"><code class="docutils literal notranslate"><span class="pre">determine_bf_macro_activation_idx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.determine_continuum_macro_activation_idx"><code class="docutils literal notranslate"><span class="pre">determine_continuum_macro_activation_idx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.free_free_emission"><code class="docutils literal notranslate"><span class="pre">free_free_emission()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.get_current_line_id"><code class="docutils literal notranslate"><span class="pre">get_current_line_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.line_emission"><code class="docutils literal notranslate"><span class="pre">line_emission()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.line_scatter"><code class="docutils literal notranslate"><span class="pre">line_scatter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.macro_atom_event"><code class="docutils literal notranslate"><span class="pre">macro_atom_event()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.sample_nu_free_bound"><code class="docutils literal notranslate"><span class="pre">sample_nu_free_bound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.sample_nu_free_free"><code class="docutils literal notranslate"><span class="pre">sample_nu_free_free()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.thomson_scatter"><code class="docutils literal notranslate"><span class="pre">thomson_scatter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.macro_atom.html">tardis.montecarlo.montecarlo_numba.macro_atom module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.macro_atom.html#tardis.montecarlo.montecarlo_numba.macro_atom.MacroAtomError"><code class="docutils literal notranslate"><span class="pre">MacroAtomError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.macro_atom.html#tardis.montecarlo.montecarlo_numba.macro_atom.MacroAtomTransitionType"><code class="docutils literal notranslate"><span class="pre">MacroAtomTransitionType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.macro_atom.html#tardis.montecarlo.montecarlo_numba.macro_atom.macro_atom"><code class="docutils literal notranslate"><span class="pre">macro_atom()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.numba_config.html">tardis.montecarlo.montecarlo_numba.numba_config module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.numba_interface.html">tardis.montecarlo.montecarlo_numba.numba_interface module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html">tardis.montecarlo.montecarlo_numba.opacities module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.r_packet.html">tardis.montecarlo.montecarlo_numba.r_packet module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.single_packet_loop.html">tardis.montecarlo.montecarlo_numba.single_packet_loop module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.utils.html">tardis.montecarlo.montecarlo_numba.utils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.vpacket.html">tardis.montecarlo.montecarlo_numba.vpacket module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.numba_interface.html">tardis.montecarlo.montecarlo_numba.numba_interface module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.numba_interface.html#tardis.montecarlo.montecarlo_numba.numba_interface.LineInteractionType"><code class="docutils literal notranslate"><span class="pre">LineInteractionType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.numba_interface.html#tardis.montecarlo.montecarlo_numba.numba_interface.configuration_initialize"><code class="docutils literal notranslate"><span class="pre">configuration_initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.numba_interface.html#tardis.montecarlo.montecarlo_numba.numba_interface.numba_plasma_initialize"><code class="docutils literal notranslate"><span class="pre">numba_plasma_initialize()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html">tardis.montecarlo.montecarlo_numba.opacities module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html#tardis.montecarlo.montecarlo_numba.opacities.calculate_tau_electron"><code class="docutils literal notranslate"><span class="pre">calculate_tau_electron()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html#tardis.montecarlo.montecarlo_numba.opacities.chi_bf_interpolator"><code class="docutils literal notranslate"><span class="pre">chi_bf_interpolator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html#tardis.montecarlo.montecarlo_numba.opacities.chi_continuum_calculator"><code class="docutils literal notranslate"><span class="pre">chi_continuum_calculator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html#tardis.montecarlo.montecarlo_numba.opacities.chi_electron_calculator"><code class="docutils literal notranslate"><span class="pre">chi_electron_calculator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html#tardis.montecarlo.montecarlo_numba.opacities.chi_ff_calculator"><code class="docutils literal notranslate"><span class="pre">chi_ff_calculator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.opacities.html#tardis.montecarlo.montecarlo_numba.opacities.get_current_bound_free_continua"><code class="docutils literal notranslate"><span class="pre">get_current_bound_free_continua()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.r_packet.html">tardis.montecarlo.montecarlo_numba.r_packet module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.InteractionType"><code class="docutils literal notranslate"><span class="pre">InteractionType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.PacketStatus"><code class="docutils literal notranslate"><span class="pre">PacketStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.print_r_packet_properties"><code class="docutils literal notranslate"><span class="pre">print_r_packet_properties()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.r_packet.html#tardis.montecarlo.montecarlo_numba.r_packet.rpacket_trackers_to_dataframe"><code class="docutils literal notranslate"><span class="pre">rpacket_trackers_to_dataframe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.single_packet_loop.html">tardis.montecarlo.montecarlo_numba.single_packet_loop module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.single_packet_loop.html#tardis.montecarlo.montecarlo_numba.single_packet_loop.set_packet_props_full_relativity"><code class="docutils literal notranslate"><span class="pre">set_packet_props_full_relativity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.single_packet_loop.html#tardis.montecarlo.montecarlo_numba.single_packet_loop.set_packet_props_partial_relativity"><code class="docutils literal notranslate"><span class="pre">set_packet_props_partial_relativity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.single_packet_loop.html#tardis.montecarlo.montecarlo_numba.single_packet_loop.single_packet_loop"><code class="docutils literal notranslate"><span class="pre">single_packet_loop()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.utils.html">tardis.montecarlo.montecarlo_numba.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.utils.html#tardis.montecarlo.montecarlo_numba.utils.MonteCarloException"><code class="docutils literal notranslate"><span class="pre">MonteCarloException</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.utils.html#tardis.montecarlo.montecarlo_numba.utils.get_random_mu"><code class="docutils literal notranslate"><span class="pre">get_random_mu()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.vpacket.html">tardis.montecarlo.montecarlo_numba.vpacket module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.vpacket.html#tardis.montecarlo.montecarlo_numba.vpacket.trace_vpacket"><code class="docutils literal notranslate"><span class="pre">trace_vpacket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.vpacket.html#tardis.montecarlo.montecarlo_numba.vpacket.trace_vpacket_volley"><code class="docutils literal notranslate"><span class="pre">trace_vpacket_volley()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.vpacket.html#tardis.montecarlo.montecarlo_numba.vpacket.trace_vpacket_within_shell"><code class="docutils literal notranslate"><span class="pre">trace_vpacket_within_shell()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tardis.montecarlo.montecarlo_numba.html#module-tardis.montecarlo.montecarlo_numba">Module contents</a></li>
@@ -189,10 +272,75 @@
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.base.html">tardis.montecarlo.base module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.base.html">tardis.montecarlo.base module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.calculate_emitted_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.calculate_emitted_luminosity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.calculate_f_lambda"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.calculate_f_lambda()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.calculate_f_nu"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.calculate_f_nu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.calculate_luminosity_inner"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.calculate_luminosity_inner()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.calculate_radiationfield_properties"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.calculate_radiationfield_properties()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.calculate_reabsorbed_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.calculate_reabsorbed_luminosity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.calculate_time_of_simulation"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.calculate_time_of_simulation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.emitted_packet_luminosity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_mask"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.emitted_packet_mask</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.emitted_packet_nu"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.emitted_packet_nu</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.from_config"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.from_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.get_line_interaction_id"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.get_line_interaction_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.hdf_name"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.hdf_name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.hdf_properties"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.hdf_properties</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.integrator"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.integrator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.legacy_return"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.legacy_return()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.montecarlo_emitted_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.montecarlo_emitted_luminosity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.montecarlo_reabsorbed_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.montecarlo_reabsorbed_luminosity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.montecarlo_virtual_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.montecarlo_virtual_luminosity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.output_energy"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.output_energy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.output_nu"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.output_nu</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.packet_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.packet_luminosity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.reabsorbed_packet_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.reabsorbed_packet_luminosity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.reabsorbed_packet_nu"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.reabsorbed_packet_nu</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.run"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.spectrum"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.spectrum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.spectrum_integrated"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.spectrum_integrated</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.spectrum_reabsorbed"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.spectrum_reabsorbed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.spectrum_virtual"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.spectrum_virtual</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.t_rad_estimator_constant"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.t_rad_estimator_constant</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.virtual_packet_energy"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.virtual_packet_energy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.virtual_packet_luminosity"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.virtual_packet_luminosity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.virtual_packet_nu"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.virtual_packet_nu</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.vpacket_hdf_properties"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.vpacket_hdf_properties</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.base.html#tardis.montecarlo.base.MontecarloRunner.w_estimator_constant"><code class="docutils literal notranslate"><span class="pre">MontecarloRunner.w_estimator_constant</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.montecarlo_configuration.html">tardis.montecarlo.montecarlo_configuration module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.packet_source.html">tardis.montecarlo.packet_source module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.spectrum.html">tardis.montecarlo.spectrum module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.packet_source.html">tardis.montecarlo.packet_source module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource"><code class="docutils literal notranslate"><span class="pre">BasePacketSource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus"><code class="docutils literal notranslate"><span class="pre">BasePacketSource.create_blackbody_packet_nus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_packets"><code class="docutils literal notranslate"><span class="pre">BasePacketSource.create_packets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_uniform_packet_energies"><code class="docutils literal notranslate"><span class="pre">BasePacketSource.create_uniform_packet_energies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_zero_limb_darkening_packet_mus"><code class="docutils literal notranslate"><span class="pre">BasePacketSource.create_zero_limb_darkening_packet_mus()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource"><code class="docutils literal notranslate"><span class="pre">BlackBodySimpleSource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets"><code class="docutils literal notranslate"><span class="pre">BlackBodySimpleSource.create_packets()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tardis.montecarlo.spectrum.html">tardis.montecarlo.spectrum module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.f_nu_to_f_lambda"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum.f_nu_to_f_lambda()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.flux_lambda"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum.flux_lambda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.flux_nu"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum.flux_nu</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.hdf_properties"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum.hdf_properties</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.luminosity_to_flux"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum.luminosity_to_flux()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.plot"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum.plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.to_ascii"><code class="docutils literal notranslate"><span class="pre">TARDISSpectrum.to_ascii()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
