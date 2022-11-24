@@ -192,8 +192,8 @@ Index of filtered atomic data.</p>
 </dd>
 <dt><strong>phi</strong><span class="classifier">DataFrame</span></dt><dd><p>Saha Factors.</p>
 </dd>
-<dt><strong>rate_matrix_index</strong><span class="classifier">MultiIndex</span></dt><dd><p>(atomic_number, ion_number, level/treatment type)
-If ion is treated in LTE ionization, 3rd index is “lte_ion”,
+<dt><strong>rate_matrix_index</strong><span class="classifier">MultiIndex</span></dt><dd><p>(atomic_number, ion_number, treatment type)
+If ion is treated in LTE or nebular ionization, 3rd index is “lte_ion”,
 if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 <dt><strong>number_density</strong><span class="classifier">DataFrame</span></dt><dd><p>Number density in each shell for each species.</p>
@@ -202,9 +202,9 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>ion_number_densities_nlte: DataFrame</dt><dd><p>Number density with NLTE ionization treatment.</p>
+<dt><strong>ion_number_densities_nlte</strong><span class="classifier">DataFrame</span></dt><dd><p>Number density with NLTE ionization treatment.</p>
 </dd>
-<dt>electron_densities_nlte: Series</dt><dd><p>Electron density with NLTE ionizaion treatment.</p>
+<dt><strong>electron_densities_nlte</strong><span class="classifier">Series</span></dt><dd><p>Electron density with NLTE ionization treatment.</p>
 </dd>
 </dl>
 </dd>
@@ -225,9 +225,9 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 <dt><strong>total_photo_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Photo ionization coefficients</p>
 </dd>
-<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Radiative recombination coefficients(should get multiplied by electron density)</p>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Radiative recombination coefficients (should get multiplied by electron density)</p>
 </dd>
-<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional ionization coefficients(should get multiplied by electron density)</p>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional ionization coefficients (should get multiplied by electron density)</p>
 </dd>
 <dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional recombination coefficients (should get multiplied by electron density^2)</p>
 </dd>
@@ -327,13 +327,13 @@ Index of filtered atomic data.</p>
 </dd>
 <dt><strong>Returns</strong></dt><dd></dd>
 <dt><strong>——-</strong></dt><dd></dd>
-<dt><strong>total_photo_ion_coefficients:</strong></dt><dd><p>Photoinization coefficients grouped by atomic number and ion number.</p>
+<dt><strong>total_photo_ion_coefficients</strong></dt><dd><p>Photoionization coefficients grouped by atomic number and ion number.</p>
 </dd>
-<dt><strong>total_rad_recomb_coefficients:</strong></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
+<dt><strong>total_rad_recomb_coefficients</strong></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
 </dd>
-<dt><strong>total_coll_ion_coefficients:</strong></dt><dd><p>Collisional ionization coefficients grouped by atomic number and ion number.</p>
+<dt><strong>total_coll_ion_coefficients</strong></dt><dd><p>Collisional ionization coefficients grouped by atomic number and ion number.</p>
 </dd>
-<dt><strong>total_coll_recomb_coefficients:</strong></dt><dd><p>Collisional recombination coefficients grouped by atomic number and ion number.</p>
+<dt><strong>total_coll_recomb_coefficients</strong></dt><dd><p>Collisional recombination coefficients grouped by atomic number and ion number.</p>
 </dd>
 </dl>
 </dd>
@@ -417,7 +417,7 @@ Index of filtered atomic data.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 23 Nov 2022.
+      <span class="lastupdated">Last updated on 24 Nov 2022.
       </span></p>
   </div>
 
