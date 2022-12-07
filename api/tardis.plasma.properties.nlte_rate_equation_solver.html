@@ -213,7 +213,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.calculate_rate_matrix">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_rate_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi_shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_photo_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.calculate_rate_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.calculate_rate_matrix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_rate_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_photo_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.calculate_rate_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.calculate_rate_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -243,6 +243,36 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.deriv_matrix_block">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deriv_matrix_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_ion_number_densities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_electron_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.deriv_matrix_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.deriv_matrix_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the dot product of the derivative of rate matrix and ion number densities+electron density column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>atomic_number</strong><span class="classifier">int64</span></dt><dd><p>Current atomic number</p>
+</dd>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
+</dd>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional ionization coefficients.</p>
+</dd>
+<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional recombination coefficients.</p>
+</dd>
+<dt><strong>current_ion_number_densities</strong><span class="classifier">numpy.array</span></dt><dd><p>Current ion number densities for the current atomic number.</p>
+</dd>
+<dt><strong>current_electron_density</strong><span class="classifier">float64</span></dt><dd><p>Current electron density</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.array</dt><dd><p>Returns the part of the last column of the jacobian matrix, corresponding to atomic number.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.ion_matrix">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ion_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.ion_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.ion_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs an ionization rate matrix from the ionization rates.</p>
@@ -260,6 +290,38 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.ndarray</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.jacobian_matrix">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jacobian_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">populations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.jacobian_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.jacobian_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the jacobian matrix used for NLTE ionization solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>populations</strong><span class="classifier">numpy.array</span></dt><dd><p>Ion populations, electron density</p>
+</dd>
+<dt><strong>rate_matrix</strong><span class="classifier">DataFrame</span></dt><dd><p>Rate matrix used for NLTE solver.</p>
+</dd>
+<dt><strong>rate_matrix_index</strong><span class="classifier">MultiIndex</span></dt><dd><p>(atomic_number, ion_number, treatment type)
+If ion is treated in LTE or nebular ionization, 3rd index is “lte_ion”,
+if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
+</dd>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
+</dd>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional ionization coefficients(should get multiplied by electron density).</p>
+</dd>
+<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional recombination coefficients(should get multiplied by electron density).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.array</dt><dd><p>Jacobian matrix used for NLTE ionization solver</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -298,6 +360,11 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dd><p>Prepares the last row of the rate_matrix. This row corresponds to the charge
 density equation.</p>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_first_guess">
+<span class="sig-name descname"><span class="pre">prepare_first_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.prepare_first_guess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_first_guess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_ion_recomb_coefficients_nlte_ion">
@@ -417,7 +484,7 @@ Index of filtered atomic data.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 24 Nov 2022.
+      <span class="lastupdated">Last updated on 07 Dec 2022.
       </span></p>
   </div>
 
