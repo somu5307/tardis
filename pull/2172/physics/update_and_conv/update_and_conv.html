@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Updating Plasma and Convergence &mdash; tardis</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/tardis_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Spectrum Generation" href="../spectrum/index.html" />
+    <link rel="prev" title="Volume-Based Estimators" href="../montecarlo/estimators.html" />
+    <link href="../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> tardis
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart for TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Input/Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../io/configuration/index.html">Configuration (Required Input)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/optional/index.html">Optional Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/visualization/index.html">Visualization Tools &amp; Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/output/index.html">Additional Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/grid/TardisGridTutorial.html">Running TARDIS Model Grids</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Physics Walkthrough</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Physics Walkthrough Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/index.html">Setting Up the Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../montecarlo/index.html">Monte Carlo Iteration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Updating Plasma and Convergence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#T_\mathrm{rad}-and-W"><span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and <span class="math notranslate nohighlight">\(W\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#T_\mathrm{inner}"><span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Convergence-Information">Convergence Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Convergence-Criteria">Convergence Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Updating-Other-Quantities">Updating Other Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Code-Example">Code Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../spectrum/index.html">Spectrum Generation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/tools/index.html">Developer Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/in_progress/index.html">Features In-Progress</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/code_comparison/index.html">Code Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/zreferences.html">References and Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">tardis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Updating Plasma and Convergence</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/physics/update_and_conv/update_and_conv.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<style>
+    /* strip stderr */
+    div.nboutput.container div.output_area.stderr {
+        background: #fdd;
+        display: none;
+    }
+
+    .launch-btn {
+        background-color: #2980B9;
+        border: none;
+        border-radius: 4px;
+        color: #fcfcfc;
+        font-family: inherit;
+        text-decoration: none;
+        padding: 3px 8px;
+        letter-spacing: 0.03em;
+        display: inline-block;
+        line-height: 1.5em;
+    }
+
+    .launch-btn:hover {
+        background-color: #1b6391;
+        color: #fcfcfc;
+    }
+
+    .launch-btn:visited {
+        color: #fcfcfc;
+    }
+
+    .note-p {
+        margin-bottom: 0.4em;
+        line-height: 2em;
+    }
+</style>
+
+<div class="admonition note">
+<p class="note-p">You can interact with this notebook online: <a href="https://mybinder.org/v2/gh/tardis-sn/tardis/HEAD?filepath=docs/physics/update_and_conv/update_and_conv.ipynb" class="launch-btn" target="_blank" rel="noopener noreferrer">Launch notebook</a></p>
+</div><section id="Updating-Plasma-and-Convergence">
+<h1>Updating Plasma and Convergence<a class="headerlink" href="#Updating-Plasma-and-Convergence" title="Permalink to this heading">¶</a></h1>
+<p>As light travels through a real plasma, it has effects on the properties of the plasma due to light-matter interactions as well as the presence of extra energy from the light. Additionally, as <a class="reference internal" href="../montecarlo/propagation.html"><span class="doc">previously discussed</span></a>, properties of the plasma affect how light travels through it. This is a typical equilibrium problem. We solve for the plasma properties by finding a steady-state solution; that is, the actual plasma will be in a state such that the plasma state will
+not change as light propagates through it, because the effects of the light on the plasma and the effects of the plasma on the light are in equilibrium.</p>
+<p>One of TARDIS’s main goals is to determine this plasma state (as we need the actual plasma properties in order to get an accurate spectrum). This is done in an iterative process. After each <a class="reference internal" href="../montecarlo/index.html"><span class="doc">Monte Carlo iteration</span></a> (which sends light through the supernova ejecta), TARDIS uses the <a class="reference internal" href="../montecarlo/estimators.html"><span class="doc">Monte Carlo estimators</span></a> how the propagating light affects the plasma state, after which the plasma state is updated (as will be explained below and
+demonstrated in the code example). We do this many times, and attempt to have the plasma state converge to the steady-state we are looking for. In fact, all but the last Monte Carlo iteration is used for this purpose (after which TARDIS will have the necessary plasma state for its last iteration which calculates the spectrum).</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Note</p>
+<p>For all but the last iteration, TARDIS uses the number of Monte Carlo packets specified in the <a class="reference internal" href="../../io/configuration/components/montecarlo.html"><span class="doc">Monte Carlo configuration</span></a> under the <code class="docutils literal notranslate"><span class="pre">no_of_packets</span></code> argument. This is because a different number of packets may be necessary to calculate the spectrum as opposed to calculate the plasma state.</p>
+</div>
+<p>After each iteration the values for radiative temperature and dilution factor are updated by calling the <code class="docutils literal notranslate"><span class="pre">advance_state</span></code> method on a <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> object as will be shown below in the code example. The goal of this is to eventually have the radiative temperature and dilution factor converge to a single value so that the steady-state plasma state can be determined. To ensure that the simulation converges, TARDIS employs a convergence strategy. Currently, only one convergence strategy is
+available: damped convergence. This will be described in the following sections.</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Note</p>
+<p>Unless otherwise noted, all user-supplied quantities mentioned on this page are supplied in the <a class="reference internal" href="../../io/configuration/components/montecarlo.html#damped-convergence-strategy"><span class="std std-ref">convergence section of the Monte Carlo configuration</span></a>, which will be referenced as the convergence configuration.</p>
+</div>
+<section id="T_\mathrm{rad}-and-W">
+<h2><span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and <span class="math notranslate nohighlight">\(W\)</span><a class="headerlink" href="#T_\mathrm{rad}-and-W" title="Permalink to this heading">¶</a></h2>
+<p>The main way in which the plasma state is updated is by using the <code class="docutils literal notranslate"><span class="pre">j</span></code> and <code class="docutils literal notranslate"><span class="pre">nu_bar</span></code> estimators (see <a class="reference internal" href="../montecarlo/estimators.html#j-and-bar-nu-estimators"><span class="std std-ref">here</span></a>) to update two of the key plasma inputs (see <a class="reference internal" href="../setup/plasma/index.html"><span class="doc">Plasma</span></a>): the radiative temperature <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and dilution factor <span class="math notranslate nohighlight">\(W\)</span>. Recall that each of these quantities takes on a different value in each shell.</p>
+<p>Using the estimators <span class="math notranslate nohighlight">\(J\)</span> and <span class="math notranslate nohighlight">\(\bar \nu\)</span>, we estimate these quantities using</p>
+<div class="math notranslate nohighlight">
+\[T_{\mathrm{rad\ estimated}} = \frac{h}{k_{\mathrm{B}}} \frac{\pi^4}{360 \zeta(5)} \frac{\bar \nu}{J}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[W_\mathrm{estimated} = \frac{\pi J}{\sigma_{\mathrm{R}} T_{\mathrm{rad\ estimated}}^4}\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant, <span class="math notranslate nohighlight">\(k_{\mathrm{B}}\)</span> is Boltzmann’s constant, <span class="math notranslate nohighlight">\(\sigma_{\mathrm{R}}\)</span> is the Stefan–Boltzmann constant, and <span class="math notranslate nohighlight">\(\zeta\)</span> is the Riemann zeta function. The equation for <span class="math notranslate nohighlight">\(W\)</span> comes from the fact that the dilution factor is the ratio of the actual mean intensity to that of a blackbody, which is <span class="math notranslate nohighlight">\(J_{\mathrm{blackbody}}=\frac{\sigma_{\mathrm{R}} T^4}{\pi}\)</span>.</p>
+<p>Recall (see <a class="reference internal" href="../montecarlo/estimators.html#implementation"><span class="std std-ref">Implementation</span></a>), however, that when TARDIS stores these estimators, it leaves out the prefactor of <span class="math notranslate nohighlight">\(\frac{1}{4\pi V\Delta t}\)</span> for computational ease. That is, <span class="math notranslate nohighlight">\(J=\frac{1}{4\pi V\Delta t}\sum_i \varepsilon_i l_i=\frac{1}{4\pi V\Delta t}*\mathrm{real\ j\ estimator}\)</span>, and <span class="math notranslate nohighlight">\(\bar \nu=\frac{1}{4\pi V\Delta t}\sum_i \varepsilon_i \nu_i l_i=\frac{1}{4\pi V\Delta t}*\mathrm{real\ nu\_ bar\ estimator}\)</span>. These factors are then
+included in our calculations; specifically, using the previous relations we have</p>
+<div class="math notranslate nohighlight">
+\[T_\mathrm{rad\ estimated}= \frac{h}{k_{\mathrm{B}}} \frac{\pi^4}{360 \zeta(5)} \frac{\sum_i \varepsilon_i \nu_i l_i}{\sum_i \varepsilon_i l_i} = \frac{h}{k_{\mathrm{B}}} \frac{\pi^4}{360 \zeta(5)} \frac{\mathrm{real\ nu\_ bar\ estimator}}{\mathrm{real\ j\ estimator}}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[W_\mathrm{estimated} = \frac{\sum_i \varepsilon_i l_i}{4\sigma_{\mathrm{R}} T_{\mathrm{rad\ estimated}}^4V\Delta t} = \frac{\mathrm{real\ j\ estimator}}{4\sigma_{\mathrm{R}} T_{\mathrm{rad\ estimated}}^4V\Delta t}.\]</div>
+<p>While TARDIS can then update the plasma state using the estimated values, there is a good chance that these estimated values would “overshoot” the true value we want to converge to (for example, if the current value of the dilution factor in some cell the dilution factor is 0.4, and the true steady-state value TARDIS wants to find is 0.45, there is a good chance that the estimated value will be greater than 0.45). This could make the simulation take longer to converge or, at worst, make it so
+the simulation does not converge at all. To account for this, users can set (in the convergence configuration) a “damping constant” for both the radiative temperature (<span class="math notranslate nohighlight">\(d_{T_\mathrm{rad}}\)</span>) and the dilution factor (<span class="math notranslate nohighlight">\(d_W\)</span>). When <code class="docutils literal notranslate"><span class="pre">advance_state</span></code> is called, these quantities update as follows:</p>
+<div class="math notranslate nohighlight">
+\[T_\mathrm{rad\ updated} = T_\mathrm{rad\ current} + d_{T_\mathrm{rad}}(T_\mathrm{rad\ estimated}-T_\mathrm{rad\ current})\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[W_\mathrm{updated} = W_\mathrm{current} + d_W(W_\mathrm{estimated}-W_\mathrm{current}).\]</div>
+<p>This means, for example, if the damping constant is 0.5, the updated value is halfway between the current value and the estimated value. If the damping constant is 0.7, the updated value is 70% of the way between the current value and the estimated value, and so on. <strong>If the damping constant is 1, then the updated value is exactly the estimated value, and if the damping constant is zero, the value stays the same throughout the simulation and is not updated.</strong></p>
+<p>The updated <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and <span class="math notranslate nohighlight">\(W\)</span> are then used as inputs to the updated <a class="reference internal" href="../setup/plasma/index.html"><span class="doc">plasma calculations</span></a> which account for the effect of the Monte Carlo packets on the plasma state.</p>
+</section>
+<section id="T_\mathrm{inner}">
+<h2><span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span><a class="headerlink" href="#T_\mathrm{inner}" title="Permalink to this heading">¶</a></h2>
+<p>The temperature of the inner boundary, <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>, plays a unique role in the simulation, as it is the primary determiner of the output luminosity. This is because the the luminosity of the inner boundary is proportional to <span class="math notranslate nohighlight">\(T_\mathrm{inner}^4\)</span> (see <a class="reference internal" href="../montecarlo/initialization.html"><span class="doc">Energy Packet Initialization</span></a>). Thus, <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> is updated throughout the simulation in order to match the output luminosity to the requested luminosity specified in the
+<a class="reference internal" href="../../io/configuration/components/supernova.html"><span class="doc">supernova configuration</span></a> between the bounds specified in the supernova configuration. However, there is not necessarily a quartic relationship between <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> and the output luminosity, as changing <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> also changes the frequency distribution of the initialized packets (once again see <a class="reference internal" href="../montecarlo/initialization.html"><span class="doc">Energy Packet Initialization</span></a>). This then affects the light-matter interactions,
+affecting which packets make it to the outer boundary, which also affects the output luminosity. Because of this, there is not an exact way to estimate <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>. To do this estimation, we use</p>
+<div class="math notranslate nohighlight">
+\[T_\mathrm{inner\ estimated} = T_\mathrm{inner\ current} * \left(\frac{L_\mathrm{output}}{L_\mathrm{requested}}\right)^{\mathrm{t\_inner\_update\_exponent}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(L_\mathrm{output}\)</span> is the output luminosity calculated by adding up the luminosity of each packet (see <a class="reference internal" href="../spectrum/basic.html"><span class="doc">Basic Spectrum Generation</span></a>) between the bounds specified in the <a class="reference internal" href="../../io/configuration/components/supernova.html"><span class="doc">supernova configuration</span></a>, <span class="math notranslate nohighlight">\(L_\mathrm{requested}\)</span> is the luminosity requested also in the supernova configuration (requested between those bounds previously mentioned), and <code class="docutils literal notranslate"><span class="pre">t_inner_update_exponent</span></code> is provided by the user in the
+convergence configuration. Note that what we are doing is “correcting” the previous value of the inner temperature by a factor of <span class="math notranslate nohighlight">\(\left(\frac{L_\mathrm{output}}{L_\mathrm{requested}}\right)^{\mathrm{t\_inner\_update\_exponent}}\)</span>. Note that if <span class="math notranslate nohighlight">\(\frac{L_\mathrm{output}}{L_\mathrm{requested}}\)</span> is greater than 1, we want to lower <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> as the output luminosity is too high, and vice versa if the ratio is less than 1. Thus <code class="docutils literal notranslate"><span class="pre">t_inner_update_exponent</span></code> should be negative.
+Naively one might set <code class="docutils literal notranslate"><span class="pre">t_inner_update_exponent=-0.25</span></code>, however as a default TARDIS uses <code class="docutils literal notranslate"><span class="pre">t_inner_update_exponent=-0.5</span></code> as -0.25 may undershoot the correct <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> because of its previously mentioned effects on the initial frequency distribution.</p>
+<p>After calculating the estimated <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>, the quantity is updated using damped convergence with its own damping constant (once again set in the convergence configuration):</p>
+<div class="math notranslate nohighlight">
+\[T_\mathrm{inner\ updated} = T_\mathrm{inner\ current} + d_{T_\mathrm{inner}}(T_\mathrm{inner\ estimated}-T_\mathrm{inner\ current}).\]</div>
+<p>Once again, If the damping constant is 1, then the updated value is exactly the estimated value, and if the damping constant is zero, the value stays the same throughout the simulation and is not updated.</p>
+<p>Additionally, because of the vast impact of <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> on the simulation, one may want to update it less frequently – i.e. allow <span class="math notranslate nohighlight">\(W\)</span> and <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> to reach a steady-state value for a particular <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> before updating <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>. To do this, in the convergence configuration we set <code class="docutils literal notranslate"><span class="pre">lock_t_inner_cycles</span></code>, which is the number of iterations to wait before updating <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>. It is set to 1 by default, meaning
+<span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> would be updated every iteration.</p>
+</section>
+<section id="Convergence-Information">
+<h2>Convergence Information<a class="headerlink" href="#Convergence-Information" title="Permalink to this heading">¶</a></h2>
+<p>During the simulation, information about the how <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span>, <span class="math notranslate nohighlight">\(W\)</span>, and <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> are updated as well as a comparison of the total output luminosity and the requested luminosity are logged at the INFO level (see <a class="reference internal" href="../../io/optional/logging_configuration.html"><span class="doc">Configuring the Logging Output for TARDIS</span></a>) as shown in the code below, to give users a better idea of how the convergence process is working.</p>
+<p>In addition, TARDIS allows for the displaying of convergence plots, which allows users to visualize the convergence process for <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span>, <span class="math notranslate nohighlight">\(W\)</span>, <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>, and the total luminosity of the supernova being modeled. For more information, see <a class="reference internal" href="../../io/visualization/convergence_plot.html"><span class="doc">Convergence Plots</span></a>.</p>
+</section>
+<section id="Convergence-Criteria">
+<h2>Convergence Criteria<a class="headerlink" href="#Convergence-Criteria" title="Permalink to this heading">¶</a></h2>
+<p>TARDIS also allows users to stop the simulation if the simulation reaches a certain level of convergence, which is checked upon the call of the <code class="docutils literal notranslate"><span class="pre">advance_state</span></code> method. To enable this, users must set <code class="docutils literal notranslate"><span class="pre">stop_if_converged=True</span></code> in the convergence configuration. Also in the configuration, the quantities <code class="docutils literal notranslate"><span class="pre">hold_iterations</span></code>, <code class="docutils literal notranslate"><span class="pre">threshold</span></code>, and <code class="docutils literal notranslate"><span class="pre">fraction</span></code> are be specified to determine convergence as follows:</p>
+<p>For the simulation to be considered to have converged, for <code class="docutils literal notranslate"><span class="pre">hold_iterations</span></code> successive iterations, the estimated values of <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span>, <span class="math notranslate nohighlight">\(W\)</span>, and <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> may differ from the previous value by a fraction of at most <code class="docutils literal notranslate"><span class="pre">threshold</span></code> in at least <code class="docutils literal notranslate"><span class="pre">fraction</span></code> fraction of the shells (for <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>, since there is only one value, the <code class="docutils literal notranslate"><span class="pre">fraction</span></code> part does not apply). For example, if <code class="docutils literal notranslate"><span class="pre">hold_iterations=3</span></code>, <code class="docutils literal notranslate"><span class="pre">threshold=0.05</span></code> for all three quantities, and
+<code class="docutils literal notranslate"><span class="pre">fraction=0.8</span></code>, the simulation will be considered to have converged if for 3 successive iterations the estimated values of <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and <span class="math notranslate nohighlight">\(W\)</span> differ from the current respective values by at most 5% in at least 80% of the shells, <em>and</em> the estimated <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> differs by at most 5%. See the <a class="reference internal" href="../../io/configuration/components/montecarlo.html#damped-convergence-strategy"><span class="std std-ref">convergence configuration schema</span></a> for default values of these quantities.</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Note</p>
+<p>To determine convergence, we compare the estimated value, <strong>not</strong> the updated value (which is related to the estimated value via the damping constant), with the previous value. If <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> is locked (see the previous section), the estimated value will still be calculated so convergence can be checked as usual.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">hold_iterations</span></code> and <code class="docutils literal notranslate"><span class="pre">fraction</span></code> are universal quantities, i.e. they are each a single value that applies to <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and <span class="math notranslate nohighlight">\(W\)</span>, and for <code class="docutils literal notranslate"><span class="pre">hold_iterations</span></code> also <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>. <code class="docutils literal notranslate"><span class="pre">threshold</span></code>, on the other hand, is supplied for each quantity separately, so for instance you could require <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> to differ by less than 1%, <span class="math notranslate nohighlight">\(W\)</span> to differ by less than 3%, and <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span> to differ by less than 5% for convergence to be reached.</p>
+</div>
+</section>
+<section id="Updating-Other-Quantities">
+<h2>Updating Other Quantities<a class="headerlink" href="#Updating-Other-Quantities" title="Permalink to this heading">¶</a></h2>
+<p>Other quantities in the plasma state can depend on other estimators. Currently, this is only implemented for the <code class="docutils literal notranslate"><span class="pre">j_blue</span></code> estimator: If <code class="docutils literal notranslate"><span class="pre">radiative_rates_type</span></code> in the <a class="reference internal" href="../../io/configuration/components/plasma.html"><span class="doc">plasma configuration</span></a> is set to <code class="docutils literal notranslate"><span class="pre">detailed</span></code>, the <code class="docutils literal notranslate"><span class="pre">j_blues</span></code> plasma property will will be replaced with the value of the <span class="math notranslate nohighlight">\(J^b_{lu}\)</span> <a class="reference internal" href="../montecarlo/estimators.html#j-b-lu-estimator"><span class="std std-ref">estimator</span></a> (the raw estimator times the factor of
+<span class="math notranslate nohighlight">\(\frac{ct_\mathrm{explosion}}{4\pi V \Delta t}\)</span>, once again see <a class="reference internal" href="../montecarlo/estimators.html#implementation"><span class="std std-ref">Implementation</span></a>), which would then affect other plasma properties that depend on the <code class="docutils literal notranslate"><span class="pre">j_blues</span></code> values (see <a class="reference internal" href="../setup/plasma/index.html"><span class="doc">Plasma</span></a>). Otherwise, the <code class="docutils literal notranslate"><span class="pre">j_blues</span></code> values in the plasma are calculated as they typically are in the plasma calculations, and the <span class="math notranslate nohighlight">\(J^b_{lu}\)</span> estimator is only used for the <a class="reference internal" href="../spectrum/formal_integral.html"><span class="doc">formal integral</span></a>. Even in
+the former case, while the estimator does contribute to the updating of the plasma when the <code class="docutils literal notranslate"><span class="pre">advance_state</span></code> method is called, it does <strong>not</strong> contribute to the determination of if the simulation has converged, and it does <strong>not</strong> show up in the convergence logging or convergence plots.</p>
+</section>
+<section id="Code-Example">
+<h2>Code Example<a class="headerlink" href="#Code-Example" title="Permalink to this heading">¶</a></h2>
+<p>We now show a detailed example of how the plasma is updated using the estimators after a Monte Carlo iteration. First, we import the necessary packages and set up a simulation (see <a class="reference internal" href="../setup/index.html"><span class="doc">Setting Up the Simulation</span></a>):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tardis.io.config_reader</span> <span class="kn">import</span> <span class="n">Configuration</span>
+<span class="kn">from</span> <span class="nn">tardis.simulation</span> <span class="kn">import</span> <span class="n">Simulation</span>
+<span class="kn">from</span> <span class="nn">tardis.io.atom_data.util</span> <span class="kn">import</span> <span class="n">download_atom_data</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">zeta</span>
+
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span><span class="p">,</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+
+<span class="c1"># We download the atomic data needed to run this notebook</span>
+<span class="n">download_atom_data</span><span class="p">(</span><span class="s1">&#39;kurucz_cd23_chianti_H_He&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda3/envs/tardis/lib/python3.8/site-packages/setuptools_scm/git.py:105: UserWarning: &#34;/home/runner/work/tardis/tardis&#34; is shallow and may cause errors
+  warnings.warn(f&#39;&#34;{wd.path}&#34; is shallow and may cause errors&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "050e72e01a7549fab45a07ef0797ca50"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "caecb7f1237644a5b5bccc1a54a423ef"}</script></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tardis_config</span> <span class="o">=</span> <span class="n">Configuration</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="s1">&#39;tardis_example.yml&#39;</span><span class="p">)</span>
+
+<span class="c1"># We manually put in the damping constants and t_inner_update_exponent for</span>
+<span class="c1"># illustrative purposes:</span>
+<span class="n">d_t_rad</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">d_w</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">d_t_inner</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">t_inner_update_exponent</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+
+<span class="c1"># We set the above values into the configuration:</span>
+<span class="n">tardis_config</span><span class="o">.</span><span class="n">montecarlo</span><span class="o">.</span><span class="n">convergence_strategy</span><span class="o">.</span><span class="n">t_rad</span><span class="o">.</span><span class="n">damping_constant</span> <span class="o">=</span> <span class="n">d_t_rad</span>
+<span class="n">tardis_config</span><span class="o">.</span><span class="n">montecarlo</span><span class="o">.</span><span class="n">convergence_strategy</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">damping_constant</span> <span class="o">=</span> <span class="n">d_w</span>
+<span class="n">tardis_config</span><span class="o">.</span><span class="n">montecarlo</span><span class="o">.</span><span class="n">convergence_strategy</span><span class="o">.</span><span class="n">t_inner</span><span class="o">.</span><span class="n">damping_constant</span> <span class="o">=</span> <span class="n">d_t_inner</span>
+<span class="n">tardis_config</span><span class="o">.</span><span class="n">montecarlo</span><span class="o">.</span><span class="n">convergence_strategy</span><span class="o">.</span><span class="n">t_inner_update_exponent</span> <span class="o">=</span> <span class="n">t_inner_update_exponent</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim</span> <span class="o">=</span> <span class="n">Simulation</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">tardis_config</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">model</span>
+<span class="n">plasma</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">plasma</span>
+<span class="n">runner</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">runner</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/runner/work/tardis/tardis/tardis/plasma/properties/radiative_properties.py:93: RuntimeWarning: invalid value encountered in true_divide
+  (g_lower * n_upper) / (g_upper * n_lower)
+/home/runner/work/tardis/tardis/tardis/plasma/properties/radiative_properties.py:93: RuntimeWarning: invalid value encountered in true_divide
+  (g_lower * n_upper) / (g_upper * n_lower)
+</pre></div></div>
+</div>
+<p>We show the initial radiative temperature and dilution factor in each shell, the initial inner boundary temperature, and the initial electron densities in each shell:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">t_rad</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[9926.502,~9911.6354,~9896.8133,~9882.0354,~9867.3016,~9852.6117,~9837.9654,~9823.3627,~9808.8032,~9794.2868,~9779.8133,~9765.3825,~9750.9943,~9736.6484,~9722.3446,~9708.0828,~9693.8628,~9679.6844,~9665.5474,~9651.4516] \; \mathrm{K}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([0.40039164, 0.33245223, 0.28966798, 0.2577141 , 0.23224568,
+       0.21120466, 0.19341188, 0.17811402, 0.16479446, 0.1530809 ,
+       0.14269498, 0.13342262, 0.12509541, 0.11757849, 0.11076215,
+       0.10455605, 0.09888494, 0.09368554, 0.08890421, 0.08449514])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">t_inner</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$9933.952 \; \mathrm{K}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plasma</span><span class="o">.</span><span class="n">electron_densities</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     2.865134e+09
+1     2.182365e+09
+2     1.678840e+09
+3     1.303472e+09
+4     1.020811e+09
+5     8.059447e+08
+6     6.411609e+08
+7     5.137297e+08
+8     4.144079e+08
+9     3.364195e+08
+10    2.747519e+08
+11    2.256656e+08
+12    1.863476e+08
+13    1.546660e+08
+14    1.289928e+08
+15    1.080764e+08
+16    9.094799e+07
+17    7.685317e+07
+18    6.520063e+07
+19    5.552442e+07
+dtype: float64
+</pre></div></div>
+</div>
+<p>We set the number of packets and we run one iteration of the Monte Carlo simulation:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_packets</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="c1"># Using the commented out code below, we can also get the number of packets</span>
+<span class="c1"># from the configuration -- try it out:</span>
+<span class="c1">#N_packets = tardis_config.montecarlo.no_of_packets</span>
+
+<span class="n">sim</span><span class="o">.</span><span class="n">iterate</span><span class="p">(</span><span class="n">N_packets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "dfdd14930a3943478eacc9e1e7d05e90"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "edfe727b9cb843a188bb0ba93a9f23df"}</script></div>
+</div>
+<p>We now show the values of the <span class="math notranslate nohighlight">\(J\)</span> and <span class="math notranslate nohighlight">\(\bar \nu\)</span> estimators, attaching their proper units (note that these are the raw estimators, and the factors of <span class="math notranslate nohighlight">\(\frac{1}{4\pi V \Delta t}\)</span> etc are not included):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j_estimator</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">j_estimator</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">erg</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="p">)</span>
+<span class="n">j_estimator</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[1.1326488 \times 10^{14},~9.8061971 \times 10^{13},~8.7712772 \times 10^{13},~7.9317802 \times 10^{13},~7.3345267 \times 10^{13},~6.6928878 \times 10^{13},~6.4282524 \times 10^{13},~6.0958957 \times 10^{13},~5.7624491 \times 10^{13},~5.4974415 \times 10^{13},~5.2774217 \times 10^{13},~5.1151601 \times 10^{13},~4.9427818 \times 10^{13},~4.7869045 \times 10^{13},~4.665492 \times 10^{13},~4.5519971 \times 10^{13},~4.4615124 \times 10^{13},~4.3829349 \times 10^{13},~4.314174 \times 10^{13},~4.2213738 \times 10^{13}] \; \mathrm{cm\,erg}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nu_bar_estimator</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">nu_bar_estimator</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">erg</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">cm</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Hz</span><span class="p">)</span>
+<span class="n">nu_bar_estimator</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[9.2366972 \times 10^{28},~8.0044096 \times 10^{28},~7.1670115 \times 10^{28},~6.5223323 \times 10^{28},~6.0428657 \times 10^{28},~5.4875986 \times 10^{28},~5.2989335 \times 10^{28},~5.0217767 \times 10^{28},~4.7280809 \times 10^{28},~4.5065464 \times 10^{28},~4.3091838 \times 10^{28},~4.1273178 \times 10^{28},~3.9768577 \times 10^{28},~3.8148873 \times 10^{28},~3.6815176 \times 10^{28},~3.5592959 \times 10^{28},~3.4670082 \times 10^{28},~3.3847244 \times 10^{28},~3.3295518 \times 10^{28},~3.2424102 \times 10^{28}] \; \mathrm{Hz\,cm\,erg}$</div></div>
+</div>
+<p>We show the values of <span class="math notranslate nohighlight">\(J\)</span> and <span class="math notranslate nohighlight">\(\bar \nu\)</span> including the prefactor:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">volume</span>
+<span class="n">Delta_t</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">calculate_time_of_simulation</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">prefactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">Delta_t</span><span class="p">)</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">prefactor</span> <span class="o">*</span> <span class="n">j_estimator</span>
+<span class="n">J</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[9.4551879 \times 10^{10},~7.567263 \times 10^{10},~6.2755999 \times 10^{10},~5.2761131 \times 10^{10},~4.5475679 \times 10^{10},~3.8772285 \times 10^{10},~3.4871487 \times 10^{10},~3.1030738 \times 10^{10},~2.7579736 \times 10^{10},~2.4784064 \times 10^{10},~2.2450014 \times 10^{10},~2.0565932 \times 10^{10},~1.8811671 \times 10^{10},~1.727086 \times 10^{10},~1.5979504 \times 10^{10},~1.4819967 \times 10^{10},~1.3824559 \times 10^{10},~1.2941252 \times 10^{10},~1.2151917 \times 10^{10},~1.1355541 \times 10^{10}] \; \mathrm{\frac{erg}{s\,cm^{2}}}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nu_bar</span> <span class="o">=</span> <span class="n">prefactor</span> <span class="o">*</span> <span class="n">nu_bar_estimator</span>
+<span class="n">nu_bar</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[7.7106609 \times 10^{25},~6.1768566 \times 10^{25},~5.1277933 \times 10^{25},~4.3385674 \times 10^{25},~3.7467096 \times 10^{25},~3.1789975 \times 10^{25},~2.8745246 \times 10^{25},~2.5563009 \times 10^{25},~2.2629132 \times 10^{25},~2.0316821 \times 10^{25},~1.8331155 \times 10^{25},~1.6594229 \times 10^{25},~1.5135472 \times 10^{25},~1.3763881 \times 10^{25},~1.2609351 \times 10^{25},~1.1588024 \times 10^{25},~1.0742962 \times 10^{25},~9.9938903 \times 10^{24},~9.3784896 \times 10^{24},~8.7221185 \times 10^{24}] \; \mathrm{\frac{Hz\,erg}{s\,cm^{2}}}$</div></div>
+</div>
+<p>As mentioned <a class="reference internal" href="../montecarlo/estimators.html#j-and-bar-nu-estimators"><span class="std std-ref">here</span></a>, <span class="math notranslate nohighlight">\(\bar \nu\)</span> is not truly the mean frequency (as you can see by units). We show the true mean frequency, which will, as expected, be in units of Hz.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nu_bar</span><span class="o">/</span><span class="n">J</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[8.1549525 \times 10^{14},~8.1626032 \times 10^{14},~8.171001 \times 10^{14},~8.2230371 \times 10^{14},~8.2389307 \times 10^{14},~8.1991493 \times 10^{14},~8.2431946 \times 10^{14},~8.2379637 \times 10^{14},~8.2049851 \times 10^{14},~8.1975341 \times 10^{14},~8.1653201 \times 10^{14},~8.0687949 \times 10^{14},~8.0457885 \times 10^{14},~7.9694242 \times 10^{14},~7.8909526 \times 10^{14},~7.8191964 \times 10^{14},~7.7709258 \times 10^{14},~7.7225066 \times 10^{14},~7.717704 \times 10^{14},~7.6809361 \times 10^{14}] \; \mathrm{Hz}$</div></div>
+</div>
+<p>We show the calculations of the estimated and updated <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and <span class="math notranslate nohighlight">\(W\)</span>. Note that the <code class="docutils literal notranslate"><span class="pre">decompose()</span></code> method is used to simplify the units:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_rad_estimated</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">h</span><span class="o">.</span><span class="n">cgs</span> <span class="o">/</span> <span class="n">const</span><span class="o">.</span><span class="n">k_B</span><span class="o">.</span><span class="n">cgs</span><span class="p">)</span>
+                   <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="p">(</span><span class="mi">360</span> <span class="o">*</span> <span class="n">zeta</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+                   <span class="o">*</span> <span class="p">(</span><span class="n">nu_bar_estimator</span> <span class="o">/</span> <span class="n">j_estimator</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+<span class="n">t_rad_estimated</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[10212.753,~10222.334,~10232.851,~10298.018,~10317.922,~10268.102,~10323.262,~10316.711,~10275.41,~10266.079,~10225.736,~10104.854,~10076.043,~9980.4086,~9882.1358,~9792.2728,~9731.8217,~9671.1846,~9665.17,~9619.1242] \; \mathrm{K}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_rad_updated</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">t_rad</span> <span class="o">+</span> <span class="n">d_t_rad</span> <span class="o">*</span> <span class="p">(</span><span class="n">t_rad_estimated</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">t_rad</span><span class="p">)</span>
+<span class="n">t_rad_updated</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[10069.627,~10066.985,~10064.832,~10090.027,~10092.612,~10060.357,~10080.614,~10070.037,~10042.107,~10030.183,~10002.775,~9935.1185,~9913.5184,~9858.5285,~9802.2402,~9750.1778,~9712.8422,~9675.4345,~9665.3587,~9635.2879] \; \mathrm{K}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_estimated</span> <span class="o">=</span> <span class="p">(</span> <span class="n">j_estimator</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">const</span><span class="o">.</span><span class="n">sigma_sb</span><span class="o">.</span><span class="n">cgs</span> <span class="o">*</span> <span class="n">t_rad_estimated</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">Delta_t</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+<span class="n">w_estimated</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[0.4815458,~0.38395229,~0.31710812,~0.25991915,~0.22230487,~0.19324105,~0.17011454,~0.15176296,~0.13706675,~0.12362115,~0.11375668,~0.10928659,~0.10111279,~0.096440481,~0.092832218,~0.089300099,~0.085391259,~0.081958935,~0.077151699,~0.073485967] \; \mathrm{}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_updated</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">w</span> <span class="o">+</span> <span class="n">d_w</span> <span class="o">*</span> <span class="p">(</span><span class="n">w_estimated</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>
+<span class="n">w_updated</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[0.42473789,~0.34790225,~0.29790002,~0.25837561,~0.22926344,~0.20581558,~0.18642268,~0.1702087,~0.15647615,~0.14424298,~0.13401349,~0.12618181,~0.11790062,~0.11123709,~0.10538317,~0.099979266,~0.094836833,~0.090167556,~0.085378458,~0.08119239] \; \mathrm{}$</div></div>
+</div>
+<p>We show the output and requested luminosities, and use these to calculate the estimated and updated <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The output luminosity is calculated between the bounds specified below</span>
+<span class="n">nu_lower</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">nu_upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+<span class="c1"># Using the commented out code below, we can also get the frequency bounds</span>
+<span class="c1"># from the configuration -- try it out (note we convert between wavelength</span>
+<span class="c1"># and frequency, and thus the order switches):</span>
+<span class="c1">#nu_lower = tardis_config.supernova.luminosity_wavelength_end.to(u.Hz, u.spectral)</span>
+<span class="c1">#nu_upper = tardis_config.supernova.luminosity_wavelength_start.to(u.Hz, u.spectral)</span>
+
+<span class="n">L_output</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">calculate_emitted_luminosity</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">L_output</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$7.9806817 \times 10^{42} \; \mathrm{\frac{erg}{s}}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_requested</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">luminosity_requested</span>
+<span class="n">L_requested</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$1.0592764 \times 10^{43} \; \mathrm{\frac{erg}{s}}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_inner_estimated</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">t_inner</span> <span class="o">*</span> <span class="p">(</span><span class="n">L_output</span> <span class="o">/</span> <span class="n">L_requested</span><span class="p">)</span><span class="o">**</span><span class="n">t_inner_update_exponent</span>
+<span class="n">t_inner_estimated</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$11444.76 \; \mathrm{K}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_inner_updated</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">t_inner</span> <span class="o">+</span> <span class="n">d_t_inner</span> <span class="o">*</span> <span class="p">(</span><span class="n">t_inner_estimated</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">t_inner</span><span class="p">)</span>
+<span class="n">t_inner_updated</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$10991.518 \; \mathrm{K}$</div></div>
+</div>
+<p>We now advance the state of the simulation based on the estimators. This will also display a summary of the updated values of <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span> and <span class="math notranslate nohighlight">\(W\)</span>. Additionally, the <code class="docutils literal notranslate"><span class="pre">advance_state()</span></code> method checks for convergence and returns the convergence status as shown below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim</span><span class="o">.</span><span class="n">advance_state</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<style  type="text/css" >
+</style><table id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bca" ><thead>    <tr>        <th class="index_name level0" >Shell No.</th>        <th class="col_heading level0 col0" >t_rad</th>        <th class="col_heading level0 col1" >next_t_rad</th>        <th class="col_heading level0 col2" >w</th>        <th class="col_heading level0 col3" >next_w</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcalevel0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow0_col0" class="data row0 col0" >9.93e+03</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow0_col1" class="data row0 col1" >1.01e+04</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow0_col2" class="data row0 col2" >0.4</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow0_col3" class="data row0 col3" >0.425</td>
+            </tr>
+            <tr>
+                        <th id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcalevel0_row1" class="row_heading level0 row1" >5</th>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow1_col0" class="data row1 col0" >9.85e+03</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow1_col1" class="data row1 col1" >1.01e+04</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow1_col2" class="data row1 col2" >0.211</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow1_col3" class="data row1 col3" >0.206</td>
+            </tr>
+            <tr>
+                        <th id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcalevel0_row2" class="row_heading level0 row2" >10</th>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow2_col0" class="data row2 col0" >9.78e+03</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow2_col1" class="data row2 col1" >1e+04</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow2_col2" class="data row2 col2" >0.143</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow2_col3" class="data row2 col3" >0.134</td>
+            </tr>
+            <tr>
+                        <th id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcalevel0_row3" class="row_heading level0 row3" >15</th>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow3_col0" class="data row3 col0" >9.71e+03</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow3_col1" class="data row3 col1" >9.75e+03</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow3_col2" class="data row3 col2" >0.105</td>
+                        <td id="T_9a9c0a34_78eb_11ed_828d_6045bd7a5bcarow3_col3" class="data row3 col3" >0.1</td>
+            </tr>
+    </tbody></table></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/runner/work/tardis/tardis/tardis/plasma/properties/radiative_properties.py:93: RuntimeWarning: invalid value encountered in true_divide
+  (g_lower * n_upper) / (g_upper * n_lower)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>Finally, we show the full updated <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span>, <span class="math notranslate nohighlight">\(W\)</span>, and <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>, as well as the updated electron densities which were updated along with the rest of the plasma based on the new values for <span class="math notranslate nohighlight">\(T_\mathrm{rad}\)</span>, <span class="math notranslate nohighlight">\(W\)</span>, and <span class="math notranslate nohighlight">\(T_\mathrm{inner}\)</span>. Compare these with our calculations above and with the initial values at the beginning of the code example!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">t_rad</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$[10069.626,~10066.983,~10064.831,~10090.025,~10092.61,~10060.355,~10080.612,~10070.035,~10042.105,~10030.182,~10002.773,~9935.1171,~9913.5171,~9858.5271,~9802.2388,~9750.1765,~9712.8409,~9675.4331,~9665.3574,~9635.2866] \; \mathrm{K}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([0.42473789, 0.34790225, 0.29790003, 0.25837562, 0.22926344,
+       0.20581558, 0.18642268, 0.1702087 , 0.15647615, 0.14424298,
+       0.1340135 , 0.12618181, 0.11790063, 0.11123709, 0.10538317,
+       0.09997927, 0.09483683, 0.09016756, 0.08537846, 0.08119239])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">t_inner</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+$10991.518 \; \mathrm{K}$</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plasma</span><span class="o">.</span><span class="n">electron_densities</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     2.879194e+09
+1     2.192349e+09
+2     1.686013e+09
+3     1.309369e+09
+4     1.025252e+09
+5     8.089293e+08
+6     6.437049e+08
+7     5.156985e+08
+8     4.158632e+08
+9     3.375895e+08
+10    2.756466e+08
+11    2.262224e+08
+12    1.867888e+08
+13    1.549413e+08
+14    1.291439e+08
+15    1.081434e+08
+16    9.097366e+07
+17    7.684827e+07
+18    6.520044e+07
+19    5.551064e+07
+dtype: float64
+</pre></div></div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"5f3707083a694ac3b89ced1d34a08985": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bb3b9994710547a6b182aa4b282c72eb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "137a264b2906410e9c2b112cce46ae00": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "0e6d4dbb33f54e789915f71f34e3419b": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "28863fd2f9dd4060b202a7fcbf20c293": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_bb3b9994710547a6b182aa4b282c72eb", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_0e6d4dbb33f54e789915f71f34e3419b", "value": 0.0}}, "e123a4c38cc3486b939292396706da38": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "info", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_bb3b9994710547a6b182aa4b282c72eb", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_0e6d4dbb33f54e789915f71f34e3419b", "value": 0.0}}, "bbccff61b3714d9c9561a187f92c7737": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3599547bd6334ced98ba43a92e11d094": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4ac29738bf6c44408cc5f1724677b5e7": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "05103974f9014cbeb6a2f5b2bc15d8a8": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d130442daf794691bee8c4c899481e5b": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3599547bd6334ced98ba43a92e11d094", "placeholder": "\u200b", "style": "IPY_MODEL_05103974f9014cbeb6a2f5b2bc15d8a8", "value": ""}}, "a09c974edbe24c6fb21374d08e1e8de5": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3599547bd6334ced98ba43a92e11d094", "placeholder": "\u200b", "style": "IPY_MODEL_05103974f9014cbeb6a2f5b2bc15d8a8", "value": "Iterations:"}}, "5bb4a0d5391243549d8a23c163215c06": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "872ae4da64b447b881cfcdcb7aa127b0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2fb8a8dafe2348ad9308affd444ccd09": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "55c4fa73265a4ecbaa3549cd1830aeb0": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "5a3d3c0f9c954f8ea28d9bc73230dd73": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_872ae4da64b447b881cfcdcb7aa127b0", "placeholder": "\u200b", "style": "IPY_MODEL_55c4fa73265a4ecbaa3549cd1830aeb0", "value": ""}}, "62ef8f67455c4f25bdbf992244896f3f": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_872ae4da64b447b881cfcdcb7aa127b0", "placeholder": "\u200b", "style": "IPY_MODEL_55c4fa73265a4ecbaa3549cd1830aeb0", "value": "0/? [00:00&lt;?, ?it/s]"}}, "b2e3b878830f4351ba18d1960fe6733b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ea1eafd04ce940c2a0cfc8f39fc8cd0a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1bfaa54eea64472db6efebe5fb15cfd9": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_a09c974edbe24c6fb21374d08e1e8de5", "IPY_MODEL_e123a4c38cc3486b939292396706da38", "IPY_MODEL_62ef8f67455c4f25bdbf992244896f3f"], "layout": "IPY_MODEL_ea1eafd04ce940c2a0cfc8f39fc8cd0a"}}, "050e72e01a7549fab45a07ef0797ca50": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_a09c974edbe24c6fb21374d08e1e8de5", "IPY_MODEL_e123a4c38cc3486b939292396706da38", "IPY_MODEL_62ef8f67455c4f25bdbf992244896f3f"], "layout": "IPY_MODEL_ea1eafd04ce940c2a0cfc8f39fc8cd0a"}}, "fde40d4e4e9049968103216fd138477a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "06c1ea91818d455e9feedf680777b859": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "e30bfaa29f0044b191989368e9971666": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "cd4e270f449e4c1ba7207c241108a479": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "2daf5136d3c147f9b8156fd89b307d0a": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_06c1ea91818d455e9feedf680777b859", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_cd4e270f449e4c1ba7207c241108a479", "value": 0.0}}, "9b2f755f5dfa4ed4a4c7a7782c6d0152": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "info", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_06c1ea91818d455e9feedf680777b859", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_cd4e270f449e4c1ba7207c241108a479", "value": 0.0}}, "bf809be67c064f4e89a579c8a48106f8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5aff1c6f0260442ab0de7782132ece89": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c6761221d1d847daabbf6272364bf326": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "371342275baa469cab15ca7c4c6235ae": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d53948998f344e959a031a2d22dda7ce": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5aff1c6f0260442ab0de7782132ece89", "placeholder": "\u200b", "style": "IPY_MODEL_371342275baa469cab15ca7c4c6235ae", "value": ""}}, "05efe65b11ae4a8dae269040a4aa8c05": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5aff1c6f0260442ab0de7782132ece89", "placeholder": "\u200b", "style": "IPY_MODEL_371342275baa469cab15ca7c4c6235ae", "value": "Packets:   "}}, "6b58052547e64a42951c25e919a9a3a7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a3aa5a396eeb4780be0d037810b3bafa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "41d72cde047b4a7b9245c493c8c2faf1": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "8734182f64fc447c8135f92632467016": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "658f8c84cff9497baa74fb5f16ad9194": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a3aa5a396eeb4780be0d037810b3bafa", "placeholder": "\u200b", "style": "IPY_MODEL_8734182f64fc447c8135f92632467016", "value": ""}}, "a77cb67af48744fb8c025a2e20625102": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a3aa5a396eeb4780be0d037810b3bafa", "placeholder": "\u200b", "style": "IPY_MODEL_8734182f64fc447c8135f92632467016", "value": "0/? [00:00&lt;?, ?it/s]"}}, "9b7abc02912a4604be149b044bd63085": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6829eb495be640cfae0dba5b67699fa8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0243889a360b4493bbe19ac0e16436fe": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_05efe65b11ae4a8dae269040a4aa8c05", "IPY_MODEL_9b2f755f5dfa4ed4a4c7a7782c6d0152", "IPY_MODEL_a77cb67af48744fb8c025a2e20625102"], "layout": "IPY_MODEL_6829eb495be640cfae0dba5b67699fa8"}}, "caecb7f1237644a5b5bccc1a54a423ef": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_05efe65b11ae4a8dae269040a4aa8c05", "IPY_MODEL_9b2f755f5dfa4ed4a4c7a7782c6d0152", "IPY_MODEL_a77cb67af48744fb8c025a2e20625102"], "layout": "IPY_MODEL_6829eb495be640cfae0dba5b67699fa8"}}, "3717c077a2944afea5f3bf19c055c382": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "72fbaa5f5ab946b690f4d12c5eff6f55": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d484b50f2bf74488b18447e58560fd0b": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_72fbaa5f5ab946b690f4d12c5eff6f55", "msg_id": "", "outputs": []}}, "92f8197e34f04b4cb1391bc2e0fc994c": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_72fbaa5f5ab946b690f4d12c5eff6f55", "msg_id": "", "outputs": []}}, "1735fd43b9864ed49065b56b9e9bc813": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a4e4065e1b0849edac529d2fc23ceaf8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b1200049ec264bc6a9ce7b779b36c916": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_a4e4065e1b0849edac529d2fc23ceaf8", "msg_id": "", "outputs": []}}, "3c7449d2b5a242cf9649730ee70983ce": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_a4e4065e1b0849edac529d2fc23ceaf8", "msg_id": "", "outputs": []}}, "bdcc406aca394f9c8b36e1d209aa8b4f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d495b9ed975e451598ea33a88118a310": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60%"}}, "797cf1c3db0d458cbfffd6bef5faff0f": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "09f75d36b6b94ec8aebc9d11efee9357": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "b4042e81cafa4e43b000dd7022a16cb7": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d495b9ed975e451598ea33a88118a310", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_09f75d36b6b94ec8aebc9d11efee9357", "value": 0.0}}, "d588e859c77b4502ab64f027fd80c85a": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d495b9ed975e451598ea33a88118a310", "max": 20.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_09f75d36b6b94ec8aebc9d11efee9357", "value": 1.0}}, "b804a7728f58478ba9869a90a2a61587": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c872d89468ed4fb580e4271639ab226a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "6%"}}, "be742e979b1d4e1aa49de83114860d7d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "9c43c7ff2f184939b1b724d5595fe797": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "511d77fddfe243ecaecfb12007d50bf2": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c872d89468ed4fb580e4271639ab226a", "placeholder": "\u200b", "style": "IPY_MODEL_9c43c7ff2f184939b1b724d5595fe797", "value": ""}}, "ced81e5faa454844a48a80dbacb32772": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c872d89468ed4fb580e4271639ab226a", "placeholder": "\u200b", "style": "IPY_MODEL_9c43c7ff2f184939b1b724d5595fe797", "value": "Iterations:"}}, "8b0c8896c0244831b919e904e4091dab": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0b6d39a1730c4defaf8e17872a30cf7c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a8f37632de09418b8314e2acde2675cf": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "05014c365da4472081ce6f63d850ed39": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "0fb11e7fe2df4ec8824488909148c26c": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0b6d39a1730c4defaf8e17872a30cf7c", "placeholder": "\u200b", "style": "IPY_MODEL_05014c365da4472081ce6f63d850ed39", "value": ""}}, "753a099242ee43de87bfa24deaf14798": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0b6d39a1730c4defaf8e17872a30cf7c", "placeholder": "\u200b", "style": "IPY_MODEL_05014c365da4472081ce6f63d850ed39", "value": "1/20 [00:00&lt;00:03,  5.89it/s]"}}, "99e5e517dfd047499aa8d427b73914a3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "681d569e796b484aaf8559e97420af3d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "38602c1d6a4747c18b6713201002550b": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ced81e5faa454844a48a80dbacb32772", "IPY_MODEL_d588e859c77b4502ab64f027fd80c85a", "IPY_MODEL_753a099242ee43de87bfa24deaf14798"], "layout": "IPY_MODEL_681d569e796b484aaf8559e97420af3d"}}, "dfdd14930a3943478eacc9e1e7d05e90": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ced81e5faa454844a48a80dbacb32772", "IPY_MODEL_d588e859c77b4502ab64f027fd80c85a", "IPY_MODEL_753a099242ee43de87bfa24deaf14798"], "layout": "IPY_MODEL_681d569e796b484aaf8559e97420af3d"}}, "d7060e6997584ad680b8e028ed3e2dc6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2c022649089a4722a5990e581de71ddf": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "60%"}}, "b7f354da0ea0468db81aa29763f874d6": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "2843b8812901441bbf46f94cc7edbc16": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "af5fcd493f9b43c7a8a43c773b8e1d0b": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2c022649089a4722a5990e581de71ddf", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_2843b8812901441bbf46f94cc7edbc16", "value": 0.0}}, "789b0edfe03e4a51909a7f23c6348855": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2c022649089a4722a5990e581de71ddf", "max": 10000.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_2843b8812901441bbf46f94cc7edbc16", "value": 8086.0}}, "d0b034a59b0d4e5fa3e83b5a74e9e28b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "34b1fd137f1c470a8dd8c92660be2b23": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "6%"}}, "b1516c987ac345dc852f83bf17642c7b": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "9d609c9ba0224ed290dec07090afb947": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "180a61d2cfc848bfb4e7aadc033fc497": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_34b1fd137f1c470a8dd8c92660be2b23", "placeholder": "\u200b", "style": "IPY_MODEL_9d609c9ba0224ed290dec07090afb947", "value": ""}}, "9c0810e5df9745d3ae9d793801949c67": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_34b1fd137f1c470a8dd8c92660be2b23", "placeholder": "\u200b", "style": "IPY_MODEL_9d609c9ba0224ed290dec07090afb947", "value": "Packets:   "}}, "04a4e3802060437386e700123c3308b6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dc6448d9d67148148da59a2cf83e40c6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "87a848692e4e45fbb8e6ee702e5e622d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "4de3c333c67d4c418ebf33146b112d66": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "ce2bed0683df47768655f910d036b396": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_dc6448d9d67148148da59a2cf83e40c6", "placeholder": "\u200b", "style": "IPY_MODEL_4de3c333c67d4c418ebf33146b112d66", "value": ""}}, "b4de82cc219240bfb989d2a34aec7df5": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_dc6448d9d67148148da59a2cf83e40c6", "placeholder": "\u200b", "style": "IPY_MODEL_4de3c333c67d4c418ebf33146b112d66", "value": "8086/10000 [00:00&lt;00:00, 80856.61it/s]"}}, "94c56fca2b914595a3c018d9e3ab2d71": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "39a800785bf6491eb9f352afff79e1fc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "83342c11383b4b16b9ad39cdd01e9ad2": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_9c0810e5df9745d3ae9d793801949c67", "IPY_MODEL_789b0edfe03e4a51909a7f23c6348855", "IPY_MODEL_b4de82cc219240bfb989d2a34aec7df5"], "layout": "IPY_MODEL_39a800785bf6491eb9f352afff79e1fc"}}, "edfe727b9cb843a188bb0ba93a9f23df": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_9c0810e5df9745d3ae9d793801949c67", "IPY_MODEL_789b0edfe03e4a51909a7f23c6348855", "IPY_MODEL_b4de82cc219240bfb989d2a34aec7df5"], "layout": "IPY_MODEL_39a800785bf6491eb9f352afff79e1fc"}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../montecarlo/estimators.html" class="btn btn-neutral float-left" title="Volume-Based Estimators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../spectrum/index.html" class="btn btn-neutral float-right" title="Spectrum Generation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 11 Dec 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
