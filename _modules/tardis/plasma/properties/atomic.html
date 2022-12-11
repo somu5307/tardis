@@ -743,7 +743,7 @@ __all__ = [
         zeta_data_check = counter(zeta_data.atomic_number.values)
         keys = np.array(list(zeta_data_check.keys()))
         values = np.array(zeta_data_check.values())
-        if np.alltrue(keys + 1 == values):
+        if np.alltrue(keys + 1 == values) and keys:
             return zeta_data
         else:
             #            raise IncompleteAtomicData(&#39;zeta data&#39;)
@@ -979,7 +979,7 @@ __all__ = [
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 07 Dec 2022.
+      <span class="lastupdated">Last updated on 11 Dec 2022.
       </span></p>
   </div>
 
