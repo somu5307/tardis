@@ -15,6 +15,7 @@ Subpackages
    tardis.scripts
    tardis.simulation
    tardis.stats
+   tardis.transport
    tardis.util
    tardis.visualization
 
