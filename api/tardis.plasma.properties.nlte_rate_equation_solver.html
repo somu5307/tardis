@@ -266,37 +266,37 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>gamma</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for radiative ionization.</p>
+<dt><strong>gamma</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for radiative ionization.</p>
 </dd>
-<dt><strong>alpha_sp</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for spontaneous recombination.</p>
+<dt><strong>alpha_sp</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for spontaneous recombination.</p>
 </dd>
-<dt><strong>alpha_stim</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for stimulated recombination.</p>
+<dt><strong>alpha_stim</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for stimulated recombination.</p>
 </dd>
-<dt><strong>coll_ion_coeff</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for collisional ionization in the Seaton
+<dt><strong>coll_ion_coeff</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for collisional ionization in the Seaton
 approximation.</p>
 </dd>
-<dt><strong>coll_recomb_coeff</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for collisional recombination.</p>
+<dt><strong>coll_recomb_coeff</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for collisional recombination.</p>
 </dd>
-<dt><strong>partition_function</strong><span class="classifier">DataFrame</span></dt><dd><p>General partition function. Indexed by atomic number, ion number.</p>
+<dt><strong>partition_function</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>General partition function. Indexed by atomic number, ion number.</p>
 </dd>
 <dt><strong>levels</strong><span class="classifier">MultiIndex</span></dt><dd><p>(atomic_number, ion_number, level_number)
 Index of filtered atomic data.</p>
 </dd>
-<dt><strong>level_boltzmann_factor</strong><span class="classifier">DataFrame</span></dt><dd><p>General Boltzmann factor.</p>
+<dt><strong>level_boltzmann_factor</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>General Boltzmann factor.</p>
 </dd>
-<dt><strong>phi</strong><span class="classifier">DataFrame</span></dt><dd><p>Saha Factors.</p>
+<dt><strong>phi</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Saha Factors.</p>
 </dd>
 <dt><strong>rate_matrix_index</strong><span class="classifier">MultiIndex</span></dt><dd><p>(atomic_number, ion_number, treatment type)
 If ion is treated in LTE or nebular ionization, 3rd index is “lte_ion”,
 if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
-<dt><strong>number_density</strong><span class="classifier">DataFrame</span></dt><dd><p>Number density in each shell for each species.</p>
+<dt><strong>number_density</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Number density in each shell for each species.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>ion_number_densities_nlte</strong><span class="classifier">DataFrame</span></dt><dd><p>Number density with NLTE ionization treatment.</p>
+<dt><strong>ion_number_densities_nlte</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Number density with NLTE ionization treatment.</p>
 </dd>
 <dt><strong>electron_densities_nlte</strong><span class="classifier">Series</span></dt><dd><p>Electron density with NLTE ionization treatment.</p>
 </dd>
@@ -311,25 +311,25 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>phi_shell</strong><span class="classifier">DataFrame</span></dt><dd><p>Saha Factors in the current shell</p>
+<dt><strong>phi_shell</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Saha Factors in the current shell</p>
 </dd>
 <dt><strong>electron_density</strong><span class="classifier">float</span></dt><dd><p>Guess for electron density in the current shell</p>
 </dd>
-<dt><strong>rate_matrix_index</strong><span class="classifier">MultiIndex</span></dt><dd><p>Index used for constructing the rate matrix</p>
+<dt><strong>rate_matrix_index</strong><span class="classifier">pandas.MultiIndex</span></dt><dd><p>Index used for constructing the rate matrix</p>
 </dd>
-<dt><strong>total_photo_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Photo ionization coefficients</p>
+<dt><strong>total_photo_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Photo ionization coefficients</p>
 </dd>
-<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Radiative recombination coefficients (should get multiplied by electron density)</p>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Radiative recombination coefficients (should get multiplied by electron density)</p>
 </dd>
-<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional ionization coefficients (should get multiplied by electron density)</p>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional ionization coefficients (should get multiplied by electron density)</p>
 </dd>
-<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional recombination coefficients (should get multiplied by electron density^2)</p>
+<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional recombination coefficients (should get multiplied by electron density^2)</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>DataFrame</dt><dd><p>Rate matrix used for NLTE solver.</p>
+<dt>pandas.DataFrame</dt><dd><p>Rate matrix used for NLTE solver.</p>
 </dd>
 </dl>
 </dd>
@@ -345,11 +345,11 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>atomic_number</strong><span class="classifier">int64</span></dt><dd><p>Current atomic number</p>
 </dd>
-<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
 </dd>
-<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional ionization coefficients.</p>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional ionization coefficients.</p>
 </dd>
-<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional recombination coefficients.</p>
+<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional recombination coefficients.</p>
 </dd>
 <dt><strong>current_ion_number_densities</strong><span class="classifier">numpy.array</span></dt><dd><p>Current ion number densities for the current atomic number.</p>
 </dd>
@@ -373,7 +373,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Recombination coefficients.</p>
+<dt><strong>ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Recombination coefficients.</p>
 </dd>
 <dt><strong>atomic_number</strong><span class="classifier">int64</span></dt><dd><p>Current atomic number. Used for the dimension of a square matrix.</p>
 </dd>
@@ -398,17 +398,17 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>populations</strong><span class="classifier">numpy.array</span></dt><dd><p>Ion populations, electron density</p>
 </dd>
-<dt><strong>rate_matrix</strong><span class="classifier">DataFrame</span></dt><dd><p>Rate matrix used for NLTE solver.</p>
+<dt><strong>rate_matrix</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Rate matrix used for NLTE solver.</p>
 </dd>
 <dt><strong>rate_matrix_index</strong><span class="classifier">MultiIndex</span></dt><dd><p>(atomic_number, ion_number, treatment type)
 If ion is treated in LTE or nebular ionization, 3rd index is “lte_ion”,
 if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
-<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Radiative recombination coefficients grouped by atomic number and ion number.</p>
 </dd>
-<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional ionization coefficients(should get multiplied by electron density).</p>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional ionization coefficients(should get multiplied by electron density).</p>
 </dd>
-<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Collisional recombination coefficients(should get multiplied by electron density).</p>
+<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional recombination coefficients(should get multiplied by electron density).</p>
 </dd>
 </dl>
 </dd>
@@ -428,7 +428,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>phi_block</strong><span class="classifier">DataFrame</span></dt><dd><p>Saha Factors for current atomic number</p>
+<dt><strong>phi_block</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Saha Factors for current atomic number</p>
 </dd>
 <dt><strong>electron_density</strong><span class="classifier">float</span></dt><dd><p>Current guess for electron density</p>
 </dd>
@@ -449,6 +449,45 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.population_objective_function">
+<span class="sig-name descname"><span class="pre">population_objective_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">populations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_photo_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.population_objective_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.population_objective_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main set of equations for the NLTE ionization solver.</p>
+<p>To solve the statistical equilibrium equations, we need to find the root
+of the objective function A*x - B, where x are the populations,
+A is the matrix of rates, and B is the solution vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>populations</strong><span class="classifier">numpy.array</span></dt><dd><p>Current values of ion number densities and electron density.</p>
+</dd>
+<dt><strong>atomic_numbers</strong><span class="classifier">numpy.array</span></dt><dd><p>All atomic numbers present in the plasma.</p>
+</dd>
+<dt><strong>phi</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Saha Factors of the current shell.</p>
+</dd>
+<dt><strong>solution_vector</strong><span class="classifier">numpy.array</span></dt><dd><p>Solution vector for the set of equations.</p>
+</dd>
+<dt><strong>rate_matrix_index</strong><span class="classifier">pandas.MultiIndex</span></dt><dd><p>(atomic_number, ion_number, treatment type)
+If ion is treated in LTE or nebular ionization, 3rd index is “lte_ion”,
+if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
+</dd>
+<dt><strong>total_photo_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Photo ion. coefficients for current atomic number</p>
+</dd>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Radiative recombination coefficients for current atomic number</p>
+</dd>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional ionization coefficients for current atomic number</p>
+</dd>
+<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Coll. recomb. coefficients for current atomic number</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>——-</strong></dt><dd></dd>
+<dt><strong>(numpy.array, numpy.array)</strong></dt><dd><p>Returns the objective function and jacobian of the rate matrix in a tuple.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_charge_conservation_row">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prepare_charge_conservation_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.prepare_charge_conservation_row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_charge_conservation_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prepares the last row of the rate_matrix. This row corresponds to the charge
@@ -458,7 +497,26 @@ density equation.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_first_guess">
 <span class="sig-name descname"><span class="pre">prepare_first_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.prepare_first_guess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_first_guess" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Constructs a first guess for ion number densities and electron density, where all species are singly ionized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>atomic_numbers</strong><span class="classifier">numpy.array</span></dt><dd><p>All atomic numbers present in the plasma.</p>
+</dd>
+<dt><strong>number_density</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Number density of present species.</p>
+</dd>
+<dt><strong>electron_density</strong><span class="classifier">float</span></dt><dd><p>Current value of electron density.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.array</dt><dd><p>Guess for ion number densities and electron density.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_ion_recomb_coefficients_nlte_ion">
@@ -468,23 +526,23 @@ ion numbers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>gamma</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for radiative ionization.</p>
+<dt><strong>gamma</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for radiative ionization.</p>
 </dd>
-<dt><strong>alpha_sp</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for spontaneous recombination.</p>
+<dt><strong>alpha_sp</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for spontaneous recombination.</p>
 </dd>
-<dt><strong>alpha_stim</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for stimulated recombination.</p>
+<dt><strong>alpha_stim</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for stimulated recombination.</p>
 </dd>
-<dt><strong>coll_ion_coeff</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for collisional ionization in the Seaton
+<dt><strong>coll_ion_coeff</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for collisional ionization in the Seaton
 approximation.</p>
 </dd>
-<dt><strong>coll_recomb_coeff</strong><span class="classifier">DataFrame</span></dt><dd><p>The rate coefficient for collisional recombination.</p>
+<dt><strong>coll_recomb_coeff</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for collisional recombination.</p>
 </dd>
-<dt><strong>partition_function</strong><span class="classifier">DataFrame</span></dt><dd><p>General partition function. Indexed by atomic number, ion number.</p>
+<dt><strong>partition_function</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>General partition function. Indexed by atomic number, ion number.</p>
 </dd>
 <dt><strong>levels</strong><span class="classifier">MultiIndex</span></dt><dd><p>(atomic_number, ion_number, level_number)
 Index of filtered atomic data.</p>
 </dd>
-<dt><strong>level_boltzmann_factor</strong><span class="classifier">DataFrame</span></dt><dd><p>General Boltzmann factor.</p>
+<dt><strong>level_boltzmann_factor</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>General Boltzmann factor.</p>
 </dd>
 <dt><strong>Returns</strong></dt><dd></dd>
 <dt><strong>——-</strong></dt><dd></dd>
@@ -508,13 +566,34 @@ Index of filtered atomic data.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_solution_vector">
+<span class="sig-name descname"><span class="pre">prepare_solution_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.prepare_solution_vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_solution_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs the solution vector for the NLTE ionization solver set of equations by combining
+all solution verctor blocks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>number_density</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Number densities of all present species.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.array</dt><dd><p>Solution vector for the NLTE ionization solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.recomb_matrix">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">recomb_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ion_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.recomb_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.recomb_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a recombination rate matrix from the recombination rates.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Recombination coefficients.</p>
+<dt><strong>recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Recombination coefficients.</p>
 </dd>
 <dt><strong>atomic_number</strong><span class="classifier">int64</span></dt><dd><p>Current atomic number. Used for the dimension of a square matrix.</p>
 </dd>
@@ -543,19 +622,43 @@ Index of filtered atomic data.</p>
 </dd>
 <dt><strong>ion_number</strong><span class="classifier">int</span></dt><dd><p>Current ion number</p>
 </dd>
-<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Rad. recomb. coefficients for current atomic number</p>
+<dt><strong>total_rad_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Rad. recomb. coefficients for current atomic number</p>
 </dd>
-<dt><strong>total_photo_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Photo ion. coefficients for current atomic number</p>
+<dt><strong>total_photo_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Photo ionization coefficients for current atomic number</p>
 </dd>
-<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Coll. ion. coefficients for current atomic number</p>
+<dt><strong>total_coll_ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional ionization coefficients for current atomic number</p>
 </dd>
-<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">DataFrame</span></dt><dd><p>Coll. recomb. coefficients for current atomic number</p>
+<dt><strong>total_coll_recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Collisional recombination coefficients for current atomic number</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>Rate matrix block with a changed row for NLTE ionization treatment</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.solution_vector_block">
+<span class="sig-name descname"><span class="pre">solution_vector_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.solution_vector_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.solution_vector_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block of the solution vector for the current atomic number.</p>
+<p>Block for the solution vector has the form (0, 0, …, 0, number_density).
+Length is equal to atomic_number+1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>atomic_number</strong><span class="classifier">int</span></dt><dd><p>Current atomic number.</p>
+</dd>
+<dt><strong>number_density</strong><span class="classifier">float</span></dt><dd><p>Number density of the current atomic number.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.array</dt><dd><p>Block of the solution vector corresponding to the current atomic number.</p>
 </dd>
 </dl>
 </dd>
@@ -582,7 +685,7 @@ Index of filtered atomic data.</p>
     <p>
         &#169; Copyright 2013-2023, TARDIS Collaboration.
       <span class="lastupdated">
-        Last updated on 11 Jan 2023.
+        Last updated on 19 Jan 2023.
       </span>
 
     </p>

@@ -555,7 +555,9 @@ class SpMatrixSeriesConverterMixin(object):
         deactivation_channel_probs = p_deactivation.copy()
         deactivation_channel_probs = pd.concat(
             [
-                level_idxs2transition_idx.loc[deactivation_channel_probs.index],
+                level_idxs2transition_idx.reindex(
+                    deactivation_channel_probs.index
+                ),
                 deactivation_channel_probs,
             ],
             axis=1,
@@ -628,7 +630,7 @@ class SpMatrixSeriesConverterMixin(object):
     <p>
         &#169; Copyright 2013-2023, TARDIS Collaboration.
       <span class="lastupdated">
-        Last updated on 11 Jan 2023.
+        Last updated on 19 Jan 2023.
       </span>
 
     </p>
