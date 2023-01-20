@@ -71,6 +71,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/tools/index.html">Developer Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/CHANGELOG.html">Change Log</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
@@ -80,10 +81,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/code_comparison/index.html">Code Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/zreferences.html">References and Glossary</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Outdated</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../outdated/index.html">Outdated Documentation</a></li>
 </ul>
 
         </div>
@@ -117,6 +114,8 @@ import numpy as np
 import pandas as pd
 from astropy import units as u
 from tardis import constants
+import radioactivedecay as rd
+from radioactivedecay.utils import Z_DICT
 
 from tardis.util.base import quantity_linspace, is_valid_nuclide_or_elem
 from tardis.io.parsers.csvy import load_csvy
@@ -229,13 +228,15 @@ logger = logging.getLogger(__name__)
     density : astropy.units.quantity.Quantity
         An array of densities for each shell.
     isotopic_mass_fraction : pd.DataFrame
-    atomic_mass : pandas.core.series.Series
+    atomic_mass : pd.DataFrame
     atomic_mass_unit: astropy.units.Unit
 
     Attributes
     ----------
-    number_density : pd.DataFrame
-        Number density of each isotope in each shell.
+    atomic_mass : pd.DataFrame
+        Atomic mass of elements calculated for each shell.
+    elemental_number_density : pd.DataFrame
+        Number density of each element in each shell.
     &quot;&quot;&quot;
 
     def __init__(
@@ -248,14 +249,69 @@ logger = logging.getLogger(__name__)
         self.density = density
         self.elemental_mass_fraction = elemental_mass_fraction
         self.atomic_mass_unit = atomic_mass_unit
-        self.atomic_mass = atomic_mass
+        self._atomic_mass = atomic_mass
+
+    @property
+    def atomic_mass(self):
+        &quot;&quot;&quot;Atomic mass of elements in each shell&quot;&quot;&quot;
+        if self._atomic_mass is None:
+            raise AttributeError(
+                &quot;ModelState was not provided elemental masses.&quot;
+            )
+        return self._atomic_mass
 
     @property
     def elemental_number_density(self):
         &quot;&quot;&quot;Elemental Number Density computed using the formula: (elemental_mass_fraction * density) / atomic mass&quot;&quot;&quot;
+        if self.atomic_mass is None:
+            raise AttributeError(
+                &quot;ModelState was not provided elemental masses.&quot;
+            )
         return (self.elemental_mass_fraction * self.density).divide(
             self.atomic_mass, axis=0
         )</div>
+
+
+<div class="viewcode-block" id="ModelState_Experimental"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.ModelState_Experimental">[docs]</a>class ModelState_Experimental:
+    &quot;&quot;&quot;
+    Holds information about model geometry for radial 1D models.
+
+    Parameters
+    ----------
+    composition : tardis.model.Composition
+    geometry : tardis.model.Radial1DGeometry
+    time_explosion : astropy.units.quantity.Quantity
+
+    Attributes
+    ----------
+    mass : pd.DataFrame
+    number : pd.DataFrame
+    &quot;&quot;&quot;
+
+    def __init__(self, composition, geometry, time_explosion):
+        self.time_explosion = time_explosion
+        self.composition = composition
+        self.geometry = geometry
+
+    @property
+    def mass(self):
+        &quot;&quot;&quot;Mass calculated using the formula:
+        mass_fraction * density * volume&quot;&quot;&quot;
+        return (
+            self.composition.elemental_mass_fraction
+            * self.composition.density
+            * self.geometry.volume
+        )
+
+    @property
+    def number(self):
+        &quot;&quot;&quot;Number calculated using the formula:
+        mass / atomic_mass&quot;&quot;&quot;
+        if self.composition.atomic_mass is None:
+            raise AttributeError(
+                &quot;ModelState was not provided elemental masses.&quot;
+            )
+        return (self.mass).divide(self.composition.atomic_mass, axis=0)</div>
 
 
 <div class="viewcode-block" id="Radial1DModel"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Radial1DModel">[docs]</a>class Radial1DModel(HDFWriterMixin):
@@ -274,6 +330,7 @@ logger = logging.getLogger(__name__)
     time_explosion : astropy.units.Quantity
         Time since explosion
     t_inner : astropy.units.Quantity
+    elemental_mass: pd.Series
     luminosity_requested : astropy.units.quantity.Quantity
     t_radiative : astropy.units.Quantity
         Radiative temperature for the shells
@@ -327,6 +384,7 @@ logger = logging.getLogger(__name__)
         isotope_abundance,
         time_explosion,
         t_inner,
+        elemental_mass,
         luminosity_requested=None,
         t_radiative=None,
         dilution_factor=None,
@@ -351,16 +409,60 @@ logger = logging.getLogger(__name__)
                 self.time_explosion
             )[self.v_boundary_inner_index + 1 : self.v_boundary_outer_index + 1]
         )
-        self.model_state = ModelState(
-            v_inner=v_inner,
-            v_outer=v_outer,
-            r_inner=self.time_explosion * v_inner,
-            r_outer=self.time_explosion * v_outer,
-            time_explosion=self.time_explosion,
-            density=density,
-        )
         self.raw_abundance = self._abundance
         self.raw_isotope_abundance = isotope_abundance
+
+        atomic_mass = None
+        if elemental_mass is not None:
+            mass = {}
+            stable_atomic_numbers = self.raw_abundance.index.to_list()
+            for z in stable_atomic_numbers:
+                mass[z] = [
+                    elemental_mass[z]
+                    for i in range(self.raw_abundance.columns.size)
+                ]
+            stable_isotope_mass = pd.DataFrame(mass).T
+
+            isotope_mass = {}
+            for atomic_number, i in self.raw_isotope_abundance.decay(
+                self.time_explosion
+            ).groupby(level=0):
+                i = i.loc[atomic_number]
+                for column in i:
+                    mass = {}
+                    shell_abundances = i[column]
+                    isotopic_masses = [
+                        rd.Nuclide(Z_DICT[atomic_number] + str(i)).atomic_mass
+                        for i in shell_abundances.index.to_numpy()
+                    ]
+                    mass[atomic_number] = (
+                        shell_abundances * isotopic_masses
+                    ).sum()
+                    mass[atomic_number] /= shell_abundances.sum()
+                    mass[atomic_number] = mass[atomic_number] * u.u.to(u.g)
+                    if isotope_mass.get(column) is None:
+                        isotope_mass[column] = {}
+                    isotope_mass[column][atomic_number] = mass[atomic_number]
+            isotope_mass = pd.DataFrame(isotope_mass)
+
+            atomic_mass = pd.concat([stable_isotope_mass, isotope_mass])
+
+        composition = Composition(
+            density=density,
+            elemental_mass_fraction=self.abundance,
+            atomic_mass=atomic_mass,
+        )
+        geometry = Radial1DGeometry(
+            r_inner=self.time_explosion * v_inner,
+            r_outer=self.time_explosion * v_outer,
+            v_inner=v_inner,
+            v_outer=v_outer,
+        )
+        self.model_state = ModelState_Experimental(
+            composition=composition,
+            geometry=geometry,
+            time_explosion=self.time_explosion,
+        )
 
         if t_inner is None:
             if luminosity_requested is not None:
@@ -511,11 +613,11 @@ logger = logging.getLogger(__name__)
 
     @property
     def r_inner(self):
-        return self.model_state.r_inner
+        return self.model_state.geometry.r_inner
 
     @property
     def r_outer(self):
-        return self.model_state.r_outer
+        return self.model_state.geometry.r_outer
 
     @property
     def r_middle(self):
@@ -534,11 +636,11 @@ logger = logging.getLogger(__name__)
 
     @property
     def v_inner(self):
-        return self.model_state.v_inner
+        return self.model_state.geometry.v_inner
 
     @property
     def v_outer(self):
-        return self.model_state.v_outer
+        return self.model_state.geometry.v_outer
 
     @property
     def v_middle(self):
@@ -546,7 +648,7 @@ logger = logging.getLogger(__name__)
 
     @property
     def density(self):
-        return self.model_state.density
+        return self.model_state.composition.density
 
     @property
     def abundance(self):
@@ -676,13 +778,14 @@ logger = logging.getLogger(__name__)
     #        return self.raw_velocity.searchsorted(self.v_boundary_outer) + 1
 
 <div class="viewcode-block" id="Radial1DModel.from_config"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Radial1DModel.from_config">[docs]</a>    @classmethod
-    def from_config(cls, config):
+    def from_config(cls, config, atom_data=None):
         &quot;&quot;&quot;
         Create a new Radial1DModel instance from a Configuration object.
 
         Parameters
         ----------
         config : tardis.io.config_reader.Configuration
+        atom_data : tardis.io.AtomData
 
         Returns
         -------
@@ -773,6 +876,10 @@ logger = logging.getLogger(__name__)
 
         isotope_abundance = IsotopeAbundances(isotope_abundance)
 
+        elemental_mass = None
+        if atom_data is not None:
+            elemental_mass = atom_data.atom_data.mass
+
         return cls(
             velocity=velocity,
             homologous_density=homologous_density,
@@ -781,6 +888,7 @@ logger = logging.getLogger(__name__)
             time_explosion=time_explosion,
             t_radiative=t_radiative,
             t_inner=t_inner,
+            elemental_mass=elemental_mass,
             luminosity_requested=luminosity_requested,
             dilution_factor=None,
             v_boundary_inner=structure.get(&quot;v_inner_boundary&quot;, None),
@@ -789,13 +897,14 @@ logger = logging.getLogger(__name__)
         )</div>
 
 <div class="viewcode-block" id="Radial1DModel.from_csvy"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Radial1DModel.from_csvy">[docs]</a>    @classmethod
-    def from_csvy(cls, config):
+    def from_csvy(cls, config, atom_data=None):
         &quot;&quot;&quot;
         Create a new Radial1DModel instance from a Configuration object.
 
         Parameters
         ----------
         config : tardis.io.config_reader.Configuration
+        atom_data : tardis.io.AtomData
 
         Returns
         -------
@@ -986,6 +1095,10 @@ logger = logging.getLogger(__name__)
         )
         # isotope_abundance.time_0 = csvy_model_config.model_isotope_time_0
 
+        elemental_mass = None
+        if atom_data is not None:
+            elemental_mass = atom_data.atom_data.mass
+
         return cls(
             velocity=velocity,
             homologous_density=homologous_density,
@@ -994,6 +1107,7 @@ logger = logging.getLogger(__name__)
             time_explosion=time_explosion,
             t_radiative=t_radiative,
             t_inner=t_inner,
+            elemental_mass=elemental_mass,
             luminosity_requested=luminosity_requested,
             dilution_factor=dilution_factor,
             v_boundary_inner=v_boundary_inner,
@@ -1009,8 +1123,8 @@ logger = logging.getLogger(__name__)
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 09 Sep 2022.
+    <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 20 Jan 2023.
       </span></p>
   </div>
 

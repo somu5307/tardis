@@ -71,6 +71,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/CONTRIBUTING.html">Contribution Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/tools/index.html">Developer Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/CHANGELOG.html">Change Log</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/in_progress/index.html">Features In-Progress</a></li>
 </ul>
@@ -80,10 +81,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/research_done_using_TARDIS/research_papers.html">Papers Using TARDIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/code_comparison/index.html">Code Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/zreferences.html">References and Glossary</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Outdated</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../outdated/index.html">Outdated Documentation</a></li>
 </ul>
 
         </div>
@@ -409,7 +406,7 @@ logger = logging.getLogger(__name__)
         print_graph = self.remove_hidden_properties(print_graph)
 
         for node in print_graph:
-            if latex_label:
+            if latex_label == True:
                 if hasattr(self.plasma_properties_dict[node], &quot;latex_formula&quot;):
                     print_graph.nodes[str(node)][
                         &quot;label&quot;
@@ -429,13 +426,14 @@ logger = logging.getLogger(__name__)
 
         for edge in print_graph.edges:
             label = print_graph.edges[edge][&quot;label&quot;]
-            print_graph.edges[edge][&quot;label&quot;] = &quot;-&quot;
-            print_graph.edges[edge][&quot;texlbl&quot;] = label
+            print_graph.edges[edge][&quot;label&quot;] = &quot; &quot;
+            if latex_label == True:
+                print_graph.edges[edge][&quot;texlbl&quot;] = label
 
         nx.drawing.nx_agraph.write_dot(print_graph, fname)
 
         for line in fileinput.FileInput(fname, inplace=1):
-            if latex_label:
+            if latex_label == True:
                 print(
                     line.replace(
                         r&#39;node [label=&quot;\N&quot;]&#39;,
@@ -567,8 +565,8 @@ logger = logging.getLogger(__name__)
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2013-2022, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 09 Sep 2022.
+    <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 20 Jan 2023.
       </span></p>
   </div>
 
