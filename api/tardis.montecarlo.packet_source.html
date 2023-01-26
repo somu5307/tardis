@@ -261,37 +261,42 @@
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_blackbody_packet_nus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_of_packets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BasePacketSource.create_blackbody_packet_nus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_blackbody_packet_nus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_of_packets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BasePacketSource.create_blackbody_packet_nus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create packet <span class="math notranslate nohighlight">\(\nu\)</span> distributed using the algorithm described in
 Bjorkman &amp; Wood 2001 (page 4) which references
 Carter &amp; Cashwell 1975:
 First, generate a uniform random number, <span class="math notranslate nohighlight">\(\xi_0 \in [0, 1]\)</span> and
 determine the minimum value of
-<span class="math notranslate nohighlight">\(l, l_{\rm min}\)</span>, that satisfies the condition</p>
-<div class="math notranslate nohighlight">
-\[\sum_{i=1}^{l} i^{-4} \ge {{\pi^4}\over{90}} m_0 \;.\]</div>
+<span class="math notranslate nohighlight">\(l, l_{\rm min}\)</span>, that satisfies the condition
+.. math:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\sum_{i=1}^{l} i^{-4} \ge {{\pi^4}\over{90}} m_0 \;.
+</pre></div>
+</div>
 <p>Next obtain four additional uniform random numbers (in the range 0
 to 1) <span class="math notranslate nohighlight">\(\xi_1, \xi_2, \xi_3, {\rm and } \xi_4\)</span>.
-Finally, the packet frequency is given by</p>
-<div class="math notranslate nohighlight">
-\[x = -\ln{(\xi_1\xi_2\xi_3\xi_4)}/l_{\rm min}\;.\]</div>
-<p>where <span class="math notranslate nohighlight">\(x=h\nu/kT\)</span></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>T</strong><span class="classifier">float</span></dt><dd><p>temperature</p>
-</dd>
-<dt><strong>no_of_packets</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>l_samples</strong><span class="classifier">int</span></dt><dd><p>number of l_samples needed in the algorithm</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt>array of frequencies: numpy.ndarray</dt><dd></dd>
-</dl>
-</dd>
-</dl>
+Finally, the packet frequency is given by
+.. math:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = -\ln{(\xi_1\xi_2\xi_3\xi_4)}/l_{\rm min}\;.
+</pre></div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(x=h\nu/kT\)</span>
+Parameters
+———-
+temperature : float</p>
+<blockquote>
+<div><p>Absolute Temperature.</p>
+</div></blockquote>
+<p>no_of_packets : int
+l_samples : int</p>
+<blockquote>
+<div><p>number of l_samples needed in the algorithm</p>
+</div></blockquote>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><p>array of frequencies: numpy.ndarray</p>
+</div></blockquote>
+</section>
 </dd></dl>
 
 <dl class="py method">
@@ -344,13 +349,12 @@ according to <span class="math notranslate nohighlight">\(\mu=\sqrt{z}, z \isin 
 part.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets">
-<span class="sig-name descname"><span class="pre">create_packets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_of_packets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource.create_packets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_packets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_of_packets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource.create_packets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate black-body packet properties as arrays</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>T</strong><span class="classifier">float64</span></dt><dd><p>Temperature</p>
-</dd>
+<dt><strong>temperature</strong><span class="classifier">float64</span></dt><dd></dd>
 <dt><strong>no_of_packets</strong><span class="classifier">int</span></dt><dd><p>Number of packets</p>
 </dd>
 <dt><strong>rng</strong><span class="classifier">numpy random number generator</span></dt><dd></dd>
@@ -381,12 +385,12 @@ part.</p>
 <dd><p>Bases: <a class="reference internal" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource" title="tardis.montecarlo.packet_source.BlackBodySimpleSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlackBodySimpleSource</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tardis.montecarlo.packet_source.BlackBodySimpleSourceRelativistic.create_packets">
-<span class="sig-name descname"><span class="pre">create_packets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_of_packets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_explosion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSourceRelativistic.create_packets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSourceRelativistic.create_packets" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_packets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_of_packets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_explosion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSourceRelativistic.create_packets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSourceRelativistic.create_packets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate relativistic black-body packet properties as arrays</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>T</strong><span class="classifier">float64</span></dt><dd><p>Temperature</p>
+<dt><strong>temperature</strong><span class="classifier">float64</span></dt><dd><p>Absolute Temperature</p>
 </dd>
 <dt><strong>no_of_packets</strong><span class="classifier">int</span></dt><dd><p>Number of packets</p>
 </dd>
@@ -469,7 +473,7 @@ on which the packets are initialized is not comoving with the material.</p>
     <p>
         &#169; Copyright 2013-2023, TARDIS Collaboration.
       <span class="lastupdated">
-        Last updated on 19 Jan 2023.
+        Last updated on 26 Jan 2023.
       </span>
 
     </p>

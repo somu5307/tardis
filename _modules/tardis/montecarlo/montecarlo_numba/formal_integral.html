@@ -941,12 +941,24 @@ def trapezoid_integration(array, h):
 
 
 <div class="viewcode-block" id="intensity_black_body"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.formal_integral.html#tardis.montecarlo.montecarlo_numba.formal_integral.intensity_black_body">[docs]</a>@njit(**njit_dict_no_parallel)
-def intensity_black_body(nu, T):
-    &quot;&quot;&quot;Get the black body intensity at frequency nu
-    and temperature T&quot;&quot;&quot;
+def intensity_black_body(nu, temperature):
+    &quot;&quot;&quot;
+    Calculate the blackbody intensity.
+
+    Parameters
+    ----------
+    nu : float64
+        frequency
+    temperature : float64
+        Temperature
+
+    Returns
+    -------
+    float64
+    &quot;&quot;&quot;
     if nu == 0:
         return np.nan  # to avoid ZeroDivisionError
-    beta_rad = 1 / (KB_CGS * T)
+    beta_rad = 1 / (KB_CGS * temperature)
     coefficient = 2 * H_CGS * C_INV * C_INV
     return coefficient * nu * nu * nu / (np.exp(H_CGS * nu * beta_rad) - 1)</div>
 
@@ -968,7 +980,7 @@ def calculate_p_values(R_max, N):
     <p>
         &#169; Copyright 2013-2023, TARDIS Collaboration.
       <span class="lastupdated">
-        Last updated on 19 Jan 2023.
+        Last updated on 26 Jan 2023.
       </span>
 
     </p>
