@@ -207,11 +207,19 @@ __all__ = [
 <div class="viewcode-block" id="NLTEIndexHelper"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.rate_matrix_index.html#tardis.plasma.properties.rate_matrix_index.NLTEIndexHelper">[docs]</a>class NLTEIndexHelper(ProcessingPlasmaProperty):
     outputs = (&quot;rate_matrix_index&quot;,)
 
-    def __init__(self, plasma_parent, nlte_ionization_species=0):
+    def __init__(
+        self,
+        plasma_parent,
+        nlte_ionization_species=0,
+        nlte_excitation_species=0,
+    ):
         super().__init__(plasma_parent)
         self.nlte_ionization_species = nlte_ionization_species
+        self.nlte_excitation_species = nlte_excitation_species
 
-<div class="viewcode-block" id="NLTEIndexHelper.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.rate_matrix_index.html#tardis.plasma.properties.rate_matrix_index.NLTEIndexHelper.calculate">[docs]</a>    def calculate(self, levels, nlte_ionization_species):
+<div class="viewcode-block" id="NLTEIndexHelper.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.rate_matrix_index.html#tardis.plasma.properties.rate_matrix_index.NLTEIndexHelper.calculate">[docs]</a>    def calculate(
+        self, levels, nlte_ionization_species, nlte_excitation_species
+    ):
         &quot;&quot;&quot;Generates rate_matrix_index using levels and changing the last index(level) to
         &quot;lte_ion&quot; if that ion_number is treated in LTE or nebular, &quot;nlte_ion&quot; for NLTE ionization and
         keeps the levels for the rest.
