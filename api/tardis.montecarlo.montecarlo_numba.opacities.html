@@ -1,48 +1,28 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>tardis.montecarlo.montecarlo_numba.opacities module &mdash; tardis</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="tardis.montecarlo.montecarlo_numba.r_packet module" href="tardis.montecarlo.montecarlo_numba.r_packet.html" />
@@ -51,33 +31,16 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> tardis
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 latest
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +48,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart for TARDIS</a></li>
@@ -156,79 +108,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../resources/zreferences.html">References and Glossary</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tardis</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="modules.html">tardis</a> &raquo;</li>
-        
-          <li><a href="tardis.html">tardis package</a> &raquo;</li>
-        
-          <li><a href="tardis.montecarlo.html">tardis.montecarlo package</a> &raquo;</li>
-        
-          <li><a href="tardis.montecarlo.montecarlo_numba.html">tardis.montecarlo.montecarlo_numba package</a> &raquo;</li>
-        
-      <li>tardis.montecarlo.montecarlo_numba.opacities module</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
+          <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
+          <li class="breadcrumb-item"><a href="tardis.montecarlo.html">tardis.montecarlo package</a></li>
+          <li class="breadcrumb-item"><a href="tardis.montecarlo.montecarlo_numba.html">tardis.montecarlo.montecarlo_numba package</a></li>
+      <li class="breadcrumb-item active">tardis.montecarlo.montecarlo_numba.opacities module</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/api/tardis.montecarlo.montecarlo_numba.opacities.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -260,13 +167,13 @@
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.opacities.</span></span><span class="sig-name descname"><span class="pre">calculate_tau_electron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/opacities.html#calculate_tau_electron"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.opacities.calculate_tau_electron" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate tau for Thomson scattering</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>electron_density</strong><span class="classifier">float</span></dt><dd></dd>
 <dt><strong>distance</strong><span class="classifier">float</span></dt><dd></dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>tau_electron</strong><span class="classifier">float</span></dt><dd><p>tau for thomson scattering</p>
 </dd>
@@ -282,7 +189,7 @@
 <p>This function interpolates the tabulated bound-free opacities
 and cross-sections to new frequency values <code class="xref py py-obj docutils literal notranslate"><span class="pre">nu</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>numba_plasma</strong><span class="classifier">NumbaPlasma</span></dt><dd></dd>
 <dt><strong>nu</strong><span class="classifier">float, dtype float</span></dt><dd><p>Comoving frequency of the r-packet.</p>
@@ -291,7 +198,7 @@ and cross-sections to new frequency values <code class="xref py py-obj docutils 
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>chi_bf_tot</strong><span class="classifier">float</span></dt><dd><p>Total bound-free opacity at frequency <code class="xref py py-obj docutils literal notranslate"><span class="pre">nu</span></code>.</p>
 </dd>
@@ -312,7 +219,7 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 <dt class="sig sig-object py" id="tardis.montecarlo.montecarlo_numba.opacities.chi_continuum_calculator">
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.opacities.</span></span><span class="sig-name descname"><span class="pre">chi_continuum_calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numba_plasma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/opacities.html#chi_continuum_calculator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.opacities.chi_continuum_calculator" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>chi_bf_tot</strong><span class="classifier">float</span></dt><dd><p>Total bound-free opacity at frequency <code class="xref py py-obj docutils literal notranslate"><span class="pre">nu</span></code>.</p>
 </dd>
@@ -328,7 +235,7 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dt class="field-even">Attributes</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>numba_plasma</strong><span class="classifier">NumbaPlasma</span></dt><dd></dd>
 <dt><strong>nu</strong><span class="classifier">float64</span></dt><dd><p>Comoving frequency of the r_packet</p>
@@ -345,7 +252,7 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.opacities.</span></span><span class="sig-name descname"><span class="pre">chi_electron_calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numba_plasma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/opacities.html#chi_electron_calculator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.opacities.chi_electron_calculator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate chi for Thomson scattering</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>numba_plasma</strong><span class="classifier">NumbaPlasma</span></dt><dd></dd>
 <dt><strong>nu</strong><span class="classifier">float</span></dt><dd><p>Comoving frequency of the r-packet.</p>
@@ -354,7 +261,7 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.ndarray, dtype int</dt><dd><p>Continuum ids for which absorption is possible for frequency <code class="xref py py-obj docutils literal notranslate"><span class="pre">nu</span></code>.</p>
 </dd>
@@ -367,13 +274,13 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 <dt class="sig sig-object py" id="tardis.montecarlo.montecarlo_numba.opacities.chi_ff_calculator">
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.opacities.</span></span><span class="sig-name descname"><span class="pre">chi_ff_calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numba_plasma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/opacities.html#chi_ff_calculator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.opacities.chi_ff_calculator" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>chi_ff</strong><span class="classifier">float64</span></dt><dd><p>Free Free opacity</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dt class="field-even">Attributes</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>numba_plasma</strong><span class="classifier">NumbaPlasma</span></dt><dd></dd>
 <dt><strong>nu</strong><span class="classifier">float64</span></dt><dd><p>Comoving frequency of the r_packet</p>
@@ -390,14 +297,14 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.opacities.</span></span><span class="sig-name descname"><span class="pre">get_current_bound_free_continua</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numba_plasma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/opacities.html#get_current_bound_free_continua"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.opacities.get_current_bound_free_continua" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine bound-free continua for which absorption is possible.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>numba_plasma</strong><span class="classifier">NumbaPlasma</span></dt><dd></dd>
 <dt><strong>nu</strong><span class="classifier">float</span></dt><dd><p>Comoving frequency of the r-packet.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.ndarray, dtype int</dt><dd><p>Continuum ids for which absorption is possible for frequency <code class="xref py py-obj docutils literal notranslate"><span class="pre">nu</span></code>.</p>
 </dd>
@@ -410,53 +317,35 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="tardis.montecarlo.montecarlo_numba.r_packet.html" class="btn btn-neutral float-right" title="tardis.montecarlo.montecarlo_numba.r_packet module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="tardis.montecarlo.montecarlo_numba.numba_interface.html" class="btn btn-neutral float-left" title="tardis.montecarlo.montecarlo_numba.numba_interface module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tardis.montecarlo.montecarlo_numba.r_packet.html" class="btn btn-neutral float-right" title="tardis.montecarlo.montecarlo_numba.r_packet module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">
-        Last updated on 01 Feb 2023.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 06 Feb 2023.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,48 +1,28 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>tardis.visualization.widgets.shell_info module &mdash; tardis</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="tardis.visualization.widgets.util module" href="tardis.visualization.widgets.util.html" />
@@ -51,33 +31,16 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> tardis
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 latest
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +48,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart for TARDIS</a></li>
@@ -156,79 +108,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../resources/zreferences.html">References and Glossary</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tardis</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="modules.html">tardis</a> &raquo;</li>
-        
-          <li><a href="tardis.html">tardis package</a> &raquo;</li>
-        
-          <li><a href="tardis.visualization.html">tardis.visualization package</a> &raquo;</li>
-        
-          <li><a href="tardis.visualization.widgets.html">tardis.visualization.widgets package</a> &raquo;</li>
-        
-      <li>tardis.visualization.widgets.shell_info module</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
+          <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
+          <li class="breadcrumb-item"><a href="tardis.visualization.html">tardis.visualization package</a></li>
+          <li class="breadcrumb-item"><a href="tardis.visualization.widgets.html">tardis.visualization.widgets package</a></li>
+      <li class="breadcrumb-item active">tardis.visualization.widgets.shell_info module</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/api/tardis.visualization.widgets.shell_info.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -262,7 +169,7 @@
 <p>The simulation information that is used by shell info widget</p>
 <p>Initialize the object with all simulation properties in use</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>t_radiative</strong><span class="classifier">array_like</span></dt><dd><p>Radiative Temperature of each shell of simulation</p>
 </dd>
@@ -289,14 +196,14 @@ number, ion number, level number) and column labels are shell number</p>
 <dd><p>Generates fractional abundance of elements present in a specific
 shell in a form that can be used by a table widget</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>shell_num</strong><span class="classifier">int</span></dt><dd><p>Shell number (note: starts from 1, not 0 which is what simulation
 model use)</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>pandas.DataFrame</dt><dd><p>Dataframe containing element symbol and fractional abundance in a
 specific shell, against each atomic number</p>
@@ -312,7 +219,7 @@ specific shell, against each atomic number</p>
 <dd><p>Generates fractional abundance of ions of a specific element and
 shell, in a form that can be used by a table widget</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>atomic_num</strong><span class="classifier">int</span></dt><dd><p>Atomic number of element</p>
 </dd>
@@ -321,7 +228,7 @@ model use)</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>pandas.DataFrame</dt><dd><p>Dataframe containing ion specie and fractional abundance for a
 specific element, against each ion number</p>
@@ -337,7 +244,7 @@ specific element, against each ion number</p>
 <dd><p>Generates fractional abundance of levels of a specific ion, element
 and shell, in a form that can be used by a table widget</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>ion</strong><span class="classifier">int</span></dt><dd><p>Ion number (note: starts from 0, same what is used by simulation
 model)</p>
@@ -349,7 +256,7 @@ model use)</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>pandas.DataFrame</dt><dd><p>Dataframe containing fractional abundance for a specific ion,
 against each level number</p>
@@ -364,7 +271,7 @@ against each level number</p>
 <span class="sig-name descname"><span class="pre">shells_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/widgets/shell_info.html#BaseShellInfo.shells_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.widgets.shell_info.BaseShellInfo.shells_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates shells data in a form that can be used by a table widget</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>pandas.DataFrame</dt><dd><p>Dataframe containing Rad. Temp. and W against each shell of
 simulation model</p>
@@ -384,7 +291,7 @@ simulation model</p>
 from a simulation HDF file</p>
 <p>Initialize the object with a simulation HDF file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>hdf_fpath</strong><span class="classifier">str</span></dt><dd><p>A valid path to a simulation HDF file (HDF file must be created
 from a TARDIS Simulation object using <code class="code docutils literal notranslate"><span class="pre">to_hdf</span></code> method with
@@ -407,7 +314,7 @@ tables.</p>
 <p>Initialize the object with the shell information of a simulation
 model</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>shell_info_data</strong><span class="classifier">subclass of BaseShellInfo</span></dt><dd><p>Shell information object constructed from Simulation object or HDF
 file</p>
@@ -421,7 +328,7 @@ file</p>
 <dd><p>Display the shell info widget by putting all component widgets nicely
 together and allowing interaction between the table widgets</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>shells_table_width</strong><span class="classifier">str, optional</span></dt><dd><p>CSS <code class="code docutils literal notranslate"><span class="pre">width</span></code> property value for shells table, by default ‘30%’</p>
 </dd>
@@ -433,13 +340,13 @@ together and allowing interaction between the table widgets</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>ipywidgets.Box</dt><dd><p>Shell info widget containing all component widgets</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">Other Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Other Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>**layout_kwargs</strong></dt><dd><p>Any valid CSS properties to be passed to the <code class="code docutils literal notranslate"><span class="pre">layout</span></code> attribute
 of table widgets container (HTML <code class="code docutils literal notranslate"><span class="pre">div</span></code>) as explained in
@@ -456,7 +363,7 @@ of table widgets container (HTML <code class="code docutils literal notranslate"
 <dd><p>Event listener to update the data in element count table widget based
 on interaction (row selected event) in shells table widget.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>event</strong><span class="classifier">dict</span></dt><dd><p>Dictionary that holds information about event (see Notes section)</p>
 </dd>
@@ -478,7 +385,7 @@ explained in <a class="reference external" href="https://qgrid.readthedocs.io/en
 <dd><p>Event listener to update the data in ion count table widget based
 on interaction (row selected event) in element count table widget.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>event</strong><span class="classifier">dict</span></dt><dd><p>Dictionary that holds information about event (see Notes section)</p>
 </dd>
@@ -500,7 +407,7 @@ explained in <a class="reference external" href="https://qgrid.readthedocs.io/en
 <dd><p>Event listener to update the data in level count table widget based
 on interaction (row selected event) in ion count table widget.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>event</strong><span class="classifier">dict</span></dt><dd><p>Dictionary that holds information about event (see Notes section)</p>
 </dd>
@@ -526,7 +433,7 @@ explained in <a class="reference external" href="https://qgrid.readthedocs.io/en
 from a TARDIS Simulation object</p>
 <p>Initialize the object with TARDIS Simulation object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>sim_model</strong><span class="classifier">tardis.simulation.Simulation</span></dt><dd><p>TARDIS Simulation object produced by running a simulation</p>
 </dd>
@@ -540,7 +447,7 @@ from a TARDIS Simulation object</p>
 <span class="sig-prename descclassname"><span class="pre">tardis.visualization.widgets.shell_info.</span></span><span class="sig-name descname"><span class="pre">shell_info_from_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdf_fpath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/widgets/shell_info.html#shell_info_from_hdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.widgets.shell_info.shell_info_from_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create shell info widget from a simulation HDF file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>hdf_fpath</strong><span class="classifier">str</span></dt><dd><p>A valid path to a simulation HDF file (HDF file must be created
 from a TARDIS Simulation object using <code class="code docutils literal notranslate"><span class="pre">to_hdf</span></code> method with
@@ -548,7 +455,7 @@ default arguments)</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>ShellInfoWidget</dt><dd></dd>
 </dl>
@@ -561,13 +468,13 @@ default arguments)</p>
 <span class="sig-prename descclassname"><span class="pre">tardis.visualization.widgets.shell_info.</span></span><span class="sig-name descname"><span class="pre">shell_info_from_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/widgets/shell_info.html#shell_info_from_simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.widgets.shell_info.shell_info_from_simulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create shell info widget from a TARDIS simulation object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>sim_model</strong><span class="classifier">tardis.simulation.Simulation</span></dt><dd><p>TARDIS Simulation object produced by running a simulation</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>ShellInfoWidget</dt><dd></dd>
 </dl>
@@ -579,53 +486,35 @@ default arguments)</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="tardis.visualization.widgets.util.html" class="btn btn-neutral float-right" title="tardis.visualization.widgets.util module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="tardis.visualization.widgets.line_info.html" class="btn btn-neutral float-left" title="tardis.visualization.widgets.line_info module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tardis.visualization.widgets.util.html" class="btn btn-neutral float-right" title="tardis.visualization.widgets.util module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">
-        Last updated on 01 Feb 2023.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 06 Feb 2023.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

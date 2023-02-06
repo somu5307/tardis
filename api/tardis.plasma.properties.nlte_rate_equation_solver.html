@@ -1,48 +1,28 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>tardis.plasma.properties.nlte_rate_equation_solver module &mdash; tardis</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="tardis.plasma.properties.partition_function module" href="tardis.plasma.properties.partition_function.html" />
@@ -51,33 +31,16 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> tardis
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 latest
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +48,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart for TARDIS</a></li>
@@ -156,79 +108,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../resources/zreferences.html">References and Glossary</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tardis</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="modules.html">tardis</a> &raquo;</li>
-        
-          <li><a href="tardis.html">tardis package</a> &raquo;</li>
-        
-          <li><a href="tardis.plasma.html">tardis.plasma package</a> &raquo;</li>
-        
-          <li><a href="tardis.plasma.properties.html">tardis.plasma.properties package</a> &raquo;</li>
-        
-      <li>tardis.plasma.properties.nlte_rate_equation_solver module</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
+          <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
+          <li class="breadcrumb-item"><a href="tardis.plasma.html">tardis.plasma package</a></li>
+          <li class="breadcrumb-item"><a href="tardis.plasma.properties.html">tardis.plasma.properties package</a></li>
+      <li class="breadcrumb-item active">tardis.plasma.properties.nlte_rate_equation_solver module</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/api/tardis.plasma.properties.nlte_rate_equation_solver.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -264,7 +171,7 @@
 <span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_sp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_stim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coll_ion_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coll_recomb_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_boltzmann_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.calculate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.calculate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates ion number densities and electron densities using NLTE ionization.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>gamma</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for radiative ionization.</p>
 </dd>
@@ -294,7 +201,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>ion_number_densities_nlte</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Number density with NLTE ionization treatment.</p>
 </dd>
@@ -309,7 +216,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <dt class="sig sig-object py" id="tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.calculate_rate_matrix">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_rate_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_shell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_photo_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.calculate_rate_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.calculate_rate_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>phi_shell</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Saha Factors in the current shell</p>
 </dd>
@@ -327,7 +234,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>pandas.DataFrame</dt><dd><p>Rate matrix used for NLTE solver.</p>
 </dd>
@@ -341,7 +248,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deriv_matrix_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_ion_number_densities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_electron_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.deriv_matrix_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.deriv_matrix_block" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the dot product of the derivative of rate matrix and ion number densities+electron density column.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>atomic_number</strong><span class="classifier">int64</span></dt><dd><p>Current atomic number</p>
 </dd>
@@ -357,7 +264,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>Returns the part of the last column of the jacobian matrix, corresponding to atomic number.</p>
 </dd>
@@ -371,7 +278,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ion_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.ion_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.ion_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs an ionization rate matrix from the ionization rates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>ion_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Recombination coefficients.</p>
 </dd>
@@ -381,7 +288,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.ndarray</dt><dd></dd>
 </dl>
@@ -394,7 +301,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jacobian_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">populations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_matrix_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.jacobian_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.jacobian_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the jacobian matrix used for NLTE ionization solver</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>populations</strong><span class="classifier">numpy.array</span></dt><dd><p>Ion populations, electron density</p>
 </dd>
@@ -412,7 +319,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>Jacobian matrix used for NLTE ionization solver</p>
 </dd>
@@ -426,7 +333,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lte_rate_matrix_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi_block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.lte_rate_matrix_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.lte_rate_matrix_block" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the generic LTE block for rate matrix.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>phi_block</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Saha Factors for current atomic number</p>
 </dd>
@@ -434,7 +341,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>LTE block for rate matrix</p>
 </dd>
@@ -456,7 +363,7 @@ if treated in NLTE ionization, 3rd index is “nlte_ion”.</p>
 of the objective function A*x - B, where x are the populations,
 A is the matrix of rates, and B is the solution vector.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>populations</strong><span class="classifier">numpy.array</span></dt><dd><p>Current values of ion number densities and electron density.</p>
 </dd>
@@ -499,7 +406,7 @@ density equation.</p>
 <span class="sig-name descname"><span class="pre">prepare_first_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.prepare_first_guess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.prepare_first_guess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a first guess for ion number densities and electron density, where all species are singly ionized.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>atomic_numbers</strong><span class="classifier">numpy.array</span></dt><dd><p>All atomic numbers present in the plasma.</p>
 </dd>
@@ -509,7 +416,7 @@ density equation.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>Guess for ion number densities and electron density.</p>
 </dd>
@@ -524,7 +431,7 @@ density equation.</p>
 <dd><p>Prepares the ionization and recombination coefficients by grouping them for
 ion numbers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>gamma</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>The rate coefficient for radiative ionization.</p>
 </dd>
@@ -571,13 +478,13 @@ Index of filtered atomic data.</p>
 <dd><p>Constructs the solution vector for the NLTE ionization solver set of equations by combining
 all solution verctor blocks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>number_density</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Number densities of all present species.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>Solution vector for the NLTE ionization solver.</p>
 </dd>
@@ -591,7 +498,7 @@ all solution verctor blocks.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">recomb_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ion_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.recomb_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.recomb_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a recombination rate matrix from the recombination rates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>recomb_coefficients</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Recombination coefficients.</p>
 </dd>
@@ -601,7 +508,7 @@ all solution verctor blocks.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.ndarray</dt><dd></dd>
 </dl>
@@ -614,7 +521,7 @@ all solution verctor blocks.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_nlte_ion_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate_matrix_block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ion_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rad_recomb_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_photo_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_ion_coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_coll_recomb_coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/nlte_rate_equation_solver.html#NLTERateEquationSolver.set_nlte_ion_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.nlte_rate_equation_solver.NLTERateEquationSolver.set_nlte_ion_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the row for the species treated in NLTE ionization</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>rate_matrix_block</strong><span class="classifier">numpy.array</span></dt><dd><p>The diagonal block corresponding to current atomic number.</p>
 </dd>
@@ -632,7 +539,7 @@ all solution verctor blocks.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>Rate matrix block with a changed row for NLTE ionization treatment</p>
 </dd>
@@ -648,7 +555,7 @@ all solution verctor blocks.</p>
 <p>Block for the solution vector has the form (0, 0, …, 0, number_density).
 Length is equal to atomic_number+1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>atomic_number</strong><span class="classifier">int</span></dt><dd><p>Current atomic number.</p>
 </dd>
@@ -656,7 +563,7 @@ Length is equal to atomic_number+1.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>numpy.array</dt><dd><p>Block of the solution vector corresponding to the current atomic number.</p>
 </dd>
@@ -671,53 +578,35 @@ Length is equal to atomic_number+1.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="tardis.plasma.properties.partition_function.html" class="btn btn-neutral float-right" title="tardis.plasma.properties.partition_function module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="tardis.plasma.properties.nlte.html" class="btn btn-neutral float-left" title="tardis.plasma.properties.nlte module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tardis.plasma.properties.partition_function.html" class="btn btn-neutral float-right" title="tardis.plasma.properties.partition_function module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">
-        Last updated on 01 Feb 2023.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 06 Feb 2023.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
