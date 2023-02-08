@@ -113,6 +113,7 @@
 import logging
 import numpy as np
 import pandas as pd
+import tardis
 from astropy import units as u
 from tardis import constants as const
 from collections import OrderedDict
@@ -217,6 +218,8 @@ logger = logging.getLogger(__name__)
     convergence_plots_kwargs: dict
     nthreads : int
         The number of threads to run montecarlo with
+    version: str
+        The TARDIS version in use when instantiating the simulation object
 
         .. note:: TARDIS must be built with OpenMP support in order for ``nthreads`` to have effect.
 
@@ -268,6 +271,7 @@ logger = logging.getLogger(__name__)
         self.luminosity_requested = luminosity_requested
         self.nthreads = nthreads
         self.show_progress_bars = show_progress_bars
+        self.version = tardis.__version__
 
         if convergence_strategy.type in (&quot;damped&quot;):
             self.convergence_strategy = convergence_strategy
@@ -836,7 +840,7 @@ logger = logging.getLogger(__name__)
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 06 Feb 2023.
+      <span class="lastupdated">Last updated on 08 Feb 2023.
       </span></p>
   </div>
 
