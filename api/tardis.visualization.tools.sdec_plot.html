@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tardis.visualization.tools.sdec_plot module &mdash; tardis</title>
@@ -15,9 +15,6 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -36,14 +33,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> tardis
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tardis
           </a>
               <div class="version">
                 latest
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -121,7 +122,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
           <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
           <li class="breadcrumb-item"><a href="tardis.visualization.html">tardis.visualization package</a></li>
@@ -174,7 +175,7 @@ proposed by M. Kromer (see, for example, Kromer et al. 2013, figure 4).</p>
 calculations and plotting.</p>
 <p>Initialize the SDECData with required properties of simulation model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>last_interaction_type</strong><span class="classifier">np.array</span></dt><dd><p>Interaction type (no-interaction: -1, e-scattering: 1 and
 line interaction: 2) values of emitted packets</p>
@@ -214,7 +215,7 @@ unit of Hz</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdf_fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packets_mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/tools/sdec_plot.html#SDECData.from_hdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.tools.sdec_plot.SDECData.from_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an instance of SDECData from a simulation HDF file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>hdf_fpath</strong><span class="classifier">str</span></dt><dd><p>Valid path to the HDF file where simulation is saved</p>
 </dd>
@@ -222,7 +223,7 @@ unit of Hz</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>SDECData</dt><dd></dd>
 </dl>
@@ -235,7 +236,7 @@ unit of Hz</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packets_mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/tools/sdec_plot.html#SDECData.from_simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.tools.sdec_plot.SDECData.from_simulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an instance of SDECData from a TARDIS simulation object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>sim</strong><span class="classifier">tardis.simulation.Simulation</span></dt><dd><p>TARDIS Simulation object produced by running a simulation</p>
 </dd>
@@ -243,7 +244,7 @@ unit of Hz</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>SDECData</dt><dd></dd>
 </dl>
@@ -262,7 +263,7 @@ unit of Hz</p>
 model, and allows to plot it in matplotlib and plotly.</p>
 <p>Initialize the SDECPlotter with required data of simulation model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>data</strong><span class="classifier">dict of SDECData</span></dt><dd><p>Dictionary to store data required for SDEC plot, for both packet
 modes i.e. real and virtual</p>
@@ -275,13 +276,13 @@ modes i.e. real and virtual</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdf_fpath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/tools/sdec_plot.html#SDECPlotter.from_hdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.tools.sdec_plot.SDECPlotter.from_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an instance of SDECPlotter from a simulation HDF file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>hdf_fpath</strong><span class="classifier">str</span></dt><dd><p>Valid path to the HDF file where simulation is saved</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>SDECPlotter</dt><dd></dd>
 </dl>
@@ -294,13 +295,13 @@ modes i.e. real and virtual</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/tools/sdec_plot.html#SDECPlotter.from_simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.tools.sdec_plot.SDECPlotter.from_simulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an instance of SDECPlotter from a TARDIS simulation object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>sim</strong><span class="classifier">tardis.simulation.Simulation</span></dt><dd><p>TARDIS Simulation object produced by running a simulation</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>SDECPlotter</dt><dd></dd>
 </dl>
@@ -313,7 +314,7 @@ modes i.e. real and virtual</p>
 <span class="sig-name descname"><span class="pre">generate_plot_mpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packets_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'virtual'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packet_wvl_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observed_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_modeled_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmapname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jet'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/tools/sdec_plot.html#SDECPlotter.generate_plot_mpl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.tools.sdec_plot.SDECPlotter.generate_plot_mpl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate Spectral element DEComposition (SDEC) Plot using matplotlib.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>packets_mode</strong><span class="classifier">{‘virtual’, ‘real’}, optional</span></dt><dd><p>Mode of packets to be considered, either real or virtual. Default
 value is ‘virtual’</p>
@@ -354,7 +355,7 @@ e.g. [‘Si II’, ‘Ca II’, ‘C’, ‘Fe I-V’]</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>matplotlib.axes._subplots.AxesSubplot</dt><dd><p>Axis on which SDEC Plot is created</p>
 </dd>
@@ -368,7 +369,7 @@ e.g. [‘Si II’, ‘Ca II’, ‘C’, ‘Fe I-V’]</p>
 <span class="sig-name descname"><span class="pre">generate_plot_ply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packets_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'virtual'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packet_wvl_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observed_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_modeled_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmapname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jet'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/tools/sdec_plot.html#SDECPlotter.generate_plot_ply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.tools.sdec_plot.SDECPlotter.generate_plot_ply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate interactive Spectral element DEComposition (SDEC) Plot using plotly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>packets_mode</strong><span class="classifier">{‘virtual’, ‘real’}, optional</span></dt><dd><p>Mode of packets to be considered, either real or virtual. Default
 value is ‘virtual’</p>
@@ -421,13 +422,13 @@ e.g. [‘Si II’, ‘Ca II’, ‘C’, ‘Fe I-V’]</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_rgb255_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color_tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/visualization/tools/sdec_plot.html#SDECPlotter.to_rgb255_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.visualization.tools.sdec_plot.SDECPlotter.to_rgb255_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a matplotlib RGBA tuple to a generic RGB 255 string.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>color_tuple</strong><span class="classifier">tuple</span></dt><dd><p>Matplotlib RGBA tuple of float values in closed interval [0, 1]</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>str</dt><dd><p>RGB string of format rgb(r,g,b) where r,g,b are integers between
 0 and 255 (both inclusive)</p>
@@ -453,7 +454,7 @@ e.g. [‘Si II’, ‘Ca II’, ‘C’, ‘Fe I-V’]</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 16 Feb 2023.
+      <span class="lastupdated">Last updated on 20 Feb 2023.
       </span></p>
   </div>
 

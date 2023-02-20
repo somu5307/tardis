@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tardis.io.parsers.arepo module &mdash; tardis</title>
@@ -15,9 +15,6 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -36,14 +33,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> tardis
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tardis
           </a>
               <div class="version">
                 latest
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -121,7 +122,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
           <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
           <li class="breadcrumb-item"><a href="tardis.io.html">tardis.io package</a></li>
@@ -171,7 +172,7 @@ csvy-model. Requires arepo-snap-util to be installed.
 The snapshot is mapped onto a Cartesian grid before further
 processing is done.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>Path to file to be converted.</p>
 </dd>
@@ -211,7 +212,7 @@ Default: 0.0</p>
 <p>Class for profiles extracted inside a cone around the x-axis.
 Extends Profile.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>pos</strong><span class="classifier">list of float</span></dt><dd><p>Meshgrid of positions in center of mass frames in
 Cartesian coordinates</p>
@@ -233,7 +234,7 @@ meshgrids of the relevant species.</p>
 <span class="sig-name descname"><span class="pre">create_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">opening_angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#ConeProfile.create_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.ConeProfile.create_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a profile along the x-axis without any averaging</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>opening_angle</strong><span class="classifier">float</span></dt><dd><p>Opening angle (in degrees) of the cone from which the
 data is extracted. Refers to the total opening angle, not
@@ -245,7 +246,7 @@ the angle with respect to the x axis. Default: 20.0</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>profile</strong><span class="classifier">ConeProfile object</span></dt><dd></dd>
 </dl>
@@ -263,7 +264,7 @@ the angle with respect to the x axis. Default: 20.0</p>
 i.e. angle averaged profiles.
 Extends Profile.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>pos</strong><span class="classifier">list of float</span></dt><dd><p>Meshgrid of positions in center of mass frames in
 Cartesian coordinates</p>
@@ -286,7 +287,7 @@ meshgrids of the relevant species.</p>
 <dd><p>Creates a profile from the full snapshot. Positive and negative
 direction are identical.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>inner_radius</strong><span class="classifier">float</span></dt><dd><p>Inner radius where the profiles will be cut off. Default: None</p>
 </dd>
@@ -294,7 +295,7 @@ direction are identical.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>profile</strong><span class="classifier">FullProfile object</span></dt><dd></dd>
 </dl>
@@ -311,7 +312,7 @@ direction are identical.</p>
 <p>Parent class of all Profiles. Contains general function,
 e.g. for plotting and export.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>pos</strong><span class="classifier">list of float</span></dt><dd><p>Meshgrid of positions in center of mass frames in
 Cartesian coordinates</p>
@@ -336,7 +337,7 @@ positive or negative direction can be exported. By default
 does not overwrite existing files, saves to &lt;filename&gt;_&lt;number&gt;.csvy
 file instead.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>nshells</strong><span class="classifier">int</span></dt><dd><p>Number of shells to be exported.</p>
 </dd>
@@ -354,7 +355,7 @@ By default False.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>Name of the actual saved file</p>
 </dd>
@@ -374,7 +375,7 @@ By default False.</p>
 <span class="sig-name descname"><span class="pre">plot_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/arepo.html#Profile.plot_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.io.parsers.arepo.Profile.plot_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots profile, both in the positive and negative direction.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>save</strong><span class="classifier">str</span></dt><dd><p>Path under which the figure is to be saved. Default: None</p>
 </dd>
@@ -383,7 +384,7 @@ By default False.</p>
 <dt><strong>**kwargs</strong><span class="classifier">keywords passable to matplotlib.pyplot.plot()</span></dt><dd></dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>fig</strong><span class="classifier">matplotlib figure object</span></dt><dd></dd>
 </dl>
@@ -398,7 +399,7 @@ By default False.</p>
 to bin the data. The standard deviation of each bin can be obtained
 by passing the statistics=”std” keyword.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>nshells</strong><span class="classifier">int</span></dt><dd><p>Number of bins of new data.</p>
 </dd>
@@ -406,7 +407,7 @@ by passing the statistics=”std” keyword.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>self</strong><span class="classifier">Profile object</span></dt><dd></dd>
 </dl>
@@ -430,7 +431,7 @@ by passing the statistics=”std” keyword.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 16 Feb 2023.
+      <span class="lastupdated">Last updated on 20 Feb 2023.
       </span></p>
   </div>
 

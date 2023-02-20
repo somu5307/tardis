@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tardis.simulation.base module &mdash; tardis</title>
@@ -15,9 +15,6 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -36,14 +33,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> tardis
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tardis
           </a>
               <div class="version">
                 latest
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -121,7 +122,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
           <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
           <li class="breadcrumb-item"><a href="tardis.simulation.html">tardis.simulation package</a></li>
@@ -177,7 +178,7 @@ temperature at the inner boundary is saved.</p>
 <dd><p>Reshapes the storage arrays in case convergence was reached before
 all specified iterations were executed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>executed_iterations</strong><span class="classifier">int</span></dt><dd><p>iteration index, i.e. number of iterations executed minus one!</p>
 </dd>
@@ -192,7 +193,7 @@ all specified iterations were executed.</p>
 <dd><p>Store current plasma information and inner boundary temperature
 used in iterated i.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>i</strong><span class="classifier">int</span></dt><dd><p>current iteration index (0 for the first)</p>
 </dd>
@@ -218,7 +219,7 @@ used in iterated i.</p>
 <p>A composite object containing all the required information for a
 simulation.</p>
 <dl class="field-list">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
 <dt><strong>converged</strong><span class="classifier">bool</span></dt><dd></dd>
 <dt><strong>iterations</strong><span class="classifier">int</span></dt><dd></dd>
@@ -251,7 +252,7 @@ after every iteration.</p>
 <p>The cb_func signature must look like:
 cb_func(simulation, extra_arg1, …)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>cb_func</strong><span class="classifier">callable</span></dt><dd><p>The callback function</p>
 </dd>
@@ -260,7 +261,7 @@ cb_func(simulation, extra_arg1, …)</p>
 <dt><strong>…</strong></dt><dd></dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>: int</dt><dd><p>The callback ID</p>
 </dd>
@@ -276,7 +277,7 @@ cb_func(simulation, extra_arg1, …)</p>
 iteration of the simulation. Returns True if the convergence criteria
 are met, else False.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>converged</strong><span class="classifier">bool</span></dt><dd></dd>
 </dl>
@@ -299,7 +300,7 @@ are met, else False.</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packet_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">virtual_packet_logging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_convergence_plots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_progress_bars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/simulation/base.html#Simulation.from_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.simulation.base.Simulation.from_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new Simulation instance from a Configuration object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>config</strong><span class="classifier">tardis.io.config_reader.Configuration</span></dt><dd></dd>
 <dt><strong>**kwargs</strong></dt><dd><p>Allow overriding some structures, such as model, plasma, atomic data
@@ -308,7 +309,7 @@ object.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Simulation</dt><dd></dd>
 </dl>
@@ -336,7 +337,7 @@ object.</p>
 <span class="sig-name descname"><span class="pre">log_plasma_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_t_rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_t_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/simulation/base.html#Simulation.log_plasma_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.simulation.base.Simulation.log_plasma_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logging the change of the plasma state</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>t_rad</strong><span class="classifier">astropy.units.Quanity</span></dt><dd><p>current t_rad</p>
 </dd>
@@ -350,7 +351,7 @@ object.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"></dd>
 </dl>
 </dd></dl>
@@ -366,13 +367,13 @@ object.</p>
 <dd><p>Remove the callback with a specific ID (which was returned by
 add_callback)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>The callback ID</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>: True if the callback was successfully removed.</dt><dd></dd>
 </dl>
@@ -402,7 +403,7 @@ add_callback)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 16 Feb 2023.
+      <span class="lastupdated">Last updated on 20 Feb 2023.
       </span></p>
   </div>
 

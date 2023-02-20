@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tardis.montecarlo.montecarlo_numba.formal_integral module &mdash; tardis</title>
@@ -15,9 +15,6 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -36,14 +33,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> tardis
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tardis
           </a>
               <div class="version">
                 latest
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -121,7 +122,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
           <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
           <li class="breadcrumb-item"><a href="tardis.montecarlo.html">tardis.montecarlo package</a></li>
@@ -180,7 +181,7 @@ choose the first one that it sees. You can
 read more about selecting different GPUs on
 Numba’s CUDA documentation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>model</strong><span class="classifier">tardis.model.Radial1DModel</span></dt><dd></dd>
 <dt><strong>plasma</strong><span class="classifier">tardis.plasma.BasePlasma</span></dt><dd></dd>
@@ -230,12 +231,12 @@ needed for computing the formal integral</p>
 <p>Formally it calculates the expression ( 1 - exp(-tau_ul) ) S_ul but this product is what we need later,
 so there is no need to factor out the source function explicitly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>model</strong><span class="classifier">tardis.model.Radial1DModel</span></dt><dd></dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Numpy array containing ( 1 - exp(-tau_ul) ) S_ul ordered by wavelength of the transition u -&gt; l</dt><dd></dd>
 </dl>
@@ -280,13 +281,13 @@ of radius r in terms of unit length (c * t_exp).
 If shell and p-line do not intersect, return 0.</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">r</dt>
+<dt class="field-odd">r<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(double) radius of the shell</p>
 </dd>
-<dt class="field-even">p</dt>
+<dt class="field-even">p<span class="colon">:</span></dt>
 <dd class="field-even"><p>(double) distance of the p-line to the center of the supernova</p>
 </dd>
-<dt class="field-odd">inv_t</dt>
+<dt class="field-odd">inv_t<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(double) inverse time_explosio is needed to norm to unit-length</p>
 </dd>
 </dl>
@@ -299,7 +300,7 @@ If shell and p-line do not intersect, return 0.</p>
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.formal_integral.</span></span><span class="sig-name descname"><span class="pre">intensity_black_body</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/formal_integral.html#intensity_black_body"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.formal_integral.intensity_black_body" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the blackbody intensity.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>nu</strong><span class="classifier">float64</span></dt><dd><p>frequency</p>
 </dd>
@@ -307,7 +308,7 @@ If shell and p-line do not intersect, return 0.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>float64</dt><dd></dd>
 </dl>
@@ -321,13 +322,13 @@ If shell and p-line do not intersect, return 0.</p>
 <dd><p>Insert a value in to an array of line frequencies</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">nu</dt>
+<dt class="field-odd">nu<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(array) line frequencies</p>
 </dd>
-<dt class="field-even">nu_insert</dt>
+<dt class="field-even">nu_insert<span class="colon">:</span></dt>
 <dd class="field-even"><p>(int) value of nu key</p>
 </dd>
-<dt class="field-odd">number_of_lines</dt>
+<dt class="field-odd">number_of_lines<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(int) number of lines in the line list</p>
 </dd>
 </dl>
@@ -348,7 +349,7 @@ If shell and p-line do not intersect, return 0.</p>
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.formal_integral.</span></span><span class="sig-name descname"><span class="pre">numba_formal_integral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plasma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inu_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">att_S_ul</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Jred_lu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Jblue_lu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_sobolev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/formal_integral.html#numba_formal_integral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.formal_integral.numba_formal_integral" title="Permalink to this definition">¶</a></dt>
 <dd><p>model, plasma, and estimator are the numba variants</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>L</strong><span class="classifier">float64 array</span></dt><dd><p>integrated luminosities</p>
 </dd>
@@ -368,14 +369,14 @@ frequency x p-ray grid</p>
 each shell</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">p</dt>
+<dt class="field-odd">p<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(double) distance of the integration line to the center</p>
 </dd>
-<dt class="field-even">oz</dt>
+<dt class="field-even">oz<span class="colon">:</span></dt>
 <dd class="field-even"><p>(array of doubles) will be set with z values. the array is truncated
 by the value <code class="xref py py-obj docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </dd>
-<dt class="field-odd">oshell_id</dt>
+<dt class="field-odd">oshell_id<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(int64) will be set with the corresponding shell_ids</p>
 </dd>
 </dl>
@@ -389,16 +390,16 @@ by the value <code class="xref py py-obj docutils literal notranslate"><span cla
 <dd><p>Look for a place to insert a value in an inversely sorted float array.</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">x</dt>
+<dt class="field-odd">x<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(array) an inversely (largest to lowest) sorted float array</p>
 </dd>
-<dt class="field-even">x_insert</dt>
+<dt class="field-even">x_insert<span class="colon">:</span></dt>
 <dd class="field-even"><p>(value) a value to insert</p>
 </dd>
-<dt class="field-odd">imin</dt>
+<dt class="field-odd">imin<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(int) lower bound</p>
 </dd>
-<dt class="field-even">imax</dt>
+<dt class="field-even">imax<span class="colon">:</span></dt>
 <dd class="field-even"><p>(int) upper bound</p>
 </dd>
 </dl>
@@ -430,7 +431,7 @@ since it is numba compatable</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 16 Feb 2023.
+      <span class="lastupdated">Last updated on 20 Feb 2023.
       </span></p>
   </div>
 

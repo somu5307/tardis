@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tardis.montecarlo.montecarlo_numba.estimators module &mdash; tardis</title>
@@ -15,9 +15,6 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -36,14 +33,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> tardis
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tardis
           </a>
               <div class="version">
                 latest
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -121,7 +122,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
           <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
           <li class="breadcrumb-item"><a href="tardis.montecarlo.html">tardis.montecarlo package</a></li>
@@ -173,7 +174,7 @@
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.estimators.</span></span><span class="sig-name descname"><span class="pre">update_bound_free_estimators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comov_nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comov_energy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numba_estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_electron</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_sect_bfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_continua</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bf_threshold_list_nu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/estimators.html#update_bound_free_estimators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.estimators.update_bound_free_estimators" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the estimators for bound-free processes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>comov_nu</strong><span class="classifier">float</span></dt><dd></dd>
 <dt><strong>comov_energy</strong><span class="classifier">float</span></dt><dd></dd>
@@ -199,7 +200,7 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 <span class="sig-prename descclassname"><span class="pre">tardis.montecarlo.montecarlo_numba.estimators.</span></span><span class="sig-name descname"><span class="pre">update_line_estimators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_packet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cur_line_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_trace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_explosion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/montecarlo_numba/estimators.html#update_line_estimators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.montecarlo.montecarlo_numba.estimators.update_line_estimators" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update the line estimators</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>estimators</strong><span class="classifier">tardis.montecarlo.montecarlo_numba.numba_interface.Estimators</span></dt><dd></dd>
 <dt><strong>r_packet</strong><span class="classifier">tardis.montecarlo.montecarlo_numba.r_packet.RPacket</span></dt><dd></dd>
@@ -225,7 +226,7 @@ which absorption is possible for frequency <code class="xref py py-obj docutils 
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 16 Feb 2023.
+      <span class="lastupdated">Last updated on 20 Feb 2023.
       </span></p>
   </div>
 

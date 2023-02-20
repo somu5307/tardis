@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tardis.plasma.properties.radiative_properties module &mdash; tardis</title>
@@ -15,9 +15,6 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -36,14 +33,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> tardis
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tardis
           </a>
               <div class="version">
                 latest
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -121,7 +122,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="modules.html">tardis</a></li>
           <li class="breadcrumb-item"><a href="tardis.html">tardis package</a></li>
           <li class="breadcrumb-item"><a href="tardis.plasma.html">tardis.plasma package</a></li>
@@ -167,7 +168,7 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.plasma.properties.radiative_properties.</span></span><span class="sig-name descname"><span class="pre">BetaSobolev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plasma_parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#BetaSobolev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.BetaSobolev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingPlasmaProperty</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>beta_sobolev</strong><span class="classifier">Numpy Array, dtype float</span></dt><dd></dd>
 </dl>
@@ -211,7 +212,7 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.plasma.properties.radiative_properties.</span></span><span class="sig-name descname"><span class="pre">RawRadBoundBoundTransProbs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plasma_parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#RawRadBoundBoundTransProbs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.RawRadBoundBoundTransProbs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities" title="tardis.plasma.properties.radiative_properties.TransitionProbabilities"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransitionProbabilities</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TransitionProbabilitiesProperty</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>p_rad_bb</strong><span class="classifier">pandas.DataFrame, dtype float</span></dt><dd><p>Unnormalized transition probabilities for radiative bound-bound
 transitions</p>
@@ -241,7 +242,7 @@ transitions</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.plasma.properties.radiative_properties.</span></span><span class="sig-name descname"><span class="pre">StimulatedEmissionFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plasma_parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlte_species</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#StimulatedEmissionFactor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingPlasmaProperty</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>stimulated_emission_factor</strong><span class="classifier">Numpy Array, dtype float</span></dt><dd><p>Indexed by lines, columns as zones.</p>
 </dd>
@@ -285,7 +286,7 @@ transitions</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.plasma.properties.radiative_properties.</span></span><span class="sig-name descname"><span class="pre">TauSobolev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plasma_parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TauSobolev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TauSobolev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingPlasmaProperty</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>tau_sobolev</strong><span class="classifier">Pandas DataFrame, dtype float</span></dt><dd><p>Sobolev optical depth for each line. Indexed by line.
 Columns as zones.</p>
@@ -320,7 +321,7 @@ Columns as zones.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tardis.plasma.properties.radiative_properties.</span></span><span class="sig-name descname"><span class="pre">TransitionProbabilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plasma_parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TransitionProbabilities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingPlasmaProperty</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>transition_probabilities</strong><span class="classifier">Pandas DataFrame, dtype float</span></dt><dd></dd>
 </dl>
@@ -367,7 +368,7 @@ Columns as zones.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2013-2023, TARDIS Collaboration.
-      <span class="lastupdated">Last updated on 16 Feb 2023.
+      <span class="lastupdated">Last updated on 20 Feb 2023.
       </span></p>
   </div>
 
