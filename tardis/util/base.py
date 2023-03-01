@@ -644,12 +644,12 @@ if is_notebook():
 else:
     iterations_pbar = tqdm.tqdm(
         desc="Iterations:",
-        bar_format="{desc:<}{bar:80}{n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]",
+        bar_format="{desc:<}{bar:100}{n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]",
     )
     packet_pbar = tqdm.tqdm(
         desc="Packets:   ",
         postfix="0",
-        bar_format="{desc:<}{bar:80}{n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]",
+        bar_format="{desc:<}{bar:100}{n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]",
     )
 
 
